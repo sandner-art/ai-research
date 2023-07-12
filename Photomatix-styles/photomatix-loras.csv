@@ -1,0 +1,2 @@
+﻿name,prompt,negative_prompt
+photostyle-loras-01,"RAW analog 3/4 photo portrait, Photorealistic, Hyperrealistic, Hyperdetailed, detailed skin, soft lighting, subsurface scattering, realistic, heavy shadow, masterpiece, best quality, ultra realistic, 8k, golden ratio, Intricate, High Detail, film photography, soft focus, rimlight  <lora:more_details:1.75>   , dusk urban underground  <lora:entropy-alpha:0.085> <lora:last:0.25> ",

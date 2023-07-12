@@ -1,0 +1,14 @@
+﻿name,prompt,negative_prompt
+photo-closeup-01,"epic realistic, faded, neutral colors, (dark shot:1.4), 80mm, (closeup:0.5), moles skin, soft light, sharp, exposure blend, medium shot, bokeh, (hdr:1.4), high contrast, (cinematic, teal and orange:0.85), (muted colors, dim colors, soothing tones:1.3), low saturation, (hyperdetailed:1.2), (noir:0.4)","orange, oversaturated, faint, faded, grayscale, black and white, b&w, (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, (mutated hands and fingers:1.4), disconnected limbs, mutation, mutated, ugly, disgusting, blurry, amputation
+"
+photo-bw-01-neg," Leica black and white, greyscale, by Lee Jeffries, details","orange, oversaturated, faint, faded, (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, (mutated hands and fingers:1.4), disconnected limbs, mutation, mutated, ugly, disgusting, blurry, amputation
+"
+photo-bw-02-neg,"black and white film photography, Leica lens, raw,  artistic accidental photography, raw, cinematic realistic screenshot","(deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, (mutated hands and fingers:1.4), disconnected limbs, mutation, mutated, ugly, disgusting, blurry, amputation, 3d, illustration, cartoon
+"
+polaroid-01,"black and white film photography, Leica lens, raw,  artistic accidental photography, polaroid raw, cinematic realistic screenshot",
+polaroid-01-neg,"woman portrait, black and white film photography, Leica lens, raw,  artistic accidental photography, polaroid raw, cinematic realistic screenshot","framed, frames, (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, (mutated hands and fingers:1.4), disconnected limbs, mutation, mutated, ugly, disgusting, blurry, amputation, 3d, illustration, cartoon
+"
+photo-bw-03-neg,"(black and white:1.1) film photography, Leica lens, raw,  artistic accidental photography, raw, cinematic realistic screenshot, epic realistic, faded, neutral tones, (dark shot:1.4), 80mm, moles skin, soft light, sharp, exposure blend, medium shot, bokeh, (hdr:1.4), high contrast, (cinematic, teal and orange:0.85), (muted colors, dim colors, soothing tones:1.3), low saturation, (hyperdetailed:1.2), (noir:0.4)","(deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, (mutated hands and fingers:1.4), disconnected limbs, mutation, mutated, ugly, disgusting, blurry, amputation, 3d, illustration, cartoon, orange colors
+"
+photo-sepia-01,"raw photo, color sepia kodak, film grain, commoner style, absurdres, high detail
+",
