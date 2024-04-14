@@ -1,0 +1,912 @@
+{
+  "last_node_id": 41,
+  "last_link_id": 75,
+  "nodes": [
+    {
+      "id": 36,
+      "type": "PatchModelAddDownscale",
+      "pos": [
+        -532.6797827148438,
+        -200.63991577148445
+      ],
+      "size": {
+        "0": 352.79998779296875,
+        "1": 202
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 66
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            70
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PatchModelAddDownscale"
+      },
+      "widgets_values": [
+        3,
+        2,
+        0,
+        0.35,
+        true,
+        "bicubic",
+        "bicubic"
+      ]
+    },
+    {
+      "id": 37,
+      "type": "Anything Everywhere",
+      "pos": [
+        -422.6797827148442,
+        59.36008422851574
+      ],
+      "size": {
+        "0": 184.25096130371094,
+        "1": 26
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "*",
+          "link": 70,
+          "color_on": "#B39DDB"
+        }
+      ],
+      "title": "CKPT + Deep Shrink",
+      "properties": {
+        "Node name for S&R": "Anything Everywhere",
+        "group_restricted": 0,
+        "color_restricted": 0
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 38,
+      "type": "Anything Everywhere",
+      "pos": [
+        -382.6797827148441,
+        -430.639915771484
+      ],
+      "size": {
+        "0": 184.25096130371094,
+        "1": 26
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "VAE",
+          "type": "*",
+          "link": 71,
+          "color_on": "#FF6E6E"
+        }
+      ],
+      "title": "Global VAE",
+      "properties": {
+        "Node name for S&R": "Anything Everywhere",
+        "group_restricted": 0,
+        "color_restricted": 0
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 12,
+      "type": "LoadElla",
+      "pos": [
+        -527.2995971679684,
+        239.059769897461
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "ELLA",
+          "type": "ELLA",
+          "links": [
+            13,
+            16
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadElla"
+      },
+      "widgets_values": [
+        "ella-sd1.5-tsc-t5xl.safetensors",
+        "flan-t5-xl-encoder-only-bf16"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "ConditioningCombine",
+      "pos": [
+        734,
+        -28
+      ],
+      "size": {
+        "0": 228.39999389648438,
+        "1": 46
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 65
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            61
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningCombine"
+      }
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1020,
+        -40
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            72
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 29,
+      "type": "GetSigma",
+      "pos": [
+        -527.2995971679684,
+        359.059769897461
+      ],
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            47,
+            49
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetSigma"
+      },
+      "widgets_values": [
+        "dpmpp_2s_ancestral",
+        "karras",
+        64,
+        0,
+        64
+      ]
+    },
+    {
+      "id": 39,
+      "type": "Note",
+      "pos": [
+        387,
+        196.58000091552734
+      ],
+      "size": {
+        "0": 276.0509033203125,
+        "1": 319.14154052734375
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Supported languages for full FLAN-T5 model by Google:\nEnglish, Spanish, Japanese, Persian, Hindi, French, Chinese, Bengali, Gujarati, German, Telugu, Italian, Arabic, Polish, Tamil, Marathi, Malayalam, Oriya, Panjabi, Portuguese, Urdu, Galician, Hebrew, Korean, Catalan, Thai, Dutch, Indonesian, Vietnamese, Bulgarian, Filipino, Central Khmer, Lao, Turkish, Russian, Croatian, Swedish, Yoruba, Kurdish, Burmese, Malay, Czech, Finnish, Somali, Tagalog, Swahili, Sinhala, Kannada, Zhuang, Igbo, Xhosa, Romanian, Haitian, Estonian, Slovak, Lithuanian, Greek, Nepali, Assamese, Norwegian"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 34,
+      "type": "ConditioningSetTimestepRange",
+      "pos": [
+        407.9644740283204,
+        67.29873637878421
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 82
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            63
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetTimestepRange"
+      },
+      "widgets_values": [
+        0,
+        0.444
+      ]
+    },
+    {
+      "id": 40,
+      "type": "Note",
+      "pos": [
+        726,
+        -278
+      ],
+      "size": {
+        "0": 429.5207824707031,
+        "1": 176.27125549316406
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "You need to combine and OVERLAP the ELLA-generated Conditioning with CLIP conditioning of your choice. You can go with any realistic CKPT.\n\nBut keep in mind that ELLA's conditioning alone produces very \"anime\"-ish picture.\n\nAlso, take a note that other conditioning combination nodes generates errors. Conditioning Concat and Conditioning Average don't work for me."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 35,
+      "type": "ConditioningSetTimestepRange",
+      "pos": [
+        400,
+        -300
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 82
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            65
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetTimestepRange"
+      },
+      "widgets_values": [
+        0.34600000000000003,
+        1
+      ]
+    },
+    {
+      "id": 41,
+      "type": "SaveImage",
+      "pos": [
+        1363,
+        -383
+      ],
+      "size": {
+        "0": 788.857421875,
+        "1": 907.3524780273438
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 72
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ELLA-CLIP test"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -503,
+        -351
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            66
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            53
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            71
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "Photomatix\\photomatix_v3.fp16.safetensors"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        -50,
+        -310
+      ],
+      "size": {
+        "0": 416.0997009277344,
+        "1": 207.8935546875
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            64
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced"
+      },
+      "widgets_values": [
+        "(macro details:1.5) ([grayscale:vivid colors:0.76]:1.2), high_exposure, (photorealistic cinematic still:1.3), hyperrealistic detailed natural skin pigmentation, ((gloom:1.3) of morning light:1.1) (shallow dof swirly portrait_lens bokeh:0.8), dim light, chiaroscuro\n\n1 woman chubby, plump, freckles, blushing, happy",
+        "mean",
+        "down_weight"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        1010,
+        50
+      ],
+      "size": {
+        "0": 315,
+        "1": 474
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 61
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 39
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        500798899120695,
+        "randomize",
+        58,
+        5.16,
+        "euler_ancestral",
+        "sgm_uniform",
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        745,
+        384
+      ],
+      "size": {
+        "0": 210,
+        "1": 106
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            2
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1440,
+        1080,
+        1
+      ]
+    },
+    {
+      "id": 14,
+      "type": "ELLATextEncode",
+      "pos": [
+        -56.03552597167963,
+        60.29873637878425
+      ],
+      "size": {
+        "0": 426.127685546875,
+        "1": 278.0045471191406
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ella",
+          "type": "ELLA",
+          "link": 13
+        },
+        {
+          "name": "sigma",
+          "type": "FLOAT",
+          "link": 49,
+          "widget": {
+            "name": "sigma"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            62
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ELLATextEncode"
+      },
+      "widgets_values": [
+        "An edwardian vintage cinematic photograph of an interior scene focusing on happy laughing chubby pale dutch curly blushing woman pharmacist, with lively eyes, showing a crystal glass vial full of herbs, attending a customer in a cozy rural italian pharmacy. She is properly clothed in victorian costume . The morning hot sun breaks through the dust on an old window, dust particles flies in the air in volumetric crepuscular sun light. Antique wooden furniture is visible in the frame. The woman has a happy expression on her face, and her eyes are wide open. There is a lot of vials and glass bottles on the table in the apotheke. Interior is simple but has a lot of details, surfaces and textures are realistic and have signs of wear, surface scratches and dust. The light has a chiaroscuro intimate effect on the scene. The skin of the lady is wet with sweat perspiration , has wrinkles and imperfections of her old age, also some birthmarks. There is pharmacy retro equipment from 1800s. The atmosphere in the room is warm with colors and tones, volumetric shadows create great contrast in the composition.",
+        1
+      ]
+    },
+    {
+      "id": 15,
+      "type": "ELLATextEncode",
+      "pos": [
+        -47.035525971679654,
+        385.2987363787845
+      ],
+      "size": {
+        "0": 416.0996398925781,
+        "1": 132.3145294189453
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ella",
+          "type": "ELLA",
+          "link": 16
+        },
+        {
+          "name": "sigma",
+          "type": "FLOAT",
+          "link": 47,
+          "widget": {
+            "name": "sigma"
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ELLATextEncode"
+      },
+      "widgets_values": [
+        "Main subject is young and present with anatomy anomalies like broken fingers or wrong structure of arms or legs. The main subjects eyes are out of focus or has deformed cornea. Main subject has bulging fingers, or wrong number of fingers, six or four fingers, ugly deformed nails. Asian ethnicity. The clothing show cleavage, breasts and is nsfw. There are multiple people in the room. The body is disproportional, hands are too short and head to big. Rhe feeling from the image is uneasy, dark, modern, cold, soulless. all is new and pristine.",
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      2,
+      5,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      7,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      13,
+      12,
+      0,
+      14,
+      0,
+      "ELLA"
+    ],
+    [
+      16,
+      12,
+      0,
+      15,
+      0,
+      "ELLA"
+    ],
+    [
+      39,
+      15,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      47,
+      29,
+      0,
+      15,
+      1,
+      "FLOAT"
+    ],
+    [
+      49,
+      29,
+      0,
+      14,
+      1,
+      "FLOAT"
+    ],
+    [
+      53,
+      4,
+      1,
+      30,
+      0,
+      "CLIP"
+    ],
+    [
+      61,
+      32,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      62,
+      14,
+      0,
+      34,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      63,
+      34,
+      0,
+      32,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      64,
+      30,
+      0,
+      35,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      65,
+      35,
+      0,
+      32,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      66,
+      4,
+      0,
+      36,
+      0,
+      "MODEL"
+    ],
+    [
+      70,
+      36,
+      0,
+      37,
+      0,
+      "MODEL"
+    ],
+    [
+      71,
+      4,
+      2,
+      38,
+      0,
+      "VAE"
+    ],
+    [
+      72,
+      8,
+      0,
+      41,
+      0,
+      "IMAGE"
+    ],
+    [
+      73,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      74,
+      36,
+      0,
+      29,
+      0,
+      "MODEL"
+    ],
+    [
+      75,
+      36,
+      0,
+      3,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "A1111 style prompt: REALISM + BOKEH",
+      "bounding": [
+        -74,
+        -402,
+        732,
+        333
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    },
+    {
+      "title": "ELLA prompts: precise adherence to prompt text.",
+      "bounding": [
+        -79,
+        -18,
+        755,
+        562
+      ],
+      "color": "#a1309b",
+      "font_size": 24
+    },
+    {
+      "title": "SD1.5 loader. Nothing interesting here ;)",
+      "bounding": [
+        -552,
+        -509,
+        450,
+        615
+      ],
+      "color": "#8A8",
+      "font_size": 24
+    },
+    {
+      "title": "ELLA Loader. Where the magic begins.",
+      "bounding": [
+        -544,
+        148,
+        426,
+        400
+      ],
+      "color": "#a1309b",
+      "font_size": 24
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
