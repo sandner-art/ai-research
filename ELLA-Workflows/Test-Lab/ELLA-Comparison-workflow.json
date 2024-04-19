@@ -1,0 +1,1110 @@
+{
+  "last_node_id": 73,
+  "last_link_id": 103,
+  "nodes": [
+    {
+      "id": 39,
+      "type": "VAEDecode",
+      "pos": [
+        1237.5363484765621,
+        893.1687502343761
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 42
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 100,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            44
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 60,
+      "type": "VAEDecode",
+      "pos": [
+        1250.303973398437,
+        1567.0222946093754
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 77
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            78
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 58,
+      "type": "GetSigma",
+      "pos": [
+        584.8729245556631,
+        1804.9940648046895
+      ],
+      "size": {
+        "0": 210,
+        "1": 154
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 81,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            69,
+            72
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetSigma"
+      },
+      "widgets_values": [
+        "dpmpp_sde",
+        "karras",
+        25,
+        0,
+        10000
+      ]
+    },
+    {
+      "id": 40,
+      "type": "PreviewImage",
+      "pos": [
+        1489.5363484765621,
+        905.1687502343761
+      ],
+      "size": {
+        "0": 534.9561157226562,
+        "1": 549.8583374023438
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 44
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 35,
+      "type": "CLIPTextEncode",
+      "pos": [
+        902.5363484765622,
+        976.1687502343761
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 101
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 93,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "a happy woman, holding a heavy large sledgehammer in both hands"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "CLIPTextEncode",
+      "pos": [
+        901.5363484765622,
+        1075.1687502343761
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 102
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 89,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            40
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "low resolution, ugly, disfigured, 2d, 3dn nsfw, cleavage, naked, unclothed"
+      ]
+    },
+    {
+      "id": 56,
+      "type": "ELLATextEncode",
+      "pos": [
+        824.8729245556626,
+        1684.9940648046895
+      ],
+      "size": {
+        "0": 210,
+        "1": 74
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ella",
+          "type": "ELLA",
+          "link": 68
+        },
+        {
+          "name": "sigma",
+          "type": "FLOAT",
+          "link": 69,
+          "widget": {
+            "name": "sigma"
+          },
+          "slot_index": 1
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 97,
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            74
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ELLATextEncode"
+      },
+      "widgets_values": [
+        "a happy woman, holding a heavy large sledgehammer in both hands",
+        1
+      ]
+    },
+    {
+      "id": 57,
+      "type": "ELLATextEncode",
+      "pos": [
+        836.8729245556626,
+        1804.9940648046895
+      ],
+      "size": {
+        "0": 210,
+        "1": 74
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ella",
+          "type": "ELLA",
+          "link": 71
+        },
+        {
+          "name": "sigma",
+          "type": "FLOAT",
+          "link": 72,
+          "widget": {
+            "name": "sigma"
+          },
+          "slot_index": 1
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 92,
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            75
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ELLATextEncode"
+      },
+      "widgets_values": [
+        "low resolution, ugly, disfigured, 2d, 3dn nsfw, cleavage, naked, unclothed",
+        1
+      ]
+    },
+    {
+      "id": 55,
+      "type": "LoadElla",
+      "pos": [
+        476.87292455566336,
+        1684.9940648046895
+      ],
+      "size": {
+        "0": 323.2039794921875,
+        "1": 82
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "ELLA",
+          "type": "ELLA",
+          "links": [
+            68,
+            71
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadElla"
+      },
+      "widgets_values": [
+        "ella-sd1.5-tsc-t5xl.safetensors",
+        "flan-t5-xl-encoder-only-bf16"
+      ]
+    },
+    {
+      "id": 65,
+      "type": "Reroute",
+      "pos": [
+        766,
+        1529
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "LATENT",
+          "links": [
+            83,
+            84
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 51,
+      "type": "Reroute",
+      "pos": [
+        765,
+        1471
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 59
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "VAE",
+          "links": [
+            79,
+            100
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 52,
+      "type": "Reroute",
+      "pos": [
+        762,
+        1413
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 98
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MODEL",
+          "links": [
+            80,
+            81,
+            99
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 25,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        86.14529472412146,
+        1209.8721158398434
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            98
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            101,
+            102
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            59
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "Photomatix\\photomatix_v3.fp16.safetensors"
+      ]
+    },
+    {
+      "id": 63,
+      "type": "PreviewImage",
+      "pos": [
+        1490,
+        1579
+      ],
+      "size": {
+        "0": 530.4923706054688,
+        "1": 563.6987915039062
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 78
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 28,
+      "type": "EmptyLatentImage",
+      "pos": [
+        93.14529472412141,
+        1356.8721158398434
+      ],
+      "size": {
+        "0": 210,
+        "1": 106
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            82
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1
+      ]
+    },
+    {
+      "id": 37,
+      "type": "KSampler",
+      "pos": [
+        1129.5363484765621,
+        977.1687502343761
+      ],
+      "size": {
+        "0": 315,
+        "1": 474
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 99,
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 39
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 40
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 83,
+          "slot_index": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            42
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        55,
+        "fixed",
+        30,
+        3,
+        "dpmpp_2s_ancestral",
+        "sgm_uniform",
+        1
+      ]
+    },
+    {
+      "id": 59,
+      "type": "KSampler",
+      "pos": [
+        1154.303973398437,
+        1663.0222946093754
+      ],
+      "size": [
+        315,
+        474.0000457763672
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 80,
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 74
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 75,
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 84,
+          "slot_index": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            77
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        55,
+        "fixed",
+        30,
+        3,
+        "dpmpp_2s_ancestral",
+        "sgm_uniform",
+        1
+      ]
+    },
+    {
+      "id": 62,
+      "type": "PrimitiveNode",
+      "pos": [
+        444.1452947241207,
+        1356.8721158398434
+      ],
+      "size": {
+        "0": 210,
+        "1": 94.53828430175781
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            89,
+            92
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "title": "Negative prompt",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "low resolution, ugly, disfigured, 2d, 3dn nsfw, cleavage, naked, unclothed"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 61,
+      "type": "PrimitiveNode",
+      "pos": [
+        430.14529472412073,
+        1208.8721158398434
+      ],
+      "size": {
+        "0": 214.31715393066406,
+        "1": 94.88955688476562
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            93,
+            97
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "title": "Positive prompt",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "a happy woman, holding a heavy large sledgehammer in both hands"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      39,
+      35,
+      0,
+      37,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      40,
+      36,
+      0,
+      37,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      42,
+      37,
+      0,
+      39,
+      0,
+      "LATENT"
+    ],
+    [
+      44,
+      39,
+      0,
+      40,
+      0,
+      "IMAGE"
+    ],
+    [
+      59,
+      25,
+      2,
+      51,
+      0,
+      "*"
+    ],
+    [
+      68,
+      55,
+      0,
+      56,
+      0,
+      "ELLA"
+    ],
+    [
+      69,
+      58,
+      0,
+      56,
+      1,
+      "FLOAT"
+    ],
+    [
+      71,
+      55,
+      0,
+      57,
+      0,
+      "ELLA"
+    ],
+    [
+      72,
+      58,
+      0,
+      57,
+      1,
+      "FLOAT"
+    ],
+    [
+      74,
+      56,
+      0,
+      59,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      75,
+      57,
+      0,
+      59,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      77,
+      59,
+      0,
+      60,
+      0,
+      "LATENT"
+    ],
+    [
+      78,
+      60,
+      0,
+      63,
+      0,
+      "IMAGE"
+    ],
+    [
+      79,
+      51,
+      0,
+      60,
+      1,
+      "VAE"
+    ],
+    [
+      80,
+      52,
+      0,
+      59,
+      0,
+      "MODEL"
+    ],
+    [
+      81,
+      52,
+      0,
+      58,
+      0,
+      "MODEL"
+    ],
+    [
+      82,
+      28,
+      0,
+      65,
+      0,
+      "*"
+    ],
+    [
+      83,
+      65,
+      0,
+      37,
+      3,
+      "LATENT"
+    ],
+    [
+      84,
+      65,
+      0,
+      59,
+      3,
+      "LATENT"
+    ],
+    [
+      89,
+      62,
+      0,
+      36,
+      1,
+      "STRING"
+    ],
+    [
+      92,
+      62,
+      0,
+      57,
+      2,
+      "STRING"
+    ],
+    [
+      93,
+      61,
+      0,
+      35,
+      1,
+      "STRING"
+    ],
+    [
+      97,
+      61,
+      0,
+      56,
+      2,
+      "STRING"
+    ],
+    [
+      98,
+      25,
+      0,
+      52,
+      0,
+      "*"
+    ],
+    [
+      99,
+      52,
+      0,
+      37,
+      0,
+      "MODEL"
+    ],
+    [
+      100,
+      51,
+      0,
+      39,
+      1,
+      "VAE"
+    ],
+    [
+      101,
+      25,
+      1,
+      35,
+      0,
+      "CLIP"
+    ],
+    [
+      102,
+      25,
+      1,
+      36,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Load SD1.5 Model, latent, text prompt",
+      "bounding": [
+        64,
+        1131,
+        638,
+        352
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    },
+    {
+      "title": "Ella module",
+      "bounding": [
+        467,
+        1611,
+        590,
+        358
+      ],
+      "color": "#8A8",
+      "font_size": 24
+    },
+    {
+      "title": "ELLA sampling output",
+      "bounding": [
+        1144,
+        1493,
+        886,
+        660
+      ],
+      "color": "#8A8",
+      "font_size": 24
+    },
+    {
+      "title": "pure text sampling output",
+      "bounding": [
+        892,
+        819,
+        1143,
+        646
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    }
+  ],
+  "config": {},
+  "extra": {
+    "info": {
+      "name": "workflow",
+      "author": "",
+      "description": "",
+      "version": "1",
+      "created": "2024-04-13T19:38:31.452Z",
+      "modified": "2024-04-13T21:19:29.392Z",
+      "software": "ComfyUI"
+    }
+  },
+  "version": 0.4
+}
