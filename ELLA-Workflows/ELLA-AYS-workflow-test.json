@@ -1,0 +1,1555 @@
+{
+  "last_node_id": 65,
+  "last_link_id": 118,
+  "nodes": [
+    {
+      "id": 12,
+      "type": "LoadElla",
+      "pos": [
+        -527.2995971679684,
+        239.059769897461
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "ELLA",
+          "type": "ELLA",
+          "links": [
+            13,
+            16
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadElla"
+      },
+      "widgets_values": [
+        "ella-sd1.5-tsc-t5xl.safetensors",
+        "flan-t5-xl-encoder-only-bf16"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "GetSigma",
+      "pos": [
+        -527.2995971679684,
+        359.059769897461
+      ],
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            47,
+            49
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetSigma"
+      },
+      "widgets_values": [
+        "dpmpp_2s_ancestral",
+        "karras",
+        64,
+        0,
+        64
+      ]
+    },
+    {
+      "id": 34,
+      "type": "ConditioningSetTimestepRange",
+      "pos": [
+        407.9644740283204,
+        67.29873637878421
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 82
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            63
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetTimestepRange"
+      },
+      "widgets_values": [
+        0,
+        0.771
+      ]
+    },
+    {
+      "id": 30,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        -50,
+        -310
+      ],
+      "size": {
+        "0": 416.0997009277344,
+        "1": 207.8935546875
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            64
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced"
+      },
+      "widgets_values": [
+        "(macro details:1.5) ([grayscale:vivid colors:0.76]:1.2), high_exposure, (photorealistic cinematic still:1.3), hyperrealistic detailed natural skin pigmentation, ((bloom:1.3) of golden hour light:1.1) (shallow dof anamorphic portrait_lens bokeh:0.8), dim light, chiaroscuro\n\n",
+        "mean",
+        "down_weight"
+      ]
+    },
+    {
+      "id": 54,
+      "type": "Note",
+      "pos": [
+        2090,
+        1520
+      ],
+      "size": {
+        "0": 210,
+        "1": 95.52821350097656
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Best samplers were:\ndpmpp_2m\ndpmpp_2s_ancestral \ndpm_adaptive\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 58,
+      "type": "VAELoader",
+      "pos": [
+        830,
+        1610
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            99
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "sdxl_vae.safetensors"
+      ]
+    },
+    {
+      "id": 59,
+      "type": "Reroute",
+      "pos": [
+        1570,
+        1620
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 99
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "VAE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 49,
+      "type": "RandomNoise",
+      "pos": [
+        970,
+        1120
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "link": 96,
+          "widget": {
+            "name": "noise_seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            104
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        1104168821328096,
+        "randomize"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "ELLATextEncode",
+      "pos": [
+        -47,
+        385
+      ],
+      "size": {
+        "0": 416.0996398925781,
+        "1": 132.3145294189453
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ella",
+          "type": "ELLA",
+          "link": 16
+        },
+        {
+          "name": "sigma",
+          "type": "FLOAT",
+          "link": 47,
+          "widget": {
+            "name": "sigma"
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            113
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ELLATextEncode"
+      },
+      "widgets_values": [
+        "text, text overlay, web, web adress, simplified, abstract, unrealistic, impressionistic, low resolution, low detail, \n, humans, portrait, watermark\nlantern, lanterns, moon, railroad tracks\nembedding:NEG-fixl\nembedding:red-panic-button\n",
+        1
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 32,
+      "type": "ConditioningCombine",
+      "pos": [
+        734,
+        -28
+      ],
+      "size": {
+        "0": 228.39999389648438,
+        "1": 46
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 65
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            114
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningCombine"
+      }
+    },
+    {
+      "id": 40,
+      "type": "Note",
+      "pos": [
+        726,
+        -278
+      ],
+      "size": {
+        "0": 429.5207824707031,
+        "1": 176.27125549316406
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "You need to combine and OVERLAP the ELLA-generated Conditioning with CLIP conditioning of your choice. You can go with any realistic CKPT.\n\nBut keep in mind that ELLA's conditioning alone produces very \"anime\"-ish picture.\n\nAlso, take a note that other conditioning combination nodes generates errors. Conditioning Concat and Conditioning Average don't work for me."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 38,
+      "type": "Anything Everywhere",
+      "pos": [
+        -21,
+        -455
+      ],
+      "size": {
+        "0": 184.25096130371094,
+        "1": 26
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "VAE",
+          "type": "*",
+          "link": 71,
+          "color_on": "#FF6E6E"
+        }
+      ],
+      "title": "Global VAE",
+      "properties": {
+        "group_restricted": 0,
+        "color_restricted": 0,
+        "Node name for S&R": "Anything Everywhere"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 62,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        1290,
+        740
+      ],
+      "size": {
+        "0": 355.20001220703125,
+        "1": 326
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 104
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 105
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 106
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 107
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 108
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            100
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      }
+    },
+    {
+      "id": 52,
+      "type": "KSamplerSelect",
+      "pos": [
+        1090,
+        630
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            106
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "dpmpp_2s_ancestral"
+      ]
+    },
+    {
+      "id": 60,
+      "type": "VAEDecode",
+      "pos": [
+        1430,
+        620
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 100
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            92
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 46,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -790,
+        1250
+      ],
+      "size": {
+        "0": 425.27801513671875,
+        "1": 180.6060791015625
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "3d, bad anatomy, bad hands, nude, naked, nsfw, cleavage, nipples, deformed, censored, simple background,lowres, (bad), text, error, fewer, extra, missing, worst quality, jpeg artifacts, low quality,monochrome, watermark, unfinished, displeasing, oldest, early, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], office, usa flag, flag, markings, "
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 36,
+      "type": "PatchModelAddDownscale",
+      "pos": [
+        -530,
+        -200
+      ],
+      "size": {
+        "0": 352.79998779296875,
+        "1": 202
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 66
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            70
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PatchModelAddDownscale"
+      },
+      "widgets_values": [
+        3,
+        2,
+        0,
+        0.35,
+        true,
+        "bicubic",
+        "bicubic"
+      ]
+    },
+    {
+      "id": 37,
+      "type": "Anything Everywhere",
+      "pos": [
+        -420,
+        60
+      ],
+      "size": {
+        "0": 184.25096130371094,
+        "1": 26
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "*",
+          "link": 70,
+          "color_on": "#B39DDB"
+        }
+      ],
+      "title": "CKPT + Deep Shrink",
+      "properties": {
+        "group_restricted": 0,
+        "color_restricted": 0,
+        "Node name for S&R": "Anything Everywhere"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 47,
+      "type": "SaveImage",
+      "pos": [
+        1202,
+        -375
+      ],
+      "size": {
+        "0": 667.4921264648438,
+        "1": 821.33251953125
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 92
+        }
+      ],
+      "title": "USING AYS",
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -510,
+        -360
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            66
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            53
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            71
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "Photomatix\\photomatix_v3.fp16.safetensors"
+      ]
+    },
+    {
+      "id": 45,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -810,
+        1030
+      ],
+      "size": {
+        "0": 422.84503173828125,
+        "1": 164.31304931640625
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "solo,  portrait (scifi:1.2) astronaut,solo,muscle,smile,short hair,best quality, dynamic angle, powerarmor, blockbuster spaceship interior\n\nmale focus elderly older man, moustache,beard, goggles, medium breasts,(dieselpunk + cyberpunk),blue hair, holding a (futuristic concept glowing metal glass cylindrical plasma container jar:1.15), dirty rugged spacesuit,ring,(spacecraft interior:1.2), house,,alien veiny,reactor, hibernation pod, standing,bangs,\nBREAK\nscore_9, score_8_up, score_7_up, score_6_up, score_5_up, score_4_up,  , Expressive,  athletic, wrinkles, infernal glowing eyes, cuban cigar, heavenly, infernal  \nembedding:bpe-alienator\nembedding:pny-safe\nembedding:bpe-illuminati\n"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 56,
+      "type": "PerturbedAttention",
+      "pos": [
+        -203,
+        669
+      ],
+      "size": {
+        "0": 327.6000061035156,
+        "1": 178
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 98
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            93
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PerturbedAttention"
+      },
+      "widgets_values": [
+        3,
+        0,
+        "middle",
+        0,
+        -1,
+        -1
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 63,
+      "type": "FreeU_V2",
+      "pos": [
+        -569,
+        709
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 109
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            98
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FreeU_V2"
+      },
+      "widgets_values": [
+        1.3,
+        1.4,
+        0.9,
+        0.2
+      ]
+    },
+    {
+      "id": 64,
+      "type": "SelfAttentionGuidance",
+      "pos": [
+        -929,
+        720
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            109
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SelfAttentionGuidance"
+      },
+      "widgets_values": [
+        0.5,
+        2
+      ]
+    },
+    {
+      "id": 35,
+      "type": "ConditioningSetTimestepRange",
+      "pos": [
+        400,
+        -300
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 82
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            65
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetTimestepRange"
+      },
+      "widgets_values": [
+        0.685,
+        1
+      ]
+    },
+    {
+      "id": 39,
+      "type": "Note",
+      "pos": [
+        387,
+        196.58000091552734
+      ],
+      "size": {
+        "0": 276.0509033203125,
+        "1": 319.14154052734375
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Supported languages for full FLAN-T5 model by Google:\nEnglish, Spanish, Japanese, Persian, Hindi, French, Chinese, Bengali, Gujarati, German, Telugu, Italian, Arabic, Polish, Tamil, Marathi, Malayalam, Oriya, Panjabi, Portuguese, Urdu, Galician, Hebrew, Korean, Catalan, Thai, Dutch, Indonesian, Vietnamese, Bulgarian, Filipino, Central Khmer, Lao, Turkish, Russian, Croatian, Swedish, Yoruba, Kurdish, Burmese, Malay, Czech, Finnish, Somali, Tagalog, Swahili, Sinhala, Kannada, Zhuang, Igbo, Xhosa, Romanian, Haitian, Estonian, Slovak, Lithuanian, Greek, Nepali, Assamese, Norwegian"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 50,
+      "type": "CR Seed",
+      "pos": [
+        320,
+        870
+      ],
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "FLOAT,INT,NUMBER,STRING",
+          "links": [
+            96
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Seed"
+      },
+      "widgets_values": [
+        242747138329280,
+        "randomize"
+      ]
+    },
+    {
+      "id": 48,
+      "type": "CFGGuider",
+      "pos": [
+        300,
+        700
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 93
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 114
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 113
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            105
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CFGGuider"
+      },
+      "widgets_values": [
+        4.9
+      ]
+    },
+    {
+      "id": 14,
+      "type": "ELLATextEncode",
+      "pos": [
+        -56,
+        60
+      ],
+      "size": {
+        "0": 426.127685546875,
+        "1": 278.0045471191406
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ella",
+          "type": "ELLA",
+          "link": 13
+        },
+        {
+          "name": "sigma",
+          "type": "FLOAT",
+          "link": 49,
+          "widget": {
+            "name": "sigma"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            62
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ELLATextEncode"
+      },
+      "widgets_values": [
+        "A dynamic post-apocalyptic landscape filled with vibrant colors and whimsical graffiti. The illustration captures a quirky blend of both chaos and order, with buildings in various states of disrepair, yet still retaining their architectural charm. The skyline features a mix of traditional structures and futuristic, graffiti-covered walls, green vines and vomes and green sustainable architecture, nearby murky creek, metal bridge, all bathed in a warm, golden light. The overall atmosphere is surreal and imaginative, showcasing the intersection of realistic physics and logical design in a dystopian setting., illustration, graffiti, vibrant, photo, autumn clouds, flock of birds and seaguls",
+        1
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 44,
+      "type": "EmptyLatentImage",
+      "pos": [
+        322,
+        1081
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            108
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1600,
+        960,
+        1
+      ]
+    },
+    {
+      "id": 51,
+      "type": "CustomSigmas",
+      "pos": [
+        739,
+        487
+      ],
+      "size": {
+        "0": 329.1037292480469,
+        "1": 198.1228485107422
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            107
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CustomSigmas"
+      },
+      "widgets_values": [
+        "14.615, 6.475, 3.861, 2.697, 1.886, 1.396, 0.963, 0.652, 0.399, 0.152, 0.029",
+        18
+      ]
+    }
+  ],
+  "links": [
+    [
+      13,
+      12,
+      0,
+      14,
+      0,
+      "ELLA"
+    ],
+    [
+      16,
+      12,
+      0,
+      15,
+      0,
+      "ELLA"
+    ],
+    [
+      47,
+      29,
+      0,
+      15,
+      1,
+      "FLOAT"
+    ],
+    [
+      49,
+      29,
+      0,
+      14,
+      1,
+      "FLOAT"
+    ],
+    [
+      53,
+      4,
+      1,
+      30,
+      0,
+      "CLIP"
+    ],
+    [
+      62,
+      14,
+      0,
+      34,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      63,
+      34,
+      0,
+      32,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      64,
+      30,
+      0,
+      35,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      65,
+      35,
+      0,
+      32,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      66,
+      4,
+      0,
+      36,
+      0,
+      "MODEL"
+    ],
+    [
+      70,
+      36,
+      0,
+      37,
+      0,
+      "MODEL"
+    ],
+    [
+      71,
+      4,
+      2,
+      38,
+      0,
+      "VAE"
+    ],
+    [
+      73,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      74,
+      36,
+      0,
+      29,
+      0,
+      "MODEL"
+    ],
+    [
+      75,
+      36,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      76,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      77,
+      36,
+      0,
+      29,
+      0,
+      "MODEL"
+    ],
+    [
+      78,
+      36,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      79,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      80,
+      36,
+      0,
+      29,
+      0,
+      "MODEL"
+    ],
+    [
+      81,
+      36,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      82,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      83,
+      36,
+      0,
+      29,
+      0,
+      "MODEL"
+    ],
+    [
+      84,
+      36,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      92,
+      60,
+      0,
+      47,
+      0,
+      "IMAGE"
+    ],
+    [
+      93,
+      56,
+      0,
+      48,
+      0,
+      "MODEL"
+    ],
+    [
+      96,
+      50,
+      0,
+      49,
+      0,
+      "INT"
+    ],
+    [
+      98,
+      63,
+      0,
+      56,
+      0,
+      "MODEL"
+    ],
+    [
+      99,
+      58,
+      0,
+      59,
+      0,
+      "*"
+    ],
+    [
+      100,
+      62,
+      0,
+      60,
+      0,
+      "LATENT"
+    ],
+    [
+      104,
+      49,
+      0,
+      62,
+      0,
+      "NOISE"
+    ],
+    [
+      105,
+      48,
+      0,
+      62,
+      1,
+      "GUIDER"
+    ],
+    [
+      106,
+      52,
+      0,
+      62,
+      2,
+      "SAMPLER"
+    ],
+    [
+      107,
+      51,
+      0,
+      62,
+      3,
+      "SIGMAS"
+    ],
+    [
+      108,
+      44,
+      0,
+      62,
+      4,
+      "LATENT"
+    ],
+    [
+      109,
+      64,
+      0,
+      63,
+      0,
+      "MODEL"
+    ],
+    [
+      113,
+      15,
+      0,
+      48,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      114,
+      32,
+      0,
+      48,
+      1,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "A1111 style prompt: REALISM + BOKEH",
+      "bounding": [
+        -74,
+        -402,
+        732,
+        333
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    },
+    {
+      "title": "ELLA prompts: precise adherence to prompt text.",
+      "bounding": [
+        -79,
+        -18,
+        755,
+        562
+      ],
+      "color": "#a1309b",
+      "font_size": 24
+    },
+    {
+      "title": "SD1.5 loader. Nothing interesting here ;)",
+      "bounding": [
+        -552,
+        -509,
+        450,
+        615
+      ],
+      "color": "#8A8",
+      "font_size": 24
+    },
+    {
+      "title": "ELLA Loader. Where the magic begins.",
+      "bounding": [
+        -544,
+        148,
+        426,
+        400
+      ],
+      "color": "#a1309b",
+      "font_size": 24
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
