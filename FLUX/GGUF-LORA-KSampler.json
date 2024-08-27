@@ -1,0 +1,745 @@
+{
+  "last_node_id": 35,
+  "last_link_id": 59,
+  "nodes": [
+    {
+      "id": 7,
+      "type": "VAEDecode",
+      "pos": [
+        1371,
+        152
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 59,
+          "slot_index": 0
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            42
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 26,
+      "type": "SaveImage",
+      "pos": [
+        1624,
+        144
+      ],
+      "size": [
+        529.3320809525658,
+        523.8983107754932
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 42
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "fluxlora"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "INTConstant",
+      "pos": [
+        -213,
+        325
+      ],
+      "size": [
+        200,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            48,
+            50
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "width",
+      "properties": {
+        "Node name for S&R": "INTConstant"
+      },
+      "widgets_values": [
+        768
+      ],
+      "color": "#1b4669",
+      "bgcolor": "#29699c"
+    },
+    {
+      "id": 27,
+      "type": "Note",
+      "pos": [
+        180,
+        633
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "using normal LoRA loader for Flux LoRA. Stack LoRAs as needed"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 31,
+      "type": "INTConstant",
+      "pos": [
+        -213,
+        426
+      ],
+      "size": [
+        200,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            49,
+            51
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "height",
+      "properties": {
+        "Node name for S&R": "INTConstant"
+      },
+      "widgets_values": [
+        1024
+      ],
+      "color": "#1b4669",
+      "bgcolor": "#29699c"
+    },
+    {
+      "id": 29,
+      "type": "ModelSamplingFlux",
+      "pos": [
+        45,
+        301
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 52
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 48,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 49,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            46
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingFlux"
+      },
+      "widgets_values": [
+        1.15,
+        0.5,
+        1016,
+        1024
+      ]
+    },
+    {
+      "id": 33,
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        -330,
+        173
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            52
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "flux1-schnell-Q4_K_S.gguf"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "DualCLIPLoaderGGUF",
+      "pos": [
+        -332,
+        17
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            53,
+            54
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoaderGGUF"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "flux"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAELoader",
+      "pos": [
+        900,
+        47
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            7
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae (1).safetensors"
+      ]
+    },
+    {
+      "id": 34,
+      "type": "Note",
+      "pos": [
+        228,
+        212
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "try with or without ModelSamplingFlux\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 24,
+      "type": "LoraLoader",
+      "pos": [
+        406,
+        544
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 46
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 54
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            55
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            41
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "Natural_Portraits_FLUX.safetensors",
+        0.8,
+        1
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncodeFlux",
+      "pos": [
+        275,
+        -68
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 41,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            56
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "portrait happy woman, pointing finger at self",
+        "portrait happy woman wearing sweater with \"FLUX LORA\" knitted , pointing finger at self",
+        3.5
+      ]
+    },
+    {
+      "id": 19,
+      "type": "CLIPTextEncodeFlux",
+      "pos": [
+        36,
+        126
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 53,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            57
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "",
+        "",
+        4
+      ]
+    },
+    {
+      "id": 6,
+      "type": "EmptyLatentImage",
+      "pos": [
+        48,
+        475
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 50,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 51,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            58
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 35,
+      "type": "KSampler",
+      "pos": [
+        925,
+        492
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 55
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 56
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 57
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            59
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        771853484378363,
+        "randomize",
+        5,
+        1,
+        "euler",
+        "simple",
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      7,
+      8,
+      0,
+      7,
+      1,
+      "VAE"
+    ],
+    [
+      41,
+      24,
+      1,
+      5,
+      0,
+      "CLIP"
+    ],
+    [
+      42,
+      7,
+      0,
+      26,
+      0,
+      "IMAGE"
+    ],
+    [
+      46,
+      29,
+      0,
+      24,
+      0,
+      "MODEL"
+    ],
+    [
+      48,
+      30,
+      0,
+      29,
+      1,
+      "INT"
+    ],
+    [
+      49,
+      31,
+      0,
+      29,
+      2,
+      "INT"
+    ],
+    [
+      50,
+      30,
+      0,
+      6,
+      0,
+      "INT"
+    ],
+    [
+      51,
+      31,
+      0,
+      6,
+      1,
+      "INT"
+    ],
+    [
+      52,
+      33,
+      0,
+      29,
+      0,
+      "MODEL"
+    ],
+    [
+      53,
+      32,
+      0,
+      19,
+      0,
+      "CLIP"
+    ],
+    [
+      54,
+      32,
+      0,
+      24,
+      1,
+      "CLIP"
+    ],
+    [
+      55,
+      24,
+      0,
+      35,
+      0,
+      "MODEL"
+    ],
+    [
+      56,
+      5,
+      0,
+      35,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      57,
+      19,
+      0,
+      35,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      58,
+      6,
+      0,
+      35,
+      3,
+      "LATENT"
+    ],
+    [
+      59,
+      35,
+      0,
+      7,
+      0,
+      "LATENT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.3513057093104377,
+      "offset": [
+        -792.8059681211096,
+        -146.2481649057115
+      ]
+    }
+  },
+  "version": 0.4
+}
