@@ -1,0 +1,1105 @@
+{
+  "last_node_id": 36,
+  "last_link_id": 56,
+  "nodes": [
+    {
+      "id": 33,
+      "type": "VAEDecodeAudio",
+      "pos": {
+        "0": 2238,
+        "1": 705
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 48
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 49
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            47,
+            55
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeAudio"
+      }
+    },
+    {
+      "id": 26,
+      "type": "VAEDecodeAudio",
+      "pos": {
+        "0": 1908,
+        "1": 702
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 34
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            33,
+            46
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeAudio"
+      }
+    },
+    {
+      "id": 5,
+      "type": "PreviewAudio",
+      "pos": {
+        "0": 1530,
+        "1": 420
+      },
+      "size": {
+        "0": 315,
+        "1": 76
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 6
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAudio"
+      },
+      "widgets_values": [
+        null
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 25,
+      "type": "PreviewAudio",
+      "pos": {
+        "0": 1883,
+        "1": 420
+      },
+      "size": {
+        "0": 315,
+        "1": 76
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 33
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAudio"
+      },
+      "widgets_values": [
+        null
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 32,
+      "type": "PreviewAudio",
+      "pos": {
+        "0": 2241,
+        "1": 422
+      },
+      "size": {
+        "0": 315,
+        "1": 76
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 47
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAudio"
+      },
+      "widgets_values": [
+        null
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 24,
+      "type": "Note",
+      "pos": {
+        "0": 2573,
+        "1": 559
+      },
+      "size": {
+        "0": 260.36138916015625,
+        "1": 90.83781433105469
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Unmute CTRL+M to seve the results"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 34,
+      "type": "KSampler",
+      "pos": {
+        "0": 2216,
+        "1": 953
+      },
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 50
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 51
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 52
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            48
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        26,
+        "fixed",
+        10,
+        2.7,
+        "euler",
+        "simple",
+        0.79
+      ]
+    },
+    {
+      "id": 27,
+      "type": "KSampler",
+      "pos": {
+        "0": 1861,
+        "1": 959
+      },
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 36
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 44
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 43
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 42
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            34,
+            56
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        23,
+        "fixed",
+        10,
+        2.7,
+        "euler",
+        "simple",
+        0.74
+      ]
+    },
+    {
+      "id": 29,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1870,
+        "1": 780
+      },
+      "size": {
+        "0": 374.6666259765625,
+        "1": 123.33340454101562
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            44
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "dark cyberpunk ambient "
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 35,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 2260,
+        "1": 770
+      },
+      "size": {
+        "0": 374.6666259765625,
+        "1": 123.33340454101562
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 54
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            51
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "chorus factory rhytm"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 13,
+      "type": "KSampler",
+      "pos": {
+        "0": 1530,
+        "1": 966
+      },
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 16
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 19
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 20
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            18,
+            42
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        18,
+        "fixed",
+        10,
+        2.5,
+        "euler",
+        "beta",
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1476,
+        "1": 773
+      },
+      "size": {
+        "0": 374.6666259765625,
+        "1": 123.33340454101562
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            19
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "warm melodic arpegios ostinato on an analog synthesizer with gradually rising filter cutoff and a reverb tail"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 8,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1091,
+        "1": 867
+      },
+      "size": {
+        "0": 350.6666259765625,
+        "1": 89.33340454101562
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 11,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            20,
+            43,
+            52
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "noise, distorsion, unmelodic, unsmooth, amateur, random"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 22,
+      "type": "Note",
+      "pos": {
+        "0": 870,
+        "1": 590
+      },
+      "size": {
+        "0": 210,
+        "1": 78.7581558227539
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Put stable audio model to your models/Stable-diffusion folder (create a stable_audio subfolder if you want)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 23,
+      "type": "Note",
+      "pos": {
+        "0": 840,
+        "1": 740
+      },
+      "size": {
+        "0": 237.9854736328125,
+        "1": 66.0628433227539
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "place \"t5_base.safetensors\" into /models/clip/ "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 12,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": 1097,
+        "1": 583
+      },
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            16,
+            36,
+            50
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null,
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            17,
+            35,
+            49
+          ],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "stable-audio\\stable_audio_open_1.0.safetensors"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "VAEDecodeAudio",
+      "pos": {
+        "0": 1545,
+        "1": 716
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 18
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            6,
+            32
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeAudio"
+      }
+    },
+    {
+      "id": 11,
+      "type": "CLIPLoader",
+      "pos": {
+        "0": 1098,
+        "1": 728
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            10,
+            11,
+            45,
+            54
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "t5_base.safetensors",
+        "stable_audio"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "EmptyLatentAudio",
+      "pos": {
+        "0": 1115,
+        "1": 1006
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            21
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentAudio"
+      },
+      "widgets_values": [
+        45.1
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 21,
+      "type": "SaveAudio",
+      "pos": {
+        "0": 1539,
+        "1": 550
+      },
+      "size": {
+        "0": 315,
+        "1": 100
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 32
+        }
+      ],
+      "outputs": [],
+      "title": "Track1",
+      "properties": {
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/track01-ComfyUI",
+        null
+      ]
+    },
+    {
+      "id": 31,
+      "type": "SaveAudio",
+      "pos": {
+        "0": 1890,
+        "1": 549
+      },
+      "size": {
+        "0": 315,
+        "1": 100
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 46
+        }
+      ],
+      "outputs": [],
+      "title": "Track2",
+      "properties": {
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/track02-ComfyUI",
+        null
+      ]
+    },
+    {
+      "id": 36,
+      "type": "SaveAudio",
+      "pos": {
+        "0": 2236,
+        "1": 548
+      },
+      "size": {
+        "0": 315,
+        "1": 100
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 55
+        }
+      ],
+      "outputs": [],
+      "title": "SoundsSaveAudio",
+      "properties": {
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/track03-sounds-ComfyUI",
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      6,
+      6,
+      0,
+      5,
+      0,
+      "AUDIO"
+    ],
+    [
+      10,
+      11,
+      0,
+      3,
+      0,
+      "CLIP"
+    ],
+    [
+      11,
+      11,
+      0,
+      8,
+      0,
+      "CLIP"
+    ],
+    [
+      16,
+      12,
+      0,
+      13,
+      0,
+      "MODEL"
+    ],
+    [
+      17,
+      12,
+      2,
+      6,
+      1,
+      "VAE"
+    ],
+    [
+      18,
+      13,
+      0,
+      6,
+      0,
+      "LATENT"
+    ],
+    [
+      19,
+      3,
+      0,
+      13,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      20,
+      8,
+      0,
+      13,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      21,
+      7,
+      0,
+      13,
+      3,
+      "LATENT"
+    ],
+    [
+      32,
+      6,
+      0,
+      21,
+      0,
+      "AUDIO"
+    ],
+    [
+      33,
+      26,
+      0,
+      25,
+      0,
+      "AUDIO"
+    ],
+    [
+      34,
+      27,
+      0,
+      26,
+      0,
+      "LATENT"
+    ],
+    [
+      35,
+      12,
+      2,
+      26,
+      1,
+      "VAE"
+    ],
+    [
+      36,
+      12,
+      0,
+      27,
+      0,
+      "MODEL"
+    ],
+    [
+      42,
+      13,
+      0,
+      27,
+      3,
+      "LATENT"
+    ],
+    [
+      43,
+      8,
+      0,
+      27,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      44,
+      29,
+      0,
+      27,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      45,
+      11,
+      0,
+      29,
+      0,
+      "CLIP"
+    ],
+    [
+      46,
+      26,
+      0,
+      31,
+      0,
+      "AUDIO"
+    ],
+    [
+      47,
+      33,
+      0,
+      32,
+      0,
+      "AUDIO"
+    ],
+    [
+      48,
+      34,
+      0,
+      33,
+      0,
+      "LATENT"
+    ],
+    [
+      49,
+      12,
+      2,
+      33,
+      1,
+      "VAE"
+    ],
+    [
+      50,
+      12,
+      0,
+      34,
+      0,
+      "MODEL"
+    ],
+    [
+      51,
+      35,
+      0,
+      34,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      52,
+      8,
+      0,
+      34,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      54,
+      11,
+      0,
+      35,
+      0,
+      "CLIP"
+    ],
+    [
+      55,
+      33,
+      0,
+      36,
+      0,
+      "AUDIO"
+    ],
+    [
+      56,
+      27,
+      0,
+      34,
+      3,
+      "LATENT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.693433494944211,
+      "offset": [
+        -559.8932334469648,
+        -118.90005961667676
+      ]
+    }
+  },
+  "version": 0.4
+}
