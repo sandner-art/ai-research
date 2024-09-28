@@ -1,0 +1,1069 @@
+{
+  "last_node_id": 84,
+  "last_link_id": 157,
+  "nodes": [
+    {
+      "id": 33,
+      "type": "DualCLIPLoaderGGUF",
+      "pos": {
+        "0": 97,
+        "1": 140
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            54,
+            89
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoaderGGUF"
+      },
+      "widgets_values": [
+        "ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors",
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "flux"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 32,
+      "type": "UnetLoaderGGUF",
+      "pos": {
+        "0": 97,
+        "1": 293
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            65
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "flux1-schnell-Q4_K_S.gguf"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 64,
+      "type": "ImageUpscaleWithModel",
+      "pos": {
+        "0": 1632.54931640625,
+        "1": -194.66854858398438
+      },
+      "size": {
+        "0": 340.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 117
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 152
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            119
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      }
+    },
+    {
+      "id": 63,
+      "type": "ImageScaleBy",
+      "pos": {
+        "0": 1632.54931640625,
+        "1": -104.66859436035156
+      },
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 119
+        },
+        {
+          "name": "scale_by",
+          "type": "FLOAT",
+          "link": 122,
+          "widget": {
+            "name": "scale_by"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            114
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleBy"
+      },
+      "widgets_values": [
+        "lanczos",
+        1.5
+      ]
+    },
+    {
+      "id": 62,
+      "type": "VAEEncode",
+      "pos": {
+        "0": 2072.548828125,
+        "1": -174.66854858398438
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 114
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 115
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            141
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      }
+    },
+    {
+      "id": 65,
+      "type": "UpscaleModelLoader",
+      "pos": {
+        "0": 1622.54931640625,
+        "1": -314.668701171875
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            117
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4xNomos8k_atd_jpg.safetensors"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 76,
+      "type": "KSampler",
+      "pos": {
+        "0": 2387.0703125,
+        "1": -224.74871826171875
+      },
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 132
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 133
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 134
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 141
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            139
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        233457583173444,
+        "fixed",
+        3,
+        1,
+        "euler",
+        "simple",
+        0.16
+      ]
+    },
+    {
+      "id": 34,
+      "type": "Note",
+      "pos": {
+        "0": -136,
+        "1": 225
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "GGUF models and encoders, encoders can be GGUF"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 66,
+      "type": "MathExpression|pysssss",
+      "pos": {
+        "0": 2062.548828125,
+        "1": -54.66856002807617
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT,FLOAT,IMAGE,LATENT",
+          "link": 123
+        },
+        {
+          "name": "b",
+          "type": "INT,FLOAT,IMAGE,LATENT",
+          "link": 124
+        },
+        {
+          "name": "c",
+          "type": "INT,FLOAT,IMAGE,LATENT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            122
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "a/b"
+      ]
+    },
+    {
+      "id": 68,
+      "type": "INTConstant",
+      "pos": {
+        "0": 1962.5491943359375,
+        "1": -314.668701171875
+      },
+      "size": [
+        285.6000061035156,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            124
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Model upscale (INT), (2x,4x, etc.)",
+      "properties": {
+        "Node name for S&R": "INTConstant"
+      },
+      "widgets_values": [
+        4
+      ],
+      "color": "#1b4669",
+      "bgcolor": "#29699c"
+    },
+    {
+      "id": 8,
+      "type": "VAELoader",
+      "pos": {
+        "0": 102,
+        "1": 406
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            115,
+            137
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "FLUX-VAE_model-schnell.safetensors"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 42,
+      "type": "ModelSamplingFlux",
+      "pos": {
+        "0": 441,
+        "1": -148
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 65
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            132
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingFlux"
+      },
+      "widgets_values": [
+        1.15,
+        0.5,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 53,
+      "type": "CLIPTextEncodeFlux",
+      "pos": {
+        "0": 990,
+        "1": 175
+      },
+      "size": [
+        450.3814256480505,
+        417.7568484740003
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 89,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            133
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "macrodetails, superdetailed, HDR, RAW photo, photography, professional, natural tones and textures, cinema verite documentary Fujifilm GFX 100, 16k. The overall scene conveys a sense of adventure and the challenges of space exploration.",
+        "extreme macro hyperrealism, superdetailed, HDR, RAW photo, A cinematic still shot, framed in a 2.39:1 aspect ratio, inspired by the visual style of Ridley Scott, with a blend of warm, golden tones and cool, blue hues, reminiscent of his sci-fi films.  The lighting setup consists of a combination of soft, overhead sunlight, and warm, golden fill lights, positioned at a 45-degree angle to the subjects, creating deep shadows and a sense of depth. The image is rendered in 8K resolution, with a film grain texture and a subtle color grading that enhances the triadic color palette, evoking a sense of adventure and wonder. Shot on FujiFilm X-T4 with Fujinon XF 35mm f-2 R WR with a cinematic lens,  photo by a profesional cinematographer.",
+        3.5
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 19,
+      "type": "CLIPTextEncodeFlux",
+      "pos": {
+        "0": 995,
+        "1": 641
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 54,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            134
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "",
+        "",
+        4
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 77,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 2734.548828125,
+        "1": 12.331425666809082
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 139,
+          "slot_index": 0
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 137
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            140,
+            143
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 78,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1473,
+        "1": 111
+      },
+      "size": {
+        "0": 663.2875366210938,
+        "1": 650.8097534179688
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 140
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "nomosresampler"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 81,
+      "type": "LoadImage",
+      "pos": {
+        "0": 451,
+        "1": 39
+      },
+      "size": [
+        523.8310008108671,
+        552.5915201023702
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            149,
+            157
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "cosxledit_00092_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 83,
+      "type": "ImageScaleToTotalPixels",
+      "pos": {
+        "0": 1366,
+        "1": -63
+      },
+      "size": [
+        237.1028185598484,
+        82
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 149
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            152
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleToTotalPixels"
+      },
+      "widgets_values": [
+        "bilinear",
+        1
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 72,
+      "type": "CR Simple Image Compare",
+      "pos": {
+        "0": 2187,
+        "1": 116
+      },
+      "size": {
+        "0": 400,
+        "1": 266
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 157
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 143
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            128
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Simple Image Compare"
+      },
+      "widgets_values": [
+        "Before",
+        "FLUX + 4xNomos8k",
+        60,
+        "Roboto-Regular.ttf",
+        40,
+        "dark",
+        20
+      ]
+    },
+    {
+      "id": 73,
+      "type": "SaveImage",
+      "pos": {
+        "0": 2181,
+        "1": 447
+      },
+      "size": [
+        792.4496260586329,
+        308.80159565011945
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 128
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 67,
+      "type": "FloatConstant",
+      "pos": {
+        "0": 1377,
+        "1": -310
+      },
+      "size": [
+        200,
+        58
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            123
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Upscale by",
+      "properties": {
+        "Node name for S&R": "FloatConstant"
+      },
+      "widgets_values": [
+        2
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      54,
+      33,
+      0,
+      19,
+      0,
+      "CLIP"
+    ],
+    [
+      65,
+      32,
+      0,
+      42,
+      0,
+      "MODEL"
+    ],
+    [
+      89,
+      33,
+      0,
+      53,
+      0,
+      "CLIP"
+    ],
+    [
+      114,
+      63,
+      0,
+      62,
+      0,
+      "IMAGE"
+    ],
+    [
+      115,
+      8,
+      0,
+      62,
+      1,
+      "VAE"
+    ],
+    [
+      117,
+      65,
+      0,
+      64,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      119,
+      64,
+      0,
+      63,
+      0,
+      "IMAGE"
+    ],
+    [
+      122,
+      66,
+      1,
+      63,
+      1,
+      "FLOAT"
+    ],
+    [
+      123,
+      67,
+      0,
+      66,
+      0,
+      "INT,FLOAT,IMAGE,LATENT"
+    ],
+    [
+      124,
+      68,
+      0,
+      66,
+      1,
+      "INT,FLOAT,IMAGE,LATENT"
+    ],
+    [
+      128,
+      72,
+      0,
+      73,
+      0,
+      "IMAGE"
+    ],
+    [
+      132,
+      42,
+      0,
+      76,
+      0,
+      "MODEL"
+    ],
+    [
+      133,
+      53,
+      0,
+      76,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      134,
+      19,
+      0,
+      76,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      137,
+      8,
+      0,
+      77,
+      1,
+      "VAE"
+    ],
+    [
+      139,
+      76,
+      0,
+      77,
+      0,
+      "LATENT"
+    ],
+    [
+      140,
+      77,
+      0,
+      78,
+      0,
+      "IMAGE"
+    ],
+    [
+      141,
+      62,
+      0,
+      76,
+      3,
+      "LATENT"
+    ],
+    [
+      143,
+      77,
+      0,
+      72,
+      1,
+      "IMAGE"
+    ],
+    [
+      149,
+      81,
+      0,
+      83,
+      0,
+      "IMAGE"
+    ],
+    [
+      152,
+      83,
+      0,
+      64,
+      1,
+      "IMAGE"
+    ],
+    [
+      157,
+      81,
+      0,
+      72,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "sandner.art | Upscale with Nomos model + Flux",
+      "bounding": [
+        1341,
+        -420,
+        1571,
+        465
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8390545288825058,
+      "offset": [
+        -1162.7954836034528,
+        136.87959433275554
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
