@@ -1,0 +1,1047 @@
+{
+  "last_node_id": 21,
+  "last_link_id": 41,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "LoraLoader",
+      "pos": {
+        "0": 1345,
+        "1": 130
+      },
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 13
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            15
+          ],
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            16
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "Technoir NT.safetensors",
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": 5,
+      "type": "KSampler",
+      "pos": {
+        "0": 3090,
+        "1": 130
+      },
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 28
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 39
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            9
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        798437136224800,
+        "randomize",
+        3,
+        1,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 10,
+      "type": "LoraLoader",
+      "pos": {
+        "0": 930,
+        "1": 130
+      },
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 23
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            13
+          ],
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            14
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "Grimdark-NT.safetensors",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAELoader",
+      "pos": {
+        "0": 100,
+        "1": 594
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            10
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae (1).safetensors"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "CLIPSetLastLayer",
+      "pos": {
+        "0": 511,
+        "1": 54
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            12
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPSetLastLayer"
+      },
+      "widgets_values": [
+        -1
+      ]
+    },
+    {
+      "id": 17,
+      "type": "ModelSamplingFlux",
+      "pos": {
+        "0": 3088,
+        "1": -45
+      },
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 29
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 32,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 33,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            28
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingFlux"
+      },
+      "widgets_values": [
+        1.15,
+        0.5,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 6,
+      "type": "EmptyLatentImage",
+      "pos": {
+        "0": 100,
+        "1": 358
+      },
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 30,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 31,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            7
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1280,
+        640,
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "type": "LoraLoader",
+      "pos": {
+        "0": 1760,
+        "1": 130
+      },
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 15
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            17
+          ],
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            18
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "Techmaker_1_6_FLUX.safetensors",
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": 19,
+      "type": "INTConstant",
+      "pos": {
+        "0": 318,
+        "1": 502
+      },
+      "size": [
+        200,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            31,
+            33
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INTConstant"
+      },
+      "widgets_values": [
+        480
+      ],
+      "color": "#1b4669",
+      "bgcolor": "#29699c"
+    },
+    {
+      "id": 18,
+      "type": "INTConstant",
+      "pos": {
+        "0": 100,
+        "1": 502
+      },
+      "size": [
+        200,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            30,
+            32
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INTConstant"
+      },
+      "widgets_values": [
+        960
+      ],
+      "color": "#1b4669",
+      "bgcolor": "#29699c"
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 2262,
+        "1": 459
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 40
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "none"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "workflow/FLUX GGUF",
+      "pos": {
+        "0": 68,
+        "1": 98
+      },
+      "size": {
+        "0": 315,
+        "1": 194
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            23
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            24,
+            41
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "workflow/FLUX GGUF"
+      },
+      "widgets_values": [
+        "flux1-schnell-Q4_K_S.gguf",
+        "ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors",
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "flux",
+        "ae (1).safetensors"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "LoraLoader",
+      "pos": {
+        "0": 2175,
+        "1": 130
+      },
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 17
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            29
+          ],
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            34,
+            40
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "whimsical-NT.safetensors",
+        0.7000000000000001,
+        0.59
+      ]
+    },
+    {
+      "id": 15,
+      "type": "CLIPTextEncodeFlux",
+      "pos": {
+        "0": 2545,
+        "1": 135
+      },
+      "size": [
+        485.3330864029049,
+        368.2411741023409
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "cinema photo illustration, hyperdetailcinematic movie shot view is from the top left. focus of the conceptual design is bold utilitary vehicle armored truck with a sturdy boxy features,  it is powered by nuclear fusion power. sophisticated, alien machine.ed",
+        "a sleek body of an whimsical alien insect creaturecyborg hybrid  sculpture with open moth and spiraling tongue.backgroud wast rocky surreal lanscape, inspired by beksinski.\nA masterpiece of (king) style created by the collaboration of Frank Frazetta and Georgia O’Keeffe.    The main objects are sliced at intervals along a diagonal, with each interval featuring a different material: the first material is tiles, the remaining materials are those that the main object would originally have.    HD32K, hyperdetailed, best quality, aidmaMJ6.1.\nInspiration: doom action,  horror adventure\\nAdditional notes: Consider adding the smudges and signs of wear and tear,  the sound of s lurking evil breathing heavily around corner,  and the sound of a distant alarm.\\n\\nMood: Eerie,  desolate,  abandoned\\nSounds: Rustling dust,  dripping water,  creaking metal,  distant alarms,  faint gunfire\\nAtmosphere: Dark,  claustrophobic,  with a sense of decay and danger\\nInspiration: Science fiction,  post-apocalyptic settings,  horror games\\nAdditional notes: Consider adding the sound of rats scurrying,  machinery whirring,  and the distant echo of a voice.\\nExample prompt:\\n\\n\\\"An abandoned space marine bunker,  filled with dust and decay. Rusting metal,  dripping water,  and the faint sound of distant alarms fill the air. The atmosphere is dark and claustrophobic,  with a sense of danger lurking in the shadows.\\\"\\n\\n.photorealism,  haselblad photo,  photo,  illustration,  cinematic\" .,  grit,  (rust:0.65),  cracks,  cracked surface,  subtle messy,  dust,  weary,  edges rusty dusty,  surface scratches,  peeled sun bleeched paint,  smudges,  crumbles,  rugged,  used . professional,  inviting,  well-lit,  high-resolution,  property-focused,  commercial,  highly detailed . model portrait. cinematic style of Philip Lorca diCorcia. In an incredibly amazing image of exceptional artistry. RAW candid cinema,  16mm,  color graded portra 400 film,  remarkable color,  ultra realistic cinematic realism film scene still of a photo focus on . portrait,  film,  professional,  highly detailed,  absurdres,  detailed,  macro details,  uhd-16k,  8k,  4k,  hyper realistic,  texture surface details . 35mm f1.8 Macro,  chiaroscuro,  vignette,  Mise-en-scene,  detailed,  cinemascope,  moody,  epic\n    ,  \n\nT. The overall color palette is dominated by muted grays, blacks, and metallic browns, enhancing the sense of sophistication and advanced technology. The image evokes a sense of awe and mystery, as if one is peering into the heart of a sophisticated, alien machine.\n",
+        3.2
+      ]
+    },
+    {
+      "id": 21,
+      "type": "CLIPTextEncodeFlux",
+      "pos": {
+        "0": 2550,
+        "1": 557
+      },
+      "size": {
+        "0": 485.3330993652344,
+        "1": 368.2411804199219
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "RAW candid cinema, 16mm, color graded portra 400 film, remarkable color, ultra realistic cinematic realism film scene still of a photo focus on . portrait, film, professional, highly detailed, absurdres, detailed, macro details, uhd-16k, 8k, 4k, hyper realistic, texture surface details . 35mm f1.8 Macro, chiaroscuro, vignette, Mise-en-scene, detailed, cinemascope, moody, epic\n\nscore_9, score_8_up, score_7_up,",
+        " (abstract head:1.3), alien skin, large breasts, round breasts, alien creature,   (big lips:0.4), (shortstack:0.6), leaf dress, floral hair, vine hair, leafy skin, long hair, weird, (green areola:0.4), close upa river of lava pouring down a large volcano\nthe lave pours into the sea raising (a huge cloud of steam from the sea's surface:1.5)\nthe light from the lava on the volcano can be seen as a glow through the steam",
+        2.1
+      ]
+    },
+    {
+      "id": 7,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 3510,
+        "1": 130
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 9
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            8
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": {
+        "0": 3820,
+        "1": 130
+      },
+      "size": [
+        315,
+        270
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "CR Conditioning Mixer",
+      "pos": {
+        "0": 3080,
+        "1": 510
+      },
+      "size": {
+        "0": 342.5999755859375,
+        "1": 102
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 38
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Conditioning Mixer"
+      },
+      "widgets_values": [
+        "Combine",
+        0.55
+      ]
+    }
+  ],
+  "links": [
+    [
+      6,
+      4,
+      0,
+      5,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      6,
+      0,
+      5,
+      3,
+      "LATENT"
+    ],
+    [
+      8,
+      7,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      5,
+      0,
+      7,
+      0,
+      "LATENT"
+    ],
+    [
+      10,
+      8,
+      0,
+      7,
+      1,
+      "VAE"
+    ],
+    [
+      12,
+      2,
+      0,
+      10,
+      1,
+      "CLIP"
+    ],
+    [
+      13,
+      10,
+      0,
+      11,
+      0,
+      "MODEL"
+    ],
+    [
+      14,
+      10,
+      1,
+      11,
+      1,
+      "CLIP"
+    ],
+    [
+      15,
+      11,
+      0,
+      12,
+      0,
+      "MODEL"
+    ],
+    [
+      16,
+      11,
+      1,
+      12,
+      1,
+      "CLIP"
+    ],
+    [
+      17,
+      12,
+      0,
+      13,
+      0,
+      "MODEL"
+    ],
+    [
+      18,
+      12,
+      1,
+      13,
+      1,
+      "CLIP"
+    ],
+    [
+      23,
+      14,
+      0,
+      10,
+      0,
+      "MODEL"
+    ],
+    [
+      24,
+      14,
+      1,
+      2,
+      0,
+      "CLIP"
+    ],
+    [
+      28,
+      17,
+      0,
+      5,
+      0,
+      "MODEL"
+    ],
+    [
+      29,
+      13,
+      0,
+      17,
+      0,
+      "MODEL"
+    ],
+    [
+      30,
+      18,
+      0,
+      6,
+      0,
+      "INT"
+    ],
+    [
+      31,
+      19,
+      0,
+      6,
+      1,
+      "INT"
+    ],
+    [
+      32,
+      18,
+      0,
+      17,
+      1,
+      "INT"
+    ],
+    [
+      33,
+      19,
+      0,
+      17,
+      2,
+      "INT"
+    ],
+    [
+      34,
+      13,
+      1,
+      15,
+      0,
+      "CLIP"
+    ],
+    [
+      37,
+      21,
+      0,
+      20,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      38,
+      15,
+      0,
+      20,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      39,
+      20,
+      0,
+      5,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      40,
+      13,
+      1,
+      4,
+      0,
+      "CLIP"
+    ],
+    [
+      41,
+      14,
+      1,
+      21,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6934334949442322,
+      "offset": [
+        -2102.0505710208226,
+        -47.721216349045704
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
