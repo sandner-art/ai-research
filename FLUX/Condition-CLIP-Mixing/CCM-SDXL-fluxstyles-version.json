@@ -1,0 +1,1173 @@
+{
+  "last_node_id": 63,
+  "last_link_id": 98,
+  "nodes": [
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": {
+        "0": 480,
+        "1": 160
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 54,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 55,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            45
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        768,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 53,
+      "type": "FloatToText",
+      "pos": {
+        "0": -109,
+        "1": 658
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            73,
+            74
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FloatToText"
+      },
+      "widgets_values": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 38,
+      "type": "Note",
+      "pos": {
+        "0": -84,
+        "1": -43
+      },
+      "size": {
+        "0": 210,
+        "1": 75.6300048828125
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {},
+      "widgets_values": [
+        "Simple Schnell workflow with styling"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 43,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 490,
+        "1": 312
+      },
+      "size": {
+        "0": 333.494140625,
+        "1": 130.19009399414062
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 65,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            84,
+            85
+          ],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        [
+          "Geometric Abstraction metal sculpture of a woman elderly, thinking, Geometric Abstraction, often for mathematical precision, geometric shapes, or formal composition."
+        ],
+        "Art of capturing moving images in filmmaking \"Generate a detailed, cinematic scene of a medieval battle in a harsh, snowy landscape. The foreground features a group of heavily armored soldiers, their faces etched with determination and fatigue. Snowflakes swirl around them, clinging to their armor and weapons. The soldiers are led by a prominent figure, a seasoned warrior with a stern expression, who stands out due to his size and the intricate design of his armor. Behind them, a village burns, casting an eerie glow against the dark, overcast sky. The soldiers' breath is visible in the frigid air, and the ground is blanketed in a thick layer of snow, with footprints and tracks indicating their recent advance. The atmosphere is tense and foreboding, capturing the grim reality of war in a unforgiving winter environment.\"\n\n, including camera work, lighting, and composition."
+      ]
+    },
+    {
+      "id": 55,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 493,
+        "1": 485
+      },
+      "size": {
+        "0": 330,
+        "1": 130
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 78,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            90,
+            91
+          ],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "The Addams Family portrait deep emotion, open mouth. Macabre, kooky, mysterious, and spooky family"
+      ]
+    },
+    {
+      "id": 54,
+      "type": "MilehighStyler",
+      "pos": {
+        "0": 484,
+        "1": 655
+      },
+      "size": {
+        "0": 425.6482849121094,
+        "1": 598.781005859375
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "link": 74,
+          "widget": {
+            "name": "text_negative"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "links": [
+            78
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MilehighStyler"
+      },
+      "widgets_values": [
+        "deep emotion, open mouth",
+        "",
+        "Addams Family_Portraiture_Horror",
+        true
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 41,
+      "type": "MilehighStyler",
+      "pos": {
+        "0": 46,
+        "1": 657
+      },
+      "size": {
+        "0": 417.53057861328125,
+        "1": 592.1359252929688
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "link": 73,
+          "widget": {
+            "name": "text_negative"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "links": [
+            65
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MilehighStyler"
+      },
+      "widgets_values": [
+        "\"Generate a detailed, cinematic scene of a medieval battle in a harsh, snowy landscape. The foreground features a group of heavily armored soldiers, their faces etched with determination and fatigue. Snowflakes swirl around them, clinging to their armor and weapons. The soldiers are led by a prominent figure, a seasoned warrior with a stern expression, who stands out due to his size and the intricate design of his armor. Behind them, a village burns, casting an eerie glow against the dark, overcast sky. The soldiers' breath is visible in the frigid air, and the ground is blanketed in a thick layer of snow, with footprints and tracks indicating their recent advance. The atmosphere is tense and foreboding, capturing the grim reality of war in a unforgiving winter environment.\"\n\n",
+        "",
+        "Cinematography",
+        true
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 10,
+      "type": "VAELoader",
+      "pos": {
+        "0": 34,
+        "1": 417
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            12
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "sdxl_vae.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 11,
+      "type": "DualCLIPLoader",
+      "pos": {
+        "0": 9,
+        "1": 248
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            83,
+            88
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors",
+        "sdxl"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 57,
+      "type": "CR Conditioning Mixer",
+      "pos": {
+        "0": 958,
+        "1": 1154
+      },
+      "size": {
+        "0": 301.9560241699219,
+        "1": 102
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 87
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 89
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            79
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Conditioning Mixer"
+      },
+      "widgets_values": [
+        "Combine",
+        0.5
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1414,
+        "1": 114
+      },
+      "size": {
+        "0": 985.3012084960938,
+        "1": 1060.3828125
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 34,
+      "type": "INTConstant",
+      "pos": {
+        "0": 30,
+        "1": 524
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            54
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "width",
+      "properties": {
+        "Node name for S&R": "INTConstant"
+      },
+      "widgets_values": [
+        1024
+      ],
+      "color": "#1b4669",
+      "bgcolor": "#29699c"
+    },
+    {
+      "id": 35,
+      "type": "INTConstant",
+      "pos": {
+        "0": 241,
+        "1": 523
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            55
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "height",
+      "properties": {
+        "Node name for S&R": "INTConstant"
+      },
+      "widgets_values": [
+        1024
+      ],
+      "color": "#1b4669",
+      "bgcolor": "#29699c"
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 1259,
+        "1": 265
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 49
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 60,
+      "type": "CLIPTextEncodeSDXL",
+      "pos": {
+        "0": 935,
+        "1": 825
+      },
+      "size": {
+        "0": 400,
+        "1": 270
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 88
+        },
+        {
+          "name": "text_g",
+          "type": "STRING",
+          "link": 90,
+          "widget": {
+            "name": "text_g"
+          }
+        },
+        {
+          "name": "text_l",
+          "type": "STRING",
+          "link": 91,
+          "widget": {
+            "name": "text_l"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            89
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeSDXL"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        0,
+        0,
+        1024,
+        1024,
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 59,
+      "type": "CLIPTextEncodeSDXL",
+      "pos": {
+        "0": 935,
+        "1": 502
+      },
+      "size": [
+        400,
+        270
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 83
+        },
+        {
+          "name": "text_g",
+          "type": "STRING",
+          "link": 84,
+          "widget": {
+            "name": "text_g"
+          }
+        },
+        {
+          "name": "text_l",
+          "type": "STRING",
+          "link": 85,
+          "widget": {
+            "name": "text_l"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            86,
+            87
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeSDXL"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        0,
+        0,
+        1024,
+        1024,
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 58,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": 9,
+        "1": 102
+      },
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            82
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "cinematix-L8.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 36,
+      "type": "LoraLoaderModelOnly",
+      "pos": {
+        "0": 144,
+        "1": -44
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            97
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "HYPERSD\\Hyper-FLUX.1-dev-8steps-lora.safetensors",
+        0.12
+      ]
+    },
+    {
+      "id": 62,
+      "type": "FreeU_V2",
+      "pos": {
+        "0": 909,
+        "1": -16
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 98
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            96
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FreeU_V2"
+      },
+      "widgets_values": [
+        1.3,
+        1.4,
+        0.9,
+        0.2
+      ]
+    },
+    {
+      "id": 63,
+      "type": "SelfAttentionGuidance",
+      "pos": {
+        "0": 493,
+        "1": 10
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 97
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            98
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SelfAttentionGuidance"
+      },
+      "widgets_values": [
+        0.5,
+        2
+      ]
+    },
+    {
+      "id": 27,
+      "type": "KSampler",
+      "pos": {
+        "0": 928,
+        "1": 184
+      },
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 96
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 79
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 86
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            49
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        147178,
+        "fixed",
+        11,
+        5.3,
+        "dpmpp_2s_ancestral",
+        "sgm_uniform",
+        1
+      ]
+    },
+    {
+      "id": 26,
+      "type": "Note",
+      "pos": {
+        "0": -212,
+        "1": 430
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "select your SDXL VAE"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      10,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      45,
+      5,
+      0,
+      27,
+      3,
+      "LATENT"
+    ],
+    [
+      49,
+      27,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      54,
+      34,
+      0,
+      5,
+      0,
+      "INT"
+    ],
+    [
+      55,
+      35,
+      0,
+      5,
+      1,
+      "INT"
+    ],
+    [
+      65,
+      41,
+      0,
+      43,
+      0,
+      "STRING"
+    ],
+    [
+      73,
+      53,
+      0,
+      41,
+      0,
+      "STRING"
+    ],
+    [
+      74,
+      53,
+      0,
+      54,
+      0,
+      "STRING"
+    ],
+    [
+      78,
+      54,
+      0,
+      55,
+      0,
+      "STRING"
+    ],
+    [
+      79,
+      57,
+      0,
+      27,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      82,
+      58,
+      0,
+      36,
+      0,
+      "MODEL"
+    ],
+    [
+      83,
+      11,
+      0,
+      59,
+      0,
+      "CLIP"
+    ],
+    [
+      84,
+      43,
+      0,
+      59,
+      1,
+      "STRING"
+    ],
+    [
+      85,
+      43,
+      0,
+      59,
+      2,
+      "STRING"
+    ],
+    [
+      86,
+      59,
+      0,
+      27,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      87,
+      59,
+      0,
+      57,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      88,
+      11,
+      0,
+      60,
+      0,
+      "CLIP"
+    ],
+    [
+      89,
+      60,
+      0,
+      57,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      90,
+      55,
+      0,
+      60,
+      1,
+      "STRING"
+    ],
+    [
+      91,
+      55,
+      0,
+      60,
+      2,
+      "STRING"
+    ],
+    [
+      96,
+      62,
+      0,
+      27,
+      0,
+      "MODEL"
+    ],
+    [
+      97,
+      36,
+      0,
+      63,
+      0,
+      "MODEL"
+    ],
+    [
+      98,
+      63,
+      0,
+      62,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5644739300537793,
+      "offset": [
+        -85.87011153506506,
+        -61.409775350473325
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
