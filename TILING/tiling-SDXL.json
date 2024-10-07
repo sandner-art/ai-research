@@ -61,8 +61,8 @@
         0,
         4096,
         4096,
-        "blurry, animation, 3d render, illustration, toy, puppet, claymation, low quality, flag, nasa, mission patch",
-        "blurry, animation, 3d render, illustration, toy, puppet, claymation, low quality, flag, nasa, mission patch"
+        "blurry, animation, 3d render, illustration, toy, puppet, claymation, low quality, flag, nasa, mission patch, unprofessional ",
+        "blurry, animation, 3d render, illustration, toy, puppet, claymation, low quality, flag, nasa, mission patch, unprofessional "
       ],
       "color": "#322",
       "bgcolor": "#533"
@@ -104,31 +104,6 @@
       "bgcolor": "#535"
     },
     {
-      "id": 11,
-      "type": "Note",
-      "pos": {
-        "0": 80,
-        "1": -200
-      },
-      "size": {
-        "0": 282.48541259765625,
-        "1": 197.0584259033203
-      },
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "BASIC SDXL WORKFLOW WITH BASE MODEL ONLY\n========================================\n\nThis basic workflow only uses the BASE SDXL model. This can be useful for systems with limited resources as the REFINER takes another 6GB or ram.\n\nIf you use the embedded VAE be sure to download the \"0.9vae\" version because the 1.0 vae is considered defective."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 29,
       "type": "Note",
       "pos": {
@@ -140,7 +115,7 @@
         "1": 477.3874816894531
       },
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -154,45 +129,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 32,
-      "type": "PrimitiveNode",
-      "pos": {
-        "0": 460,
-        "1": 180
-      },
-      "size": {
-        "0": 338.24078369140625,
-        "1": 179.58128356933594
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            47,
-            48
-          ],
-          "slot_index": 0,
-          "widget": {
-            "name": "text_g"
-          }
-        }
-      ],
-      "title": "negative",
-      "properties": {
-        "Run widget replace on values": false
-      },
-      "widgets_values": [
-        "blurry, animation, 3d render, illustration, toy, puppet, claymation, low quality, flag, nasa, mission patch"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 34,
       "type": "Note",
       "pos": {
@@ -204,7 +140,7 @@
         "1": 130
       },
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -213,31 +149,6 @@
       },
       "widgets_values": [
         "WIDTH/HEIGHT and TARGET_WIDTH/HEIGHT are both 4 times the latent size.\n\nThis generally grants a higher definition image."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 35,
-      "type": "Note",
-      "pos": {
-        "0": 464,
-        "1": -235
-      },
-      "size": {
-        "0": 330.7162780761719,
-        "1": 95.14419555664062
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Note that we send the same prompt to both TEXT_G and TEXT_L, you can experiment with different prompts but using the same seems to lead to more predictable results."
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -301,8 +212,8 @@
         0,
         4096,
         4096,
-        "isometric, 3d, a seamless photo of an anthropomorphic cute toy alien-animals inside a labyrinth design, airlocks, sci-fi spaceship, seamless tile\n\n",
-        "isometric, 3d, a seamless photo of an anthropomorphic cute toy alien-animals inside a labyrinth design, airlocks, sci-fi spaceship, seamless tile\n\n"
+        "a seamless natural texture floral ornament pattern texture, game texturing, pattern, fractal pixel-perfect, 4k, hdr, detailed, professional seamless tile\n\n",
+        "a seamless natural texture floral ornament pattern texture, game texturing, pattern, fractal pixel-perfect, 4k, hdr, detailed, professional seamless tile\n\n"
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -360,7 +271,7 @@
         "1": 98
       },
       "flags": {},
-      "order": 6,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -653,6 +564,45 @@
       ]
     },
     {
+      "id": 32,
+      "type": "PrimitiveNode",
+      "pos": {
+        "0": 460,
+        "1": 180
+      },
+      "size": {
+        "0": 338.24078369140625,
+        "1": 179.58128356933594
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            47,
+            48
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "text_g"
+          }
+        }
+      ],
+      "title": "negative",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "blurry, animation, 3d render, illustration, toy, puppet, claymation, low quality, flag, nasa, mission patch, unprofessional "
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
       "id": 3,
       "type": "KSampler",
       "pos": {
@@ -703,11 +653,11 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        3,
+        1255878,
         "fixed",
         11,
-        1.6,
-        "dpmpp_2m_sde_gpu",
+        1.9000000000000001,
+        "dpmpp_sde_gpu",
         "sgm_uniform",
         1
       ],
@@ -726,7 +676,7 @@
         "1": 179.58128356933594
       },
       "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -748,10 +698,61 @@
         "Run widget replace on values": false
       },
       "widgets_values": [
-        "isometric, 3d, a seamless photo of an anthropomorphic cute toy alien-animals inside a labyrinth design, airlocks, sci-fi spaceship, seamless tile\n\n"
+        "a seamless natural texture floral ornament pattern texture, game texturing, pattern, fractal pixel-perfect, 4k, hdr, detailed, professional seamless tile\n\n"
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 35,
+      "type": "Note",
+      "pos": {
+        "0": 464,
+        "1": -235
+      },
+      "size": {
+        "0": 330.7162780761719,
+        "1": 95.14419555664062
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Note that we send the same prompt to both TEXT_G and TEXT_L, you can experiment with different prompts but using the same seems to lead to more predictable results."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 11,
+      "type": "Note",
+      "pos": {
+        "0": -26,
+        "1": -75
+      },
+      "size": [
+        255.56700255211933,
+        93.44385374096808
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "BASIC SDXL WORKFLOW FOR TILED TEXTURE\n========================================\n\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -922,8 +923,8 @@
     "ds": {
       "scale": 0.9090909090909091,
       "offset": [
-        -1488.4125635485711,
-        196.6600276582323
+        321.4107714957322,
+        222.08948518725458
       ]
     },
     "groupNodes": {}
