@@ -263,37 +263,6 @@
       ]
     },
     {
-      "id": 76,
-      "type": "SaveImage",
-      "pos": {
-        "0": 1212,
-        "1": 300
-      },
-      "size": {
-        "0": 367.42144775390625,
-        "1": 406.4285888671875
-      },
-      "flags": {},
-      "order": 33,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 127,
-          "label": "images"
-        }
-      ],
-      "outputs": [],
-      "title": "Model Output",
-      "properties": {
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "pl"
-      ]
-    },
-    {
       "id": 149,
       "type": "PreviewImage",
       "pos": {
@@ -1589,6 +1558,37 @@
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 76,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1212,
+        "1": 300
+      },
+      "size": {
+        "0": 367.42144775390625,
+        "1": 406.4285888671875
+      },
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 127,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "title": "Model Output",
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "inpaint"
+      ]
     }
   ],
   "links": [
@@ -1947,14 +1947,14 @@
   ],
   "groups": [
     {
-      "title": "ControlNet (AliMama) Inpainting",
+      "title": "Load Model",
       "bounding": [
-        214,
-        -963,
-        1341,
-        687
+        -268,
+        -264,
+        365,
+        491
       ],
-      "color": "#3f789e",
+      "color": "#8A8",
       "font_size": 24,
       "flags": {}
     },
@@ -1971,14 +1971,14 @@
       "flags": {}
     },
     {
-      "title": "Load Model",
+      "title": "ControlNet (AliMama) Inpainting",
       "bounding": [
-        -268,
-        -264,
-        365,
-        491
+        214,
+        -963,
+        1341,
+        687
       ],
-      "color": "#8A8",
+      "color": "#3f789e",
       "font_size": 24,
       "flags": {}
     }
@@ -1986,10 +1986,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.5054470284993055,
+      "scale": 0.9849732675807846,
       "offset": [
-        369.570957125973,
-        531.5756791114518
+        -1015.5628623240375,
+        -29.520860132877768
       ]
     },
     "workspace_info": {
