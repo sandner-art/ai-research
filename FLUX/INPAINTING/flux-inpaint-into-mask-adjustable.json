@@ -1,0 +1,1379 @@
+{
+  "last_node_id": 33,
+  "last_link_id": 32,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "RandomNoise",
+      "pos": {
+        "0": 120,
+        "1": 1600
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            1
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        34880986409335,
+        "randomize"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "SamplerCustomAdvanced",
+      "pos": {
+        "0": 1310,
+        "1": 930
+      },
+      "size": {
+        "0": 236.8000030517578,
+        "1": 106
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 1
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 2
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 3
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 4
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            15
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      }
+    },
+    {
+      "id": 4,
+      "type": "BasicGuider",
+      "pos": {
+        "0": 950,
+        "1": 890
+      },
+      "size": {
+        "0": 241.79998779296875,
+        "1": 46
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 6
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            2
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      }
+    },
+    {
+      "id": 5,
+      "type": "UnetLoaderGGUF",
+      "pos": {
+        "0": 110,
+        "1": 1230
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            23
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "flux1-schnell-Q4_K_S.gguf"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "DualCLIPLoaderGGUF",
+      "pos": {
+        "0": 120,
+        "1": 1340
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            10
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoaderGGUF"
+      },
+      "widgets_values": [
+        "ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors",
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "flux"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "VAELoader",
+      "pos": {
+        "0": 120,
+        "1": 1500
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            16,
+            20
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "EmptyLatentImage",
+      "pos": {
+        "0": 50,
+        "1": 1760
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 8,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 9,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1280,
+        640,
+        1
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 9,
+      "type": "CLIPTextEncodeFlux",
+      "pos": {
+        "0": 510,
+        "1": 1080
+      },
+      "size": {
+        "0": 534.2110595703125,
+        "1": 785.4349975585938
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            7
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "ambient occlusion shadow light,cracked dry dim dark grey volcanic sheal ,  dusty texturing,flattening, diffuse texture, flat ambient lighting, pbr, change texture to very detailed hires texture, old decrepit, crumbling, make soft volumetric shading, like stone relief, low contrast game wall dirty texture, seamless\n\nSci-Fi Spacecraft Surface Hull Plating Texture\n\nDescription: Generate a high-resolution texture for a sci-fi spacecraft surface hull plating. The texture should capture the sleek, futuristic aesthetic of advanced alien or human spacecraft, with intricate details and a metallic sheen.\n\nTexture Details:\n\nMaterial Appearance: The texture should depict a metallic surface with a smooth, polished finish. The primary colors should be shades of silver, gray, and blue, with subtle hints of gold or bronze to add depth.\nPanel Design: Include a repeating pattern of metallic panels, each with slight variations in texture and shading to create a sense of depth and realism. The panels should be arranged in a grid-like pattern, with some panels slightly offset to add visual interest.\nWear and Tear: Incorporate subtle signs of wear and tear, such as scratches, dents, and small areas of corrosion, to give the texture an authentic, used look. These imperfections should be minimal and not detract from the overall sleek appearance.\nLighting Effects: Add realistic lighting effects, with highlights and shadows that emphasize the curvature and depth of the panels. The lighting should be soft and diffused, with a slight glow to suggest the presence of internal lights or energy fields.\nColor and Texture: The texture should have a metallic sheen, with a smooth base color and fine details that catch the light. The color palette should be cool and futuristic, with shades of silver, gray, and blue dominating the scene.\n\negyptian excavation of alien scriptures ancient tomb stone wall,  , intricate ornate ancient cryptic enigmatic, egyptian like unknown math alchemical symbols, runes, engravings, ancient alphabets inscriptions, game texture seamless, texture seamless, pbr, pixel-perfect, 4k, hdr, detailed, professional \n",
+        "game wall dirty texture, seamless\n\nSci-Fi Spacecraft Surface Hull Plating Texture\n\nDescription: Generate a high-resolution texture for a sci-fi spacecraft surface hull plating. The texture should capture the sleek, futuristic aesthetic of advanced alien or human spacecraft, with intricate details and a metallic sheen.\n\nTexture Details:\n\nMaterial Appearance: The texture should depict a metallic surface with a smooth, polished finish. The primary colors should be shades of silver, gray, and blue, with subtle hints of gold or bronze to add depth.\nPanel Design: Include a repeating pattern of metallic panels, each with slight variations in texture and shading to create a sense of depth and realism. The panels should be arranged in a grid-like pattern, with some panels slightly offset to add visual interest.\nWear and Tear: Incorporate subtle signs of wear and tear, such as scratches, dents, and small areas of corrosion, to give the texture an authentic, used look. These imperfections should be minimal and not detract from the overall sleek appearance.\nLighting Effects: Add realistic lighting effects, with highlights and shadows that emphasize the curvature and depth of the panels. The lighting should be soft and diffused, with a slight glow to suggest the presence of internal lights or energy fields.\nColor and Texture: The texture should have a metallic sheen, with a smooth base color and fine details that catch the light. The color palette should be cool and futuristic, with shades of silver, gray, and blue dominating the scene.\n\negyptian excavation of alien scriptures ancient tomb stone wall,  , intricate ornate ancient cryptic enigmatic, egyptian like unknown math alchemical symbols, runes, engravings, ancient alphabets inscriptions, game texture seamless, texture seamless, pbr, pixel-perfect, 4k, hdr, detailed, professional \n",
+        2
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 10,
+      "type": "BasicScheduler",
+      "pos": {
+        "0": 1090,
+        "1": 1260
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            4
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        4,
+        0.62
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 11,
+      "type": "KSamplerSelect",
+      "pos": {
+        "0": 1090,
+        "1": 1140
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            3
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "euler"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 1580,
+        "1": 980
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 15
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            18,
+            21
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 14,
+      "type": "LoraLoaderModelOnly",
+      "pos": {
+        "0": 1090,
+        "1": 1430
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            12
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Grimdark-NT.safetensors",
+        0.8300000000000001
+      ]
+    },
+    {
+      "id": 16,
+      "type": "INTConstant",
+      "pos": {
+        "0": 110,
+        "1": 1030
+      },
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            8,
+            13
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "width",
+      "properties": {
+        "Node name for S&R": "INTConstant"
+      },
+      "widgets_values": [
+        1024
+      ],
+      "color": "#1b4669",
+      "bgcolor": "#29699c"
+    },
+    {
+      "id": 17,
+      "type": "INTConstant",
+      "pos": {
+        "0": 110,
+        "1": 1130
+      },
+      "size": [
+        210,
+        60.522117614746094
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            9,
+            14
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "height",
+      "properties": {
+        "Node name for S&R": "INTConstant"
+      },
+      "widgets_values": [
+        1024
+      ],
+      "color": "#1b4669",
+      "bgcolor": "#29699c"
+    },
+    {
+      "id": 23,
+      "type": "LoraLoaderModelOnly",
+      "pos": {
+        "0": 1080,
+        "1": 1720
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            24
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Techmaker_1_6_FLUX.safetensors",
+        0.3
+      ]
+    },
+    {
+      "id": 24,
+      "type": "LoraLoaderModelOnly",
+      "pos": {
+        "0": 1080,
+        "1": 1560
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            17
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Technoir NT.safetensors",
+        0.25
+      ]
+    },
+    {
+      "id": 12,
+      "type": "ModelSamplingFlux",
+      "pos": {
+        "0": 520,
+        "1": 900
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 12
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 13,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 14,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            6,
+            11
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingFlux"
+      },
+      "widgets_values": [
+        1.15,
+        0.5,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 22,
+      "type": "Note",
+      "pos": {
+        "0": 3670,
+        "1": 1400
+      },
+      "size": [
+        210,
+        92.33597564697266
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {},
+      "widgets_values": [
+        "Note that seams are not aligned perfectly yet"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 19,
+      "type": "VAEEncode",
+      "pos": {
+        "0": 667,
+        "1": 472
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 26
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            28
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 20,
+      "type": "iToolsGridFiller",
+      "pos": {
+        "0": 2895,
+        "1": 892
+      },
+      "size": {
+        "0": 315,
+        "1": 178
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            22,
+            30
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "iToolsGridFiller"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        3,
+        3,
+        0,
+        "#000000AA"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "SaveImage",
+      "pos": {
+        "0": 3312,
+        "1": 978
+      },
+      "size": [
+        315,
+        270
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 30
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "texturegrid"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 2984,
+        "1": 1157
+      },
+      "size": {
+        "0": 732.5216674804688,
+        "1": 639.94970703125
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 22
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 28,
+      "type": "SetLatentNoiseMask",
+      "pos": {
+        "0": 1048,
+        "1": 766
+      },
+      "size": {
+        "0": 264.5999755859375,
+        "1": 46
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 28
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            29
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SetLatentNoiseMask"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 26,
+      "type": "LoadImage",
+      "pos": {
+        "0": 189,
+        "1": 530
+      },
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            31
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "title": "MASK Load Image",
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "mask-rectangular.png",
+        "image"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 32,
+      "type": "GrowMaskWithBlur",
+      "pos": {
+        "0": 672,
+        "1": 580
+      },
+      "size": {
+        "0": 315,
+        "1": 246
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            32
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "mask_inverted",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GrowMaskWithBlur"
+      },
+      "widgets_values": [
+        -100,
+        0,
+        true,
+        false,
+        50,
+        1,
+        1,
+        false
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 27,
+      "type": "Note",
+      "pos": {
+        "0": 16,
+        "1": 50
+      },
+      "size": [
+        323.92613031213443,
+        60.0631683075282
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {},
+      "widgets_values": [
+        "Inpaint into masked area\n1. load image 2. load mask with ALPHA (white=masked)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 33,
+      "type": "Note",
+      "pos": {
+        "0": 1026,
+        "1": 582
+      },
+      "size": [
+        323.92613031213443,
+        60.0631683075282
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {},
+      "widgets_values": [
+        "Adjust or invert your mask"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 15,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1859,
+        "1": 879
+      },
+      "size": {
+        "0": 963.700439453125,
+        "1": 891.7371215820312
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 18
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "texture"
+      ]
+    },
+    {
+      "id": 25,
+      "type": "LoadImage",
+      "pos": {
+        "0": 187,
+        "1": 159
+      },
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            26
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "pasted/image (25).png",
+        "image"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "NOISE"
+    ],
+    [
+      2,
+      4,
+      0,
+      3,
+      1,
+      "GUIDER"
+    ],
+    [
+      3,
+      11,
+      0,
+      3,
+      2,
+      "SAMPLER"
+    ],
+    [
+      4,
+      10,
+      0,
+      3,
+      3,
+      "SIGMAS"
+    ],
+    [
+      6,
+      12,
+      0,
+      4,
+      0,
+      "MODEL"
+    ],
+    [
+      7,
+      9,
+      0,
+      4,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      8,
+      16,
+      0,
+      8,
+      0,
+      "INT"
+    ],
+    [
+      9,
+      17,
+      0,
+      8,
+      1,
+      "INT"
+    ],
+    [
+      10,
+      6,
+      0,
+      9,
+      0,
+      "CLIP"
+    ],
+    [
+      11,
+      12,
+      0,
+      10,
+      0,
+      "MODEL"
+    ],
+    [
+      12,
+      14,
+      0,
+      12,
+      0,
+      "MODEL"
+    ],
+    [
+      13,
+      16,
+      0,
+      12,
+      1,
+      "INT"
+    ],
+    [
+      14,
+      17,
+      0,
+      12,
+      2,
+      "INT"
+    ],
+    [
+      15,
+      3,
+      0,
+      13,
+      0,
+      "LATENT"
+    ],
+    [
+      16,
+      7,
+      0,
+      13,
+      1,
+      "VAE"
+    ],
+    [
+      17,
+      24,
+      0,
+      14,
+      0,
+      "MODEL"
+    ],
+    [
+      18,
+      13,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      20,
+      7,
+      0,
+      19,
+      1,
+      "VAE"
+    ],
+    [
+      21,
+      13,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ],
+    [
+      22,
+      20,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      23,
+      5,
+      0,
+      23,
+      0,
+      "MODEL"
+    ],
+    [
+      24,
+      23,
+      0,
+      24,
+      0,
+      "MODEL"
+    ],
+    [
+      26,
+      25,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      28,
+      19,
+      0,
+      28,
+      0,
+      "LATENT"
+    ],
+    [
+      29,
+      28,
+      0,
+      3,
+      4,
+      "LATENT"
+    ],
+    [
+      30,
+      20,
+      0,
+      29,
+      0,
+      "IMAGE"
+    ],
+    [
+      31,
+      26,
+      1,
+      32,
+      0,
+      "MASK"
+    ],
+    [
+      32,
+      32,
+      0,
+      28,
+      1,
+      "MASK"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5131581182307067,
+      "offset": [
+        9.742518291934527,
+        -465.7900187841487
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
