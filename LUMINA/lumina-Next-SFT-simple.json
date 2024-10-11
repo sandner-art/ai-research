@@ -1,0 +1,427 @@
+{
+  "last_node_id": 9,
+  "last_link_id": 7,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1619,
+        "1": 330
+      },
+      "size": {
+        "0": 339.9334716796875,
+        "1": 380.4000244140625
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 1341,
+        "1": 414
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 5,
+      "type": "VAELoader",
+      "pos": {
+        "0": 1272,
+        "1": 538
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            4
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "sdxl_vae.safetensors"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "CR SDXL Aspect Ratio",
+      "pos": {
+        "0": 65,
+        "1": 338
+      },
+      "size": {
+        "0": 315,
+        "1": 278
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "upscale_factor",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "empty_latent",
+          "type": "LATENT",
+          "links": [
+            1
+          ],
+          "slot_index": 4,
+          "shape": 3
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR SDXL Aspect Ratio"
+      },
+      "widgets_values": [
+        768,
+        1024,
+        "custom",
+        "Off",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 7,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 415,
+        "1": 790
+      },
+      "size": {
+        "0": 391,
+        "1": 109.13343811035156
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 7,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Photographing fashion items Envision a regal portrait of an ancient Egyptian queen, bathed in the soft, dim glow of flickering torches, casting long, dramatic shadows that dance across her face. Her skin is adorned with a luxurious, shimmering blue body paint, accentuated by ornate gold lines that trace the contours of her face and neck, creating a striking, opulent contrast. She wears a magnificent headdress of gold and black feathers, symbolizing her divine connection to the sky and the gods, with intricate gold filigree and precious stones that catch the light, adding a poignant sparkle. Around her neck, a breathtaking collar of gold and lapis lazuli rests, adorned with elaborate pendants that shimmer in the dim light, reflecting her royal status and wealth. Her gaze is steady and commanding, reflecting the wisdom and power of a ruler who commands respect and admiration. The image captures the essence of elegance, strength, and timeless beauty, evoking a sense of awe, reverence, and luxurious allure., often for advertising, magazines, or brand promotion."
+      ]
+    },
+    {
+      "id": 6,
+      "type": "MilehighStyler",
+      "pos": {
+        "0": 406,
+        "1": 488
+      },
+      "size": {
+        "0": 414.7333984375,
+        "1": 250.933349609375
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "links": [
+            5,
+            7
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "links": [
+            6
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MilehighStyler"
+      },
+      "widgets_values": [
+        "Envision a regal portrait of an ancient Egyptian queen, bathed in the soft, dim glow of flickering torches, casting long, dramatic shadows that dance across her face. Her skin is adorned with a luxurious, shimmering blue body paint, accentuated by ornate gold lines that trace the contours of her face and neck, creating a striking, opulent contrast. She wears a magnificent headdress of gold and black feathers, symbolizing her divine connection to the sky and the gods, with intricate gold filigree and precious stones that catch the light, adding a poignant sparkle. Around her neck, a breathtaking collar of gold and lapis lazuli rests, adorned with elaborate pendants that shimmer in the dim light, reflecting her royal status and wealth. Her gaze is steady and commanding, reflecting the wisdom and power of a ruler who commands respect and admiration. The image captures the essence of elegance, strength, and timeless beauty, evoking a sense of awe, reverence, and luxurious allure.",
+        "bad anatomy, distorted, mutilated\n",
+        "Fashion Photography",
+        true
+      ]
+    },
+    {
+      "id": 1,
+      "type": "LuminaDiffusersNode",
+      "pos": {
+        "0": 874,
+        "1": 342
+      },
+      "size": {
+        "0": 353.7333984375,
+        "1": 438
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "latents",
+          "type": "LATENT",
+          "link": 1
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 5,
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "link": 6,
+          "widget": {
+            "name": "negative_prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            2
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LuminaDiffusersNode"
+      },
+      "widgets_values": [
+        "Alpha-VLLM/Lumina-Next-SFT-diffusers",
+        "beautiful woman, happy, portrait, pho",
+        "",
+        30,
+        4,
+        1329,
+        "fixed",
+        1,
+        0.3,
+        true,
+        true,
+        256,
+        false,
+        4,
+        1
+      ]
+    },
+    {
+      "id": 9,
+      "type": "Note",
+      "pos": {
+        "0": 621,
+        "1": 327
+      },
+      "size": {
+        "0": 210,
+        "1": 92.80001831054688
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {},
+      "widgets_values": [
+        "Lumina Test\n\nComfyUI-Lumina-Next-SFT-DiffusersWrapper"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      4,
+      1,
+      0,
+      "LATENT"
+    ],
+    [
+      2,
+      1,
+      0,
+      3,
+      0,
+      "LATENT"
+    ],
+    [
+      3,
+      3,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      5,
+      0,
+      3,
+      1,
+      "VAE"
+    ],
+    [
+      5,
+      6,
+      0,
+      1,
+      1,
+      "STRING"
+    ],
+    [
+      6,
+      6,
+      1,
+      1,
+      2,
+      "STRING"
+    ],
+    [
+      7,
+      6,
+      0,
+      7,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        -14.93328857421875,
+        -209.6000518798828
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
