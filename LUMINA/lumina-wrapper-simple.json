@@ -1,0 +1,627 @@
+{
+  "last_node_id": 23,
+  "last_link_id": 38,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "VAELoader",
+      "pos": {
+        "0": 487,
+        "1": 542
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            13
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "sdxl_vae.safetensors"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "LuminaGemmaTextEncode",
+      "pos": {
+        "0": 48,
+        "1": 227
+      },
+      "size": {
+        "0": 403.68280029296875,
+        "1": 133.0609588623047
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "gemma_model",
+          "type": "GEMMAODEL",
+          "link": 25,
+          "slot_index": 0
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 20
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 36,
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "name": "n_prompt",
+          "type": "STRING",
+          "link": 37,
+          "widget": {
+            "name": "n_prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "lumina_embeds",
+          "type": "LUMINATEMBED",
+          "links": [
+            29
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LuminaGemmaTextEncode"
+      },
+      "widgets_values": [
+        "high quality photograph of a woman laying on grass, she's wearing a blue dress, top down view, her hair is on fire",
+        "bad quality, drawing, illustration, nsfw",
+        false
+      ]
+    },
+    {
+      "id": 19,
+      "type": "Reroute",
+      "pos": {
+        "0": 356,
+        "1": 388
+      },
+      "size": [
+        90.4,
+        26
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            32
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": true,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 22,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 481,
+        "1": 645
+      },
+      "size": {
+        "0": 322.9583435058594,
+        "1": 317.2070007324219
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 35,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        [
+          "Documentary Photography Create an image of a medieval knight standing proudly in front of a historic stone castle. The knight has vibrant red hair and a full red beard, both well-groomed and flowing. He is dressed in ornate, polished armor that covers his entire body, featuring intricate designs and a prominent coat of arms on his chest. The coat of arms includes a blue shield with a yellow lion and red flames. The knight holds a flagpole with a red and yellow flag bearing a similar coat of arms, standing tall and confident. The castle behind him is made of gray stone with tall towers and narrow windows, set against a backdrop of lush green hills and a clear blue sky. The overall mood should be one of valor, history, and medieval splendor.\n\n, Photographing subjects to document events, stories, or social issues, often in a journalistic style."
+        ],
+        "Adventure Films Create a portrait of an elegant elderly woman with short, wavy silver hair, standing in a lush, green garden. Her skin should exhibit natural aging with subtle wrinkles and a warm, healthy tone. She wears a cozy, beige turtleneck sweater that complements her serene expression. A striking red flower is tucked behind her ear, adding a vibrant pop of color to the scene. The background should be softly blurred, emphasizing the woman as the focal point, with hints of greenery and natural light filtering through the leaves. The overall mood should be calm and peaceful, capturing the beauty and wisdom of aging gracefully.\n\n\n, Adventure Films, often for daring quests, exploration, or thrilling journeys."
+      ]
+    },
+    {
+      "id": 15,
+      "type": "DownloadAndLoadGemmaModel",
+      "pos": {
+        "0": -317,
+        "1": 271
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "gemma_model",
+          "type": "GEMMAODEL",
+          "links": [
+            25
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DownloadAndLoadGemmaModel"
+      },
+      "widgets_values": [
+        "bf16"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 834,
+        "1": 139
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 33
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 13,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            14,
+            38
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 23,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1331,
+        "1": 236
+      },
+      "size": {
+        "0": 386.03759765625,
+        "1": 319.6417541503906
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 38
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "EmptyLatentImage",
+      "pos": {
+        "0": -315,
+        "1": 440
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            20,
+            34
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        896,
+        1088,
+        1
+      ]
+    },
+    {
+      "id": 21,
+      "type": "MilehighStyler",
+      "pos": {
+        "0": 38,
+        "1": 470
+      },
+      "size": {
+        "0": 413.2419738769531,
+        "1": 515.9563598632812
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "links": [
+            35,
+            36
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "links": [
+            37
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MilehighStyler"
+      },
+      "widgets_values": [
+        "Create a portrait of an elegant elderly woman with short, wavy silver hair, standing in a lush, green garden. Her skin should exhibit natural aging with subtle wrinkles and a warm, healthy tone. She wears a cozy, beige turtleneck sweater that complements her serene expression. A striking red flower is tucked behind her ear, adding a vibrant pop of color to the scene. The background should be softly blurred, emphasizing the woman as the focal point, with hints of greenery and natural light filtering through the leaves. The overall mood should be calm and peaceful, capturing the beauty and wisdom of aging gracefully.\n\n\n",
+        "bad anatomy, distorted, mutilated, bad quality, drawing, illustration, nsfw\n",
+        "Adventure Films",
+        true
+      ]
+    },
+    {
+      "id": 2,
+      "type": "DownloadAndLoadLuminaModel",
+      "pos": {
+        "0": -311,
+        "1": 140
+      },
+      "size": {
+        "0": 303.01300048828125,
+        "1": 82
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "lumina_model",
+          "type": "LUMINAMODEL",
+          "links": [
+            28
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DownloadAndLoadLuminaModel"
+      },
+      "widgets_values": [
+        "Alpha-VLLM/Lumina-Next-SFT",
+        "bf16"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 839,
+        "1": 233
+      },
+      "size": {
+        "0": 459.1072998046875,
+        "1": 714.3753662109375
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 17,
+      "type": "LuminaT2ISampler",
+      "pos": {
+        "0": 488,
+        "1": 143
+      },
+      "size": {
+        "0": 315,
+        "1": 338
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lumina_model",
+          "type": "LUMINAMODEL",
+          "link": 28
+        },
+        {
+          "name": "lumina_embeds",
+          "type": "LUMINATEMBED",
+          "link": 29
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "links": [
+            33
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LuminaT2ISampler"
+      },
+      "widgets_values": [
+        1275,
+        "fixed",
+        26,
+        4,
+        false,
+        false,
+        0.3,
+        4,
+        "midpoint",
+        false,
+        1
+      ]
+    },
+    {
+      "id": 20,
+      "type": "Note",
+      "pos": {
+        "0": 62,
+        "1": 48
+      },
+      "size": {
+        "0": 210,
+        "1": 92.80001831054688
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {},
+      "widgets_values": [
+        "Lumina Test\n\nComfyUI-LuminaWrapper\nexample workflow"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      13,
+      10,
+      0,
+      9,
+      1,
+      "VAE"
+    ],
+    [
+      14,
+      9,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      20,
+      6,
+      0,
+      13,
+      1,
+      "LATENT"
+    ],
+    [
+      25,
+      15,
+      0,
+      13,
+      0,
+      "GEMMAODEL"
+    ],
+    [
+      28,
+      2,
+      0,
+      17,
+      0,
+      "LUMINAMODEL"
+    ],
+    [
+      29,
+      13,
+      0,
+      17,
+      1,
+      "LUMINATEMBED"
+    ],
+    [
+      32,
+      19,
+      0,
+      17,
+      2,
+      "LATENT"
+    ],
+    [
+      33,
+      17,
+      0,
+      9,
+      0,
+      "LATENT"
+    ],
+    [
+      34,
+      6,
+      0,
+      19,
+      0,
+      "*"
+    ],
+    [
+      35,
+      21,
+      0,
+      22,
+      0,
+      "STRING"
+    ],
+    [
+      36,
+      21,
+      0,
+      13,
+      2,
+      "STRING"
+    ],
+    [
+      37,
+      21,
+      1,
+      13,
+      3,
+      "STRING"
+    ],
+    [
+      38,
+      9,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909091,
+      "offset": [
+        213.01579153078848,
+        -10.19472249299801
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
