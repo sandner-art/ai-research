@@ -201,7 +201,7 @@
         "1": 106
       },
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -240,30 +240,6 @@
         1024,
         1
       ]
-    },
-    {
-      "id": 66,
-      "type": "Note",
-      "pos": {
-        "0": 188,
-        "1": 421
-      },
-      "size": {
-        "0": 308.5064392089844,
-        "1": 62.04813003540039
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "sandner.art |",
-      "properties": {},
-      "widgets_values": [
-        "max schnell-Q4_K_S (gguf) for 16GB VRAM!"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 43,
@@ -452,7 +428,7 @@
         "1": 82
       },
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 4,
       "inputs": [
         {
@@ -479,41 +455,6 @@
         "HYPERSD\\FLUX.1-Turbo-Alpha.safetensors",
         1
       ]
-    },
-    {
-      "id": 65,
-      "type": "UnetLoaderGGUF",
-      "pos": {
-        "0": 185,
-        "1": 319
-      },
-      "size": {
-        "0": 315,
-        "1": 58
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            119
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "UnetLoaderGGUF"
-      },
-      "widgets_values": [
-        "flux1-schnell-Q4_K_S.gguf"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 9,
@@ -554,7 +495,7 @@
         "1": 234.22666931152344
       },
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -592,7 +533,7 @@
         "1": 300.74462890625
       },
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -690,7 +631,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -721,6 +662,41 @@
       "widgets_values": [
         "portrait - 832x1216 (2:3)"
       ]
+    },
+    {
+      "id": 65,
+      "type": "UnetLoaderGGUF",
+      "pos": {
+        "0": 185,
+        "1": 319
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            119
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "hyper-flux-8step-Q4_K_M.gguf"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 32,
@@ -779,12 +755,36 @@
       "widgets_values": [
         555666888156,
         "fixed",
-        4,
+        8,
         2.5,
         "euler",
         "beta",
         1
       ]
+    },
+    {
+      "id": 66,
+      "type": "Note",
+      "pos": {
+        "0": 188,
+        "1": 421
+      },
+      "size": {
+        "0": 308.5064392089844,
+        "1": 62.04813003540039
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {},
+      "widgets_values": [
+        "get hyperflux https://huggingface.co/martintomov/Hyper-FLUX.1-dev-gguf/tree/main"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -969,10 +969,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.1000000000000005,
+      "scale": 1.9487171000000014,
       "offset": [
-        -1464.8677247408013,
-        -377.00392797154
+        242.6081234867619,
+        -295.03090938520404
       ]
     },
     "groupNodes": {}
