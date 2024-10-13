@@ -1,0 +1,896 @@
+{
+  "last_node_id": 66,
+  "last_link_id": 116,
+  "nodes": [
+    {
+      "id": 45,
+      "type": "ModelSamplingFlux",
+      "pos": {
+        "0": 890,
+        "1": 350
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 100,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            108
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingFlux"
+      },
+      "widgets_values": [
+        2,
+        0.5,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 34,
+      "type": "CLIPTextEncodeFlux",
+      "pos": {
+        "0": 1000,
+        "1": 850
+      },
+      "size": {
+        "0": 210,
+        "1": 197.75155639648438
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 104,
+          "slot_index": 0
+        },
+        {
+          "name": "clip_l",
+          "type": "STRING",
+          "link": 70,
+          "slot_index": 1,
+          "widget": {
+            "name": "clip_l"
+          }
+        },
+        {
+          "name": "t5xxl",
+          "type": "STRING",
+          "link": 71,
+          "slot_index": 2,
+          "widget": {
+            "name": "t5xxl"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            115
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "3D, 3D render, photo, cinematic, simple background",
+        "3D, 3D render, photo, cinematic, simple background",
+        3.5
+      ]
+    },
+    {
+      "id": 33,
+      "type": "CLIPTextEncodeFlux",
+      "pos": {
+        "0": 1000,
+        "1": 600
+      },
+      "size": {
+        "0": 210,
+        "1": 194.6269989013672
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 102,
+          "slot_index": 0
+        },
+        {
+          "name": "t5xxl",
+          "type": "STRING",
+          "link": 68,
+          "widget": {
+            "name": "t5xxl"
+          }
+        },
+        {
+          "name": "clip_l",
+          "type": "STRING",
+          "link": 67,
+          "slot_index": 2,
+          "widget": {
+            "name": "clip_l"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            114
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "fashion design, a 30 year old model fashionista haute couture with dreadlocks is showing her hands",
+        "fashion design, a 30 year old model fashionista haute couture with dreadlocks is showing her hands",
+        3.5
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": {
+        "0": 2130,
+        "1": 350
+      },
+      "size": {
+        "0": 654.5431518554688,
+        "1": 694.1315307617188
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 41,
+      "type": "PrimitiveNode",
+      "pos": {
+        "0": 630,
+        "1": 870
+      },
+      "size": {
+        "0": 279.7331237792969,
+        "1": 234.22666931152344
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            70,
+            71
+          ],
+          "widget": {
+            "name": "clip_l"
+          }
+        }
+      ],
+      "title": "Negative Prompt",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "3D, 3D render, photo, cinematic, simple background"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 37,
+      "type": "DualCLIPLoader",
+      "pos": {
+        "0": 170,
+        "1": 730
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            72
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "flux"
+      ]
+    },
+    {
+      "id": 43,
+      "type": "OverrideVAEDevice",
+      "pos": {
+        "0": 969,
+        "1": -12
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 77,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            78
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OverrideVAEDevice"
+      },
+      "widgets_values": [
+        "cuda:0"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 1738,
+        "1": 221
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 50
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 78
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 59,
+      "type": "DynamicThresholdingFull",
+      "pos": {
+        "0": 1344,
+        "1": 128
+      },
+      "size": {
+        "0": 315,
+        "1": 298
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 108,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            109
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DynamicThresholdingFull"
+      },
+      "widgets_values": [
+        1,
+        1,
+        "Half Cosine Up",
+        0,
+        "Half Cosine Up",
+        0,
+        1,
+        "enable",
+        "MEAN",
+        "AD",
+        0.7000000000000001
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 57,
+      "type": "LoraLoader",
+      "pos": {
+        "0": 554,
+        "1": 347
+      },
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 116,
+          "slot_index": 0
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 103,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            100
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            102,
+            104
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "Chiaroscuro_FLUX.safetensors",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 42,
+      "type": "OverrideCLIPDevice",
+      "pos": {
+        "0": 181,
+        "1": 588
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 72
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            103
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OverrideCLIPDevice"
+      },
+      "widgets_values": [
+        "cuda:0"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 10,
+      "type": "VAELoader",
+      "pos": {
+        "0": 191,
+        "1": 220
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            77
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ]
+    },
+    {
+      "id": 40,
+      "type": "PrimitiveNode",
+      "pos": {
+        "0": 630,
+        "1": 530
+      },
+      "size": {
+        "0": 284.4693908691406,
+        "1": 300.74462890625
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            67,
+            68
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "clip_l"
+          }
+        }
+      ],
+      "title": "Prompt",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "fashion design, a 30 year old model fashionista haute couture with dreadlocks is showing her hands"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 54,
+      "type": "EmptyLatentImage",
+      "pos": {
+        "0": 180,
+        "1": 890
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            87
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1
+      ]
+    },
+    {
+      "id": 32,
+      "type": "KSampler",
+      "pos": {
+        "0": 1680,
+        "1": 400
+      },
+      "size": {
+        "0": 409.6072692871094,
+        "1": 637.8309936523438
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 109,
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 114,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 115,
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 87,
+          "slot_index": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            50
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        555666888152,
+        "fixed",
+        20,
+        5,
+        "euler",
+        "beta",
+        1
+      ]
+    },
+    {
+      "id": 65,
+      "type": "UnetLoaderGGUF",
+      "pos": {
+        "0": 185,
+        "1": 319
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            116
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "flux1-schnell-Q4_K_S.gguf"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 66,
+      "type": "Note",
+      "pos": {
+        "0": 188,
+        "1": 421
+      },
+      "size": [
+        308.50642531975313,
+        62.04813158495074
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "max schnell-Q4_K_S (gguf) for 16GB VRAM"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      50,
+      32,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      67,
+      40,
+      0,
+      33,
+      2,
+      "STRING"
+    ],
+    [
+      68,
+      40,
+      0,
+      33,
+      1,
+      "STRING"
+    ],
+    [
+      70,
+      41,
+      0,
+      34,
+      1,
+      "STRING"
+    ],
+    [
+      71,
+      41,
+      0,
+      34,
+      2,
+      "STRING"
+    ],
+    [
+      72,
+      37,
+      0,
+      42,
+      0,
+      "CLIP"
+    ],
+    [
+      77,
+      10,
+      0,
+      43,
+      0,
+      "VAE"
+    ],
+    [
+      78,
+      43,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      87,
+      54,
+      0,
+      32,
+      3,
+      "LATENT"
+    ],
+    [
+      100,
+      57,
+      0,
+      45,
+      0,
+      "MODEL"
+    ],
+    [
+      102,
+      57,
+      1,
+      33,
+      0,
+      "CLIP"
+    ],
+    [
+      103,
+      42,
+      0,
+      57,
+      1,
+      "CLIP"
+    ],
+    [
+      104,
+      57,
+      1,
+      34,
+      0,
+      "CLIP"
+    ],
+    [
+      108,
+      45,
+      0,
+      59,
+      0,
+      "MODEL"
+    ],
+    [
+      109,
+      59,
+      0,
+      32,
+      0,
+      "MODEL"
+    ],
+    [
+      114,
+      33,
+      0,
+      32,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      115,
+      34,
+      0,
+      32,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      116,
+      65,
+      0,
+      57,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9849732675807676,
+      "offset": [
+        90.44619242780115,
+        -116.17207792598153
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
