@@ -1,0 +1,1042 @@
+[
+    {
+        "name": "FLUX: Upscale Portrait",
+        "prompt": "model portrait. realistic skin style . Extremely high-resolution details, photographic, realism pushed to extreme, fine texture, incredibly lifelike In an incredibly amazing image of exceptional artistry, hyperrealism, realism, unrealengine, realistic, detailed skin pore, film still, still photography style, sharp style, detailed style, perfect style, perfection style, Kodak film skin color tone style, fujifilm skin tone color style, professional photography style, skin textured, skin texture style, perfect face, perfect mouth, perfect nose, perfect lips, perfect eyes, perfect ears, perfect skin, perfect skin pores, perfect body, perfect hair, very detailed skin pores, perfect skin texture style {prompt} .",
+        "negative_prompt": ""
+    },
+    {
+        "name": "FLUX: Portrait Studio",
+        "prompt": "Natural portrait model. A full figure artistic portrait of a {prompt} . Captured in a studio with a simple background. The individual is posing in the center of the frame. The lighting is dramatic, with a bright spotlight on the individual and soft shadows. The background is dark, creating a perfect silhouette. The image has a soft shadow study art school aesthetic. uhd-16k, 8k, 4k, hyper realistic, texture surface details . 35mm f1.8 Macro, chiaroscuro, vignette, Mise-en-scene, detailed, cinemascope, moody, epic",
+        "negative_prompt": ""
+    },
+    {
+        "name": "FLUX: Portrait Photo 1",
+        "prompt": "{prompt} . model portrait. very realistic, cinematic, award winning photo In an incredibly amazing image of exceptional artistry.",
+        "negative_prompt": ""
+    },
+    {
+        "name": "FLUX: Portrait Photo 2",
+        "prompt": "{prompt} . model portrait. cinematic style of Philip Lorca diCorcia. In an incredibly amazing image of exceptional artistry. RAW candid cinema, 16mm, color graded portra 400 film, remarkable color, ultra realistic cinematic realism film scene still of a photo focus on . portrait, film, professional, highly detailed, absurdres, detailed, macro details, uhd-16k, 8k, 4k, hyper realistic, texture surface details . 35mm f1.8 Macro, chiaroscuro, vignette, Mise-en-scene, detailed, cinemascope, moody, epic",
+        "negative_prompt": ""
+    },
+    {
+        "name": "FLUX: Portrait Simple",
+        "prompt": "{prompt} . natural portrait model portrait. A photo of a full figure artistic portrait of an individual with a classical beauty face. Visible in a natural pose. The background is a wall with a texture. The lighting is soft. The overall image is inspired by the compositions of old master paintings. The lighting is soft. uhd-16k, 8k, 4k, hyper realistic, texture surface details . 35mm f1.8 Macro, chiaroscuro, shallow depth of field, vignette, Mise-en-scene, detailed, cinemascope, moody, epic, 16mm, color graded portra 400 film, remarkable color, professional",
+        "negative_prompt": ""
+    },
+    {
+        "name": "F-Natural-Sandner",
+        "prompt": "Detailed description for the naturalistic and award-winning photo: Subject: The main focus of this captivating photograph is a {prompt} . Lighting: The photo is illuminated by natural light, bathes the scene in warm, golden tones, providing a serene candid moment captured by the lens. The soft, diffused sunlight accentuates the textures materials and surfaces, creating a flattering glow on reflective parts.  Composition: The photographer has expertly framed the subject within the frame, using the negative space to emphasize the subject's presence, adding depth to the setting without overpowering the subject. The main subject  is positioned slightly off-center, allowing for a more dynamic composition that draws the viewer's eye naturally towards the storytelling of the composition. Setting: The scene unfolds in a tranquil, poignant manner. The crisp documentary analog shot, achieved through the shallow depth of field created by the 55mm f/1.8 lens, effectively isolates the subject and contributes to an intimate atmosphere.  Depth of Field: With the aperture set at f/1.8, a significant portion of the scene is very sharp, emphasizing the subject by a compositions, where all artistic elements interacts with each other. The woman's face, hair, and upper body are in crisp focus, while the background \u2013 including the lawn, trees, and distant objects \u2013 recedes into soft, creamy blur, thereby drawing attention to her candid expression.Leica-like Aesthetic: Although shot on a DSLR camera, this photograph shares characteristics reminiscent of Leica's distinctive aesthetic. The vibrant colors and sharp details bring the scene to life, creating an enduring visual memory for the viewer. The classic feel of the image is further enhanced by the natural lighting and the subject's unposed demeanor.  Candid Photography: This spontaneous moment captures the essence of candid photography, where a fleeting expression or action is frozen in time. The photographer has successfully preserved the substance and joy of humanity, rendering an authentic portrayal that transcends the ordinary.",
+        "negative_prompt": ""
+    },
+    {
+        "name": "F-Night-Sandner",
+        "prompt": "Detailed description for the naturalistic and award-winning night photo, presents a poignant and intimate moment, captured with masterful precision: Subject: The main focus of this captivating nightly photograph is a {prompt} . Subtle illumination not only sets the mood but also accentuates the textures and contours of the subject, materials surfaces and fabrics texture. This naturalistic photograph, captured on a DSLR camera with a 55mm f/1.8 lens, presents an intimate and candid portrayal of the human experience.   The dimly lit atmosphere is palpable, as if time itself has slowed down to savor the quietude of this nocturnal moment.  The composition is masterfully arranged, with the subject positioned slightly off the center of the frame,  illuminated by the warm, golden night light spilling.  The use of a wide aperture (f/1.8) results in an exquisite professional documentary quality, drawing the viewer's attention to the subject's contemplative expression.  The RAW file capture ensures that every detail, from the subtlest crease on the subject's clothing to the intricate patterns etched into the brick walls, is preserved with breathtaking fidelity. The image exudes a sense of realism, as if the viewer has stumbled upon this fleeting moment by chance.  Shot in a candid moment, the photograph transcends the mundane, elevating the scene to an almost poetic level. The absence of overexposition allows the textures, forms, and tonalities to take center stage, imbuing the image with a timeless quality that resonates deeply with the viewer.  This candid image, born from the intersection of serendipity and creative vision, is a testament to the power of photography to capture the essence of the human experience. As we gaze upon the subject's introspective, we are reminded that even in the most ordinary moments, there lies a profound beauty waiting to be discovered. The captivating photo masterfully weaves together elements of setting, lighting, composition, and candid photography. Midnight's  dim contrast to the serene invites viewers to step into the world of its subject, immersing them in an atmosphere of contemplation and quiet reflection.",
+        "negative_prompt": ""
+    },
+    {
+        "name": "F-Medium-Sandner",
+        "prompt": "{prompt} . Shot with a deep depth of field, the background is crisp,  features are sharp, evoking the style of film director Terrence Malick. The image is captured with a Canon EOS 90D, featuring a film grain and subtle color grading that enhances the earthy tones , embracing surroundings, in a medium shot with an eye-level angle, reminiscent of a cinematic still. Soft, warm light pours in, casting a gentle glow on. Rule of thirds,  eye-level shot,  straight angle,  soft lighting,  (muted colors,  dim colors,  soothing tones:1.3),  low saturation,  (hyperdetailed:1.2),  Square color palette, off centered subject,  medium shot,  eye-level angle,  anamorphic lens flare,  neoclassicism,  dynamic angle,  hyperrealistic ",
+        "negative_prompt": ""
+    },
+    {
+        "name": "F-Dim-Sandner",
+        "prompt": "In a dimly lit, ambient setting, reminiscent of an artistic collaboration, award-winning night photo of {prompt} . The lighting is moody, with a single, softbox key light source, positioned at a 45-degree angle, casting a warm hue glow on the subject, while the rest of the scene is bathed in cool, blue hues, creating a sense of contrast and depth, characteristic of a cinematic style inspired by the works of , with a film grain texture and a muted color grading, adding to the overall sense of grittiness and realism, as if the scene was plucked straight from a documentary photography shoot. The air is thick with tension, the atmosphere heavy with the weight of emotions. ",
+        "negative_prompt": ""
+    },
+    {
+        "name": "F-Fujifilm-Sandner",
+        "prompt": "{prompt} .  The color palette is a blend of complementary hues, reminiscent of  cinematography, with soft, feathery shadows and a subtle film grain. Photography: (overhead shot) on Fujifilm X-S10 with Fujinon XF 10-24mm f-4 R OIS WR,  photo by professional,  eye-level shot,  off-centered composition subject,  straight angle,  detailed skin pores,  sun rays,  ((landscape view)),  4k unity,  (best illumination),  detailed natural skin, macro texture details, ultrarealistic surface structures",
+        "negative_prompt": ""
+    },
+    {
+        "name": "F-Improv-Sandner",
+        "prompt": "({prompt}) VID_0391.mov IMG_1735.HEIC IMG_7587.jpg,",
+        "negative_prompt": ""
+    },
+    {
+        "name": "HYPER-FLUX 8",
+        "prompt": "{prompt} . <lora:Hyper-FLUX.1-dev-8steps-lora:0.125>",
+        "negative_prompt": ""
+    },
+    {
+        "name": "HYPER-FLUX 16",
+        "prompt": "{prompt} . <lora:Hyper-FLUX.1-dev-16steps-lora:0.125>",
+        "negative_prompt": ""
+    },
+    {
+        "name": "HYPER-SDXL 8",
+        "prompt": "{prompt} . <lora:Hyper-SDXL-8steps-CFG-lora:0.76>",
+        "negative_prompt": ""
+    },
+    {
+        "name": "HYPER-SDXL 12",
+        "prompt": "{prompt} . <lora:Hyper-SDXL-12steps-CFG-lora:0.76>",
+        "negative_prompt": ""
+    },
+    {
+        "name": "HYPER-SD15 12",
+        "prompt": "{prompt} .  <lora:Hyper-SD15-12steps-CFG-lora:0.125>",
+        "negative_prompt": ""
+    },
+    {
+        "name": "Style: Enhance",
+        "prompt": "breathtaking {prompt} . award-winning, professional, highly detailed",
+        "negative_prompt": "ugly, deformed, noisy, blurry, distorted, grainy"
+    },
+    {
+        "name": "Style: Anime",
+        "prompt": "anime artwork {prompt} . anime style, key visual, vibrant, studio anime, highly detailed",
+        "negative_prompt": "photo, deformed, black and white, realism, disfigured, low contrast"
+    },
+    {
+        "name": "Style: Photographic",
+        "prompt": "cinematic photo {prompt} . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "negative_prompt": "drawing, painting, crayon, sketch, graphite, impressionist, noisy, blurry, soft, deformed, ugly"
+    },
+    {
+        "name": "Style: Digital art",
+        "prompt": "concept art {prompt} . digital artwork, illustrative, painterly, matte painting, highly detailed",
+        "negative_prompt": "photo, photorealistic, realism, ugly"
+    },
+    {
+        "name": "Style: Comic book",
+        "prompt": "comic {prompt} . graphic illustration, comic art, graphic novel art, vibrant, highly detailed",
+        "negative_prompt": "photograph, deformed, glitch, noisy, realistic, stock photo"
+    },
+    {
+        "name": "Style: Fantasy art",
+        "prompt": "ethereal fantasy concept art of {prompt} . magnificent, celestial, ethereal, painterly, epic, majestic, magical, fantasy art, cover art, dreamy",
+        "negative_prompt": "photographic, realistic, realism, 35mm film, dslr, cropped, frame, text, deformed, glitch, noise, noisy, off-center, deformed, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, sloppy, duplicate, mutated, black and white"
+    },
+    {
+        "name": "Style: Analog film",
+        "prompt": "analog film photo {prompt} . faded film, desaturated, 35mm photo, grainy, vignette, vintage, Kodachrome, Lomography, stained, highly detailed, found footage",
+        "negative_prompt": "painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly, disfigured"
+    },
+    {
+        "name": "Style: Neonpunk",
+        "prompt": "neonpunk style {prompt} . cyberpunk, vaporwave, neon, vibes, vibrant, stunningly beautiful, crisp, detailed, sleek, ultramodern, magenta highlights, dark purple shadows, high contrast, cinematic, ultra detailed, intricate, professional",
+        "negative_prompt": "painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly, disfigured"
+    },
+    {
+        "name": "Style: Isometric",
+        "prompt": "isometric style {prompt} . vibrant, beautiful, crisp, detailed, ultra detailed, intricate",
+        "negative_prompt": "deformed, mutated, ugly, disfigured, blur, blurry, noise, noisy, realistic, photographic"
+    },
+    {
+        "name": "Style: Lowpoly",
+        "prompt": "low-poly style {prompt} . low-poly game art, polygon mesh, jagged, blocky, wireframe edges, centered composition",
+        "negative_prompt": "noisy, sloppy, messy, grainy, highly detailed, ultra textured, photo"
+    },
+    {
+        "name": "Style: Origami",
+        "prompt": "origami style {prompt} . paper art, pleated paper, folded, origami art, pleats, cut and fold, centered composition",
+        "negative_prompt": "noisy, sloppy, messy, grainy, highly detailed, ultra textured, photo"
+    },
+    {
+        "name": "Style: Line art",
+        "prompt": "line art drawing {prompt} . professional, sleek, modern, minimalist, graphic, line art, vector graphics",
+        "negative_prompt": "anime, photorealistic, 35mm film, deformed, glitch, blurry, noisy, off-center, deformed, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, mutated, realism, realistic, impressionism, expressionism, oil, acrylic"
+    },
+    {
+        "name": "Style: Craft clay",
+        "prompt": "play-doh style {prompt} . sculpture, clay art, centered composition, Claymation",
+        "negative_prompt": "sloppy, messy, grainy, highly detailed, ultra textured, photo"
+    },
+    {
+        "name": "Style: Cinematic",
+        "prompt": "cinematic film still {prompt} . shallow depth of field, vignette, highly detailed, high budget Hollywood movie, bokeh, cinemascope, moody, epic, gorgeous, film grain, grainy",
+        "negative_prompt": "anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch, deformed, mutated, ugly, disfigured"
+    },
+    {
+        "name": "Style: 3d-model",
+        "prompt": "professional 3d model {prompt} . octane render, highly detailed, volumetric, dramatic lighting",
+        "negative_prompt": "ugly, deformed, noisy, low poly, blurry, painting"
+    },
+    {
+        "name": "Style: pixel art",
+        "prompt": "pixel-art {prompt} . low-res, blocky, pixel art style, 8-bit graphics",
+        "negative_prompt": "sloppy, messy, blurry, noisy, highly detailed, ultra textured, photo, realistic"
+    },
+    {
+        "name": "Style: Texture",
+        "prompt": "texture {prompt} top down close-up",
+        "negative_prompt": "ugly, deformed, noisy, blurry"
+    },
+    {
+        "name": "ProStyle: Archviz",
+        "prompt": "real estate photography style {prompt} . professional, inviting, well-lit, high-resolution, property-focused, commercial, highly detailed",
+        "negative_prompt": "bad art , dark, blurry, unappealing, noisy, unprofessional"
+    },
+    {
+        "name": "ProStyle: Ad",
+        "prompt": "advertising poster style {prompt} . Professional, modern, product-focused, commercial, eye-catching, highly detailed",
+        "negative_prompt": "bad art , dark, blurry, unappealing, noisy, unprofessional"
+    },
+    {
+        "name": "ProStyle: Auto",
+        "prompt": "automotive advertisement style {prompt} . sleek, dynamic, professional, commercial, vehicle-focused, high-resolution, highly detailed",
+        "negative_prompt": "bad art, noisy, blurry, unattractive, sloppy, unprofessional"
+    },
+    {
+        "name": "ProStyle: Food",
+        "prompt": "food photography style {prompt} . appetizing, professional, culinary, high-resolution, commercial, highly detailed",
+        "negative_prompt": "unappetizing, sloppy, unprofessional, noisy, blurry"
+    },
+    {
+        "name": "ProStyle: Luxury",
+        "prompt": "luxury product style {prompt} . elegant, sophisticated, high-end, luxurious, professional, highly detailed",
+        "negative_prompt": "bad art, cheap, noisy, blurry, unattractive, amateurish, sloppy, unprofessional"
+    },
+    {
+        "name": "PX: Analog",
+        "prompt": "{prompt}, analog style (Analog photo by), dreamy, (prismatic lighting, high quality, film grain)",
+        "negative_prompt": "3d, digital"
+    },
+    {
+        "name": "PX: Analog Balanced",
+        "prompt": "{prompt}, hdr, wide angle, night , vignette, highly detailed, high budget, bokeh, cinemascope, moody, epic, gorgeous, key visual, hdr,  beefy, dark background  , by,  form, blue orange yellow theme",
+        "negative_prompt": "convoluted, many lights"
+    },
+    {
+        "name": "PX: LUT",
+        "prompt": "realistic, cinematic film still of {prompt},  flyweight, hdr, wide angle, night , vignette, highly detailed, key visual, hdr, beefy, simple background, by, form, cold orange green red theme,",
+        "negative_prompt": ""
+    },
+    {
+        "name": "PX: Glamour",
+        "prompt": "{prompt}. women, beauty, imperfection",
+        "negative_prompt": "ugliness, nonsense, perfection"
+    },
+    {
+        "name": "PX: Colorista",
+        "prompt": "{prompt}, key visual, hdr, simple background, by, form, orange green red blue theme",
+        "negative_prompt": ""
+    },
+    {
+        "name": "PX: Solitair",
+        "prompt": "{prompt}, beautiful, imperfect, indecent, esthetics, homeliness",
+        "negative_prompt": "ugly, perfect, decent, flamboyance, kitch"
+    },
+    {
+        "name": "PX: Master",
+        "prompt": "{prompt}, perfect, perfection, imperfections, natural",
+        "negative_prompt": "masterpiece, perfect, perfection, innatural, twisted, anatomy, stretched, stretching"
+    },
+    {
+        "name": "PX: Grit",
+        "prompt": "{prompt}, grit, rust, dust, weary, rusty dusty, surface scratches, rugged, used",
+        "negative_prompt": "new, unused"
+    },
+    {
+        "name": "PX: Studio Closeup",
+        "prompt": "close-up, editorial photograph of a {prompt} highly detailed face, background inside dark, moody, POV, by",
+        "negative_prompt": "ugly, deformed, canvas frame, mount, cartoon, 3d, ((bad art)), ((deformed)),((extra limbs))"
+    },
+    {
+        "name": "PX: Studio Product",
+        "prompt": "product photo {prompt} closeup, with photo lens cracked and greasy, realistic concept",
+        "negative_prompt": "barnum-negative, sfw human man woman watermark logo, deformed, noisy, disfigured"
+    },
+    {
+        "name": "PX: Studio Black",
+        "prompt": " ((Black background)), high definition, intricate, {prompt}, rimlights, backlight",
+        "negative_prompt": ",,"
+    },
+    {
+        "name": "PX: Studio Rimlights",
+        "prompt": "professional photo {prompt} rim light, cinematic, atmospheric, hard rim light. upward pov. depth of field. hdr, realistic concept",
+        "negative_prompt": "barnum-negative, watermark logo, deformed, noisy, disfigured"
+    },
+    {
+        "name": "PX: Studio Backlights",
+        "prompt": "professional studio photo {prompt} backlight, atmospheric, hard rim light, absurdres, hdr, realistic concept",
+        "negative_prompt": "barnum-negative, watermark logo, deformed, noisy, disfigured"
+    },
+    {
+        "name": "PX: Studio Spotlights",
+        "prompt": "professional photo {prompt}, hard spotlight, dark room, volumetric, atmospheric, soft rim light, absurdres, hdr, realistic",
+        "negative_prompt": "barnum-negative, watermark logo, deformed, noisy, disfigured"
+    },
+    {
+        "name": "PX: Studio Warm/Cold",
+        "prompt": "professional studio product photo {prompt}, left warm orange-light, right cold blue-light, volumetric, dramatic, absurdres, hdr, realistic",
+        "negative_prompt": "barnum-negative, watermark logo, deformed, noisy, disfigured"
+    },
+    {
+        "name": "PX: Portrait",
+        "prompt": "natural light and tones, traditional media blueprint editorial photo, Leica photography {prompt}, camera f1.6 lens, (highly detailed face:1.4), realistic textures and colors",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured, frame, fixture, picture mount, mount, image borders, framing, watermark, bad hands, bad feet, bad fingers"
+    },
+    {
+        "name": "PX: Natural",
+        "prompt": "natural light and tones, {prompt} , realistic textures and colors",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured, frame, fixture, picture mount, mount, image borders, framing, watermark, bad hands, bad feet, bad fingers"
+    },
+    {
+        "name": "PX: Nature",
+        "prompt": "{prompt} professional photo, detailed photo of unique, National Geographic style, scientific magazine editorial realism, hasselblad photo, detailed surface structure and tones and colors, juicy lush rusty dusty grit  theme, single accent blue orange violet green theme, rim light, cinematic, atmospheric, hard rim light. upward pov. depth of field. hdr, realistic concept, exploration",
+        "negative_prompt": "((watermark)), text, signature, border, framing, watermark logo, deformed, noisy, disfigured, frame"
+    },
+    {
+        "name": "PX: Botanical",
+        "prompt": "{prompt} professional photo, detailed photo of unique, National Geographic style, scientific magazine editorial realism, hasselblad photo, detailed surface structure and tones and colors, juicy lush rusty dusty grit  theme single accent blue orange violet green theme, plant rim light, cinematic, atmospheric, hard rim light. upward pov. depth of field. hdr, realistic concept, botanical anatomy exploration",
+        "negative_prompt": "watermark, text, signature, watermark-logo, deformed, noisy, disfigured, frame"
+    },
+    {
+        "name": "PX: Landscape",
+        "prompt": "lush, natural light and tones, {prompt}, epic, monumental, realistic textures and colors",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured, frame, fixture, picture mount, mount, image borders, framing, watermark, bad hands, bad feet, bad fingers"
+    },
+    {
+        "name": "PX: Grayscale",
+        "prompt": "black and white film photography, Leica lens, raw, {prompt}",
+        "negative_prompt": "artistic accidental photography"
+    },
+    {
+        "name": "PX: Cinema",
+        "prompt": "cinematic epic realistic photo,  {prompt}, photorealism, golden hour, Crewson style shadowing, 8k resolution, analog color kodak, film grain, neutral colors, ",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured"
+    },
+    {
+        "name": "PX: Barnum Atelier",
+        "prompt": "barnum-atelier {prompt}",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured"
+    },
+    {
+        "name": "PX: Barnum",
+        "prompt": "barnum {prompt}",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured, frame, fixture, picture mount, mount, image borders, framing, watermark, bad hands, bad feet, bad fingers"
+    },
+    {
+        "name": "PX: Barnum Sepia",
+        "prompt": "barnum-sepia {prompt}",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured, watermark, logo, third party watermark"
+    },
+    {
+        "name": "PX: Barnum Collodion",
+        "prompt": "barnum-collodion {prompt}",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured"
+    },
+    {
+        "name": "PX: Barnum Ambrotype",
+        "prompt": "barnum-ambrotype {prompt}",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured. frame, fixture, picture mount, mount, image borders, framing, watermark, bad hands, bad feet, bad fingers"
+    },
+    {
+        "name": "PX: Barnum Silver",
+        "prompt": "barnum-silver {prompt}",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured"
+    },
+    {
+        "name": "PX: Barnum Waxmuseum",
+        "prompt": "barnum-waxmuseum {prompt}",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured, disfigured, bad-hands, bad-anatomy"
+    },
+    {
+        "name": "PX: Barnum Color",
+        "prompt": "barnum-color {prompt}",
+        "negative_prompt": "barnum-negative, deformed, noisy, disfigured, bad hands, bad anatomy"
+    },
+    {
+        "name": "PX: Natural Portraits",
+        "prompt": "a gorgeous {prompt} . fine textures,high quality textures of materials, volumetric textures, natural textures, (natural colors, correct white balance, color correction, dehaze,clarity),RAW,vivid colours,intricate,photo shadows,photographic",
+        "negative_prompt": "(high contrast, over saturated, glossy:1.1), (cartoon, 3d, 3d render, Photoshop, sketch, sketches, video game, draw, paint, painting, render, cgi, computer graphics, anime, manga, 2d art, 3d art, illustration:1.1), (canvas frame, watermark, signature, username, artist name:1.1),pixelated, low res, jpeg artifacts, Compression artifacts, bad art, worst quality, low resolution, low quality, plastic, fake, bad limbs, conjoined, featureless, bad features, incorrect objects, watermark, signature, logo"
+    },
+    {
+        "name": "PX/NEG: Anatomy",
+        "prompt": "{prompt}",
+        "negative_prompt": "irrational-anatomy, unknown-otherworldly-alien-like-deformations, unknown-otherworldly-alien-like-limbs, unknown-otherworldly-alien-like-bodies, unknown-otherworldly-alien-like-creatures, bw, monochrome, oppai-loli, unknown-otherworldly-alien-like-anatomy, more-limbs-than-necessary, unknown-otherworldly-alien-like-anatomy-poses, unknown-otherwordly-alien-like-anatomy-gestures, unknown-otherworldly-alien-like-anatomy-distortions, unknown-otherworldly-alien-like-limbs, unknown-otherworldly-alien-like-anatomy-numbers, unknown-otherworldly-alien-like-limb-numbers, unknown-otherworldly-alien-like-distortions comparison"
+    },
+    {
+        "name": "PX/NEG: Experimental",
+        "prompt": "{prompt} solid-best-physical-appearance-perfect::1.1",
+        "negative_prompt": "not-solid-best-physical-appearance-perfect::2.1"
+    },
+    {
+        "name": "PX/NEG: Standard",
+        "prompt": "{prompt}",
+        "negative_prompt": "((((ugly)))), (((duplicate))), ((morbid)), ((mutilated)), [out of frame], ((watermark)),((frame)),((signature)), borders, white border, extra fingers, mutated hands, ((poorly drawn hands)), ((poorly drawn face)), (((mutation))), (((deformed))), blurry, ((bad anatomy)), (((bad proportions))), ((extra limbs)), cloned face, (((disfigured))), gross proportions, (malformed limbs), ((missing arms)), ((missing legs)), (((extra arms))), (((extra legs))), (fused fingers), (too many fingers), (((long neck)))"
+    },
+    {
+        "name": "PX/NEG: SimplePose",
+        "prompt": "{prompt} professional, simple",
+        "negative_prompt": "(((unprofessional-bodies))), (((unprofessional-pose)))"
+    },
+    {
+        "name": "PX/NEG: SimpleHand",
+        "prompt": "{prompt} professional, simple, perfect fingernails, nice hand, four fingers,",
+        "negative_prompt": "(((unprofessional-bodies))), (((unprofessional-pose)))"
+    },
+    {
+        "name": "PX/NEG: Watermark",
+        "prompt": "{prompt}",
+        "negative_prompt": "photo-description, brand, right, name, logo, imprint, copyright, watermark, text, white text, signature, downloaded, company-branding"
+    },
+    {
+        "name": "AX: 3D Monster",
+        "prompt": "(pixar|disney:1.2) monster surprise, perfect teeth, hilarious funny , yellow background .  {prompt}",
+        "negative_prompt": "disney, pixar, bad anatomy, photo-description, brand, right, name, logo, imprint, copyright, watermark, text, white text, signature, downloaded, company-branding, photo-description, brand, right, name, logo, imprint, copyright, watermark, text, white text, signature, downloaded, company-branding"
+    },
+    {
+        "name": "AX: 3D",
+        "prompt": "(pixar|disney:1.2) style, 3D, {prompt}, color background, hilarious funny",
+        "negative_prompt": "disney, pixar, bad anatomy, photo-description"
+    },
+    {
+        "name": "AX: Cartoon",
+        "prompt": "{prompt}, crazy cartoon, style, stylized exaggerated, simplified",
+        "negative_prompt": "black, numbers"
+    },
+    {
+        "name": "AX: Painting",
+        "prompt": "{prompt}, a masterpiece, art style by, guache",
+        "negative_prompt": "(frame:1.4) photo, digital, 3d"
+    },
+    {
+        "name": "AX: Color Background",
+        "prompt": "{prompt} , {red background|yellow background|blue background|white background|green background|orange background}",
+        "negative_prompt": "photo-description, brand, right, name, logo, imprint, copyright, watermark, text, white text, signature, downloaded, company-branding"
+    },
+    {
+        "name": "AX: Mecha",
+        "prompt": "{prompt}, masterpiece, creature, straight-on, hard surface, bloom,science fiction,simple background,cable,robot joints,goggles,outlet,laser, gear, concept, accents",
+        "negative_prompt": "(headphones:1.2), hair, hair style, ironman, batman, design text"
+    },
+    {
+        "name": "AX: Kawaii",
+        "prompt": "kawaii style {prompt} . cute, adorable, brightly colored, cheerful, anime influence, highly detailed",
+        "negative_prompt": "dark, scary, realistic, monochrome, abstract"
+    },
+    {
+        "name": "AX: Chibi",
+        "prompt": "chibi style {prompt} . (pixar|disney:1.2), hilarious funny, dynamic",
+        "negative_prompt": "disney, pixar, bad anatomy, child. kid, person, girl, 1girl, photo-description, brand, right, name, logo, imprint, copyright, watermark, text, white text, signature, downloaded, company-branding"
+    },
+    {
+        "name": "AX: Manga",
+        "prompt": "old, {prompt} .  manga, shigeto koyama, narumi kakinouchi,jean giraud, anime, bright colors, beautiful, 28mm lens, vibrant high contrast, gradation, cinematic, rule of thirds, great composition, intricate, detailed, flat, matte print, sharp,clean lines, Ilya Kuvshinov",
+        "negative_prompt": " silly unearthly being, paranoid android, mischievous, character sheet by Greg Rutkowski, Jason Artster, Moebius, Industrial Scifi, octane render, Greg Tran, WLOP"
+    },
+    {
+        "name": "AX: Posing",
+        "prompt": "{prompt} . solo, looking at viewer, naughty face, parted lips, blush, red light, neon light, cybepunk",
+        "negative_prompt": "drawn by bad-artist, sketch by bad-artist-anime, (bad_prompt:0.8), (artist name, signature, watermark:1.4), (ugly:1.2), (worst quality, poor details:1.4), blurry, child, loli, kids"
+    },
+    {
+        "name": "AX: Digital Art",
+        "prompt": "{prompt} .  digital art style, wide angle, balanced composition, golden ratio, triadic color, symmetry, hyper detailed, octane render",
+        "negative_prompt": "frame"
+    },
+    {
+        "name": "AX: Digital Portrait",
+        "prompt": "{prompt} .  centered and symmetrical, digital painting by Rembrandt and Thomas Kinkade and Greg Rutkowski, 4k wallpaper, realistic, detailed facial features impressive hairstyle, perfect light contrast",
+        "negative_prompt": "evil teletubbies portrait, horror, very scary, black and white, scp foundation, digital art, concept art, trending on artstation  extremely sharp detail, finely detailed"
+    },
+    {
+        "name": "AX: Character Design",
+        "prompt": "charactersheet {prompt} . simple background, white background, masterpiece, best quality, highest quality, ultra detailed, 8k, 4k, intricate, full-body-shot, cowboy-shot, 50mm, highly detailed, detailed face, detailed_eyes,(gradients),(ambient light:1.3),(cinematic composition:1.3),HDR, accent lighting,extremely detailed,original, highres,(perfect_anatomy:1.2)",
+        "negative_prompt": "drawn by bad-artist, sketch by bad-artist-anime, (bad_prompt:0.8), (artist name, signature, watermark:1.4), (ugly:1.2), (worst quality, poor details:1.4), blurry, child, loli, kids"
+    },
+    {
+        "name": "AX: Poster Spy",
+        "prompt": "{prompt} . formal suit, full body, anime style, disney style anime fashion  fate dress is cute  gungsao-tae yoo best quality standard comic art photo bad art layout error, extra digit, drawn face",
+        "negative_prompt": "low quality, child, young, loli, 100degrees from lowres, bad focus, blurry and drown, pale purple hair monochrome pale grey scale pale shade Pinyin black"
+    },
+    {
+        "name": "AX: Cover",
+        "prompt": "{prompt} .  grinning, wearing a suit, posing, portrait surrounded by hibiscus flowers, jojo cover art, jojo anime style, david production, style of vento aureo cover art, style of stone ocean cover art, style of steel ball run cover art, style of jojolion cover art, ilya kuvshinov style, illustrated by hirohiko araki icalicagoru digigo musugizami ookomochiri anime omorami obichizari shaho Ako-ken",
+        "negative_prompt": "overdetailed art, colorful, artistic record jacket design, negative prompt, comic skirt, sketch"
+    },
+    {
+        "name": "AX: Portrait",
+        "prompt": "portrait of {prompt}  italian girl. funny hermit, anime fantasy illustration by tomoyuki yamasaki, kyoto studio, madhouse, ufotable, trending on artstation ilya kuvshinov J- Top rated Pixar key visual of Miyazaki characters",
+        "negative_prompt": "uv unwrapped texture map of human face albedo at-snoot, instagram profile photo"
+    },
+    {
+        "name": "AX: Selfie",
+        "prompt": "portrait of {prompt} . , off shoulder, selfie, long ginger hair,  person, masterpiece, best quality, absurdres, highres, 4k, ray tracing, perfect face, perfect eyes, intricate details, highly detailed",
+        "negative_prompt": "drawn by bad-artist, sketch by bad-artist-anime, (bad_prompt:0.8), (artist name, signature, watermark:1.4), (ugly:1.2), (worst quality, poor details:1.4), bad-hands, badhand, blurry, child, loli, kids"
+    },
+    {
+        "name": "AX: Typo",
+        "prompt": "typographic art {prompt} . stylized, intricate, detailed, artistic, text-based",
+        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, dark, scary, realistic, monochrome, abstract"
+    },
+    {
+        "name": "AX: Concept",
+        "prompt": "concept art, digital artwork, illustrative, painterly, matte painting, highly detailed, {prompt} .  anime influence, highly detailed",
+        "negative_prompt": "(worst quality:2), (low quality:2), (normal quality:2), lowres, watermark"
+    },
+    {
+        "name": "AX: Arch",
+        "prompt": "concept art, digital artwork, illustrative, painterly, matte painting, highly detailed, {prompt} . detailed, spectacular, luxurious, elegance, perfect design, anime influence, highly detailed, harmonious color, horizontal decorative, competition, horizontal decoration, modern, vertical decoration, stacked volumes,",
+        "negative_prompt": "(worst quality:2), (low quality:2), (normal quality:2), lowres, watermark"
+    },
+    {
+        "name": "AX: Vivid Fantasy",
+        "prompt": "{prompt} extreme plus resolution fantasy concept art, intricate details to everything visible, sharp lighting, dramatic light by, strong emphasis on, digital illustration painting, 8k resolution, vivid colors",
+        "negative_prompt": "deformed, glitch, noisy, low contrast, anime, photorealistic"
+    },
+    {
+        "name": "AX: Sci-fi",
+        "prompt": "{prompt} pixar sci - fi movie by weta, marvel, maxim magazine cover,  unreal engine, sunburn, iridescent, bright morning,  mappa, high",
+        "negative_prompt": "richly detailed colored pencil 3D illustration , basic background,  mirrored background, completely rendered reflections, photo-description, brand, right, name, logo, imprint, copyright, watermark, text, white text, signature, downloaded, company-branding"
+    },
+    {
+        "name": "AX: Horror",
+        "prompt": "{prompt} . in style of mansion o madness wallpaper, dramatic, heroic, fear, insane, terrific, insane, illustration, particles, by asher brown durand, by yoshitaka amano, fantasy digital art, colorfull, bokeh effect  blurout, orange background,  absurd beauty illustration, full skin depth",
+        "negative_prompt": "long kose irani ,hyper detailed, (realisticdigital art:1.37),trending on Artstation awesome high definition dynamic angle painting cinematic photoket best best sharp, 1boygirl child face child virtualism photopad par lillic, dynamic painting a long amount lower dynamic angle, child toddler small realistic hyper intricate and hyper original fine detail, ultra dramatic masterpiece highlyill detailed stunning, cinematic beautiful detailed realistic extremely detailed eyes realistic long coat medium large breast and eyes perfect anatomy cinematic shadow perfect focus motion photo dynamic depth image exquisite detail beautiful star pupil amazing detailed star crown in realistic"
+    },
+    {
+        "name": "AX: Arkham",
+        "prompt": " in style of mansion o madness wallpaper, {prompt} . 1 8 century, arkham horror, tentacles, evil fluid,  lovecraft illustration, orange background, orange foreground blown hair, black eyes looking up at wearer blush looking with half filled expression of fear eye on dramatic, heroic, fear, insane, terrific, particles, by asher brown durand, by yoshitaka amano, fantasy digital art, colorfull, bokeh effect blurout, absurd beauty illustration,  full skin depth",
+        "negative_prompt": "long illustration, rim light, atmospheric lighting, perfectly shaded, soft painting, art by krenz cushart and wenjun lin  ute kreibensharakurakushu art print version solo (portrait:1.19) see full creative history full colour beautiful marida bloom eyes marizuba marizao street artist with light body mariu yakura akinyobisa wyomi photopan lanyard boba durembin nokiv nakulugitaka na akinyom shoddyosh shruz. loli"
+    },
+    {
+        "name": "AX/NEG: Long",
+        "prompt": "{prompt}",
+        "negative_prompt": "(ugly face:0.8), cross-eyed, (worst quality:2), (low quality:2), (normal quality:2), lowres, child, loli, kids, normal quality, ((monochrome)), ((grayscale)), skin spots, acnes, skin blemishes, bad anatomy,  facing away, tilted head, {Multiple people}, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worstquality, jpegartifacts, signature, watermark, username, blurry, bad feet, poorly drawn hands, poorly drawn face, mutation, deformed, extra fingers, extra limbs, extra arms, extra legs, malformed limbs, fused fingers, too many fingers, long neck, mutated hands, polar lowres, missing arms, missing legs, extra foot, cleavage, ((repeating hair)), ((cat ears)), ((multiple hands)), ((gloves))"
+    },
+    {
+        "name": "AX/NEG: Ultra",
+        "prompt": "{prompt}",
+        "negative_prompt": "photo-description, brand, right, name, logo, imprint, copyright, watermark, text, white text, signature, downloaded, company-branding, child, loli, kids"
+    },
+    {
+        "name": "CX: Dynamic",
+        "prompt": "{prompt}, character portrait, Foreshortening, Distorted Perspective, Dynamic",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Energetic",
+        "prompt": "character photo portrait, Diagonals, Dynamic Lines, Energetic Composition, simple background, {prompt}",
+        "negative_prompt": "lines, geometry"
+    },
+    {
+        "name": "CX: Emphasis",
+        "prompt": "character photo portrait, Texture Emphasis, Tactile Quality, Surface Detail, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Character",
+        "prompt": "{prompt}, Character Portraiture, Emphasis on Facial Features, Expressive Detail, photography",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Close",
+        "prompt": "{prompt}, Character Study, Close-Up, Detailed Examination, photography",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Distinct",
+        "prompt": "{prompt}, Contrasting Character Elements, Distinct features, visual impact, emphasis on differences, photography",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Movement",
+        "prompt": "{prompt}, Dynamic Character Motion, Dynamic poses, conveying movement and energy, photography",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Harmony",
+        "prompt": "character photo portrait, Color Harmony, Pleasing Colors, Balanced Palette, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Interest",
+        "prompt": "character photo portrait, Contrast, Emphasized Differences, Visual Interest, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Strong",
+        "prompt": "character photo portrait, dutch angle, lush landscape, characters, strong inventive artistic figural composition, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Clear",
+        "prompt": "character photo portrait, Open Composition, Expansive, No Clear Boundaries, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Chiaroscuro",
+        "prompt": "{prompt}, character color photo portrait, Mise-en-sc\u00e8ne, Staged Scene, Thoughtful Arrangement, Chiaroscuro, Strong Light and Shadow, Dramatic Contrast",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Low-Key",
+        "prompt": "character photo portrait, Low-Key Lighting, Dramatic Shadows, Focused Illumination, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Backlit",
+        "prompt": "{prompt}, backlit, miasmatic vapors mist, simple background, key visual, hdr, simple background, by, form,",
+        "negative_prompt": "masterpiece, painting, bad composition, blurry image, low quality, (low-res), bad quality, masterpiece, innatural, twisted, anatomy, stretched, stretching"
+    },
+    {
+        "name": "CX: Composition",
+        "prompt": "{prompt}, inventive artistic figural composition",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: POV",
+        "prompt": "character photo portrait, Point-of-View Shot, Character Perspective, Immersion, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: High-Angle",
+        "prompt": "character photo portrait, High-Angle Shot, Vulnerability, Subordination, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Low-Angle",
+        "prompt": "character photo portrait, Low-Angle Shot, Empowerment, Authority, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Minimal",
+        "prompt": "character photo portrait, Minimalist Composition, Simplified Elements, Subtle Details, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Dark",
+        "prompt": "Dark atmosphere, deep shadows, lack of light, Macro, deep background, {prompt} curve line lean form.",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Close-Up",
+        "prompt": "character photo portrait, Close-Up, Intimacy, Detailed Facial Expressions, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Context",
+        "prompt": "Establishing Shot, Context, Setting Introduction, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Shoulder",
+        "prompt": "{prompt}, Over-the-Shoulder Shot, Perspective, Subjective View",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Panorama",
+        "prompt": "{prompt}, Panorama Stitching, Wide View, Comprehensive Landscape",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Dolly",
+        "prompt": "{prompt}, Dolly Zoom (Vertigo Effect), Perspective Distortion, Emotional Impact",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Macro",
+        "prompt": "Macro Photography, Extreme Close-Up, Detailed Exploration, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Pair",
+        "prompt": "{prompt}, character photo portrait, Two-Shot, Pairing, Relationship Dynamics,",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Interaction",
+        "prompt": "{prompt}, character photo portrait",
+        "negative_prompt": "Shot Reverse Shot"
+    },
+    {
+        "name": "CX: Group Fusion",
+        "prompt": "{prompt}, Character Fusion, Blended Forms, Symbolic Unity, photography",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Card",
+        "prompt": "tarot card, front perspective, black background, flat, frame, square, white outline , {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Abstract",
+        "prompt": "abstract {prompt} painting, bright yellow AND deep blue color palette, curve, circle, ellipse, core, AK, abstract, deconstruction, geometry, geometric composition,paint painting,harmonious colors, black frame,rectangle, tilt, flat painting, framex, horizontal",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Abstract2",
+        "prompt": "abstract {prompt} painting, bright yellow and deep red color palette, curve, circle, ellipse, core, AK, abstract, deconstruction, geometry, geometric composition,paint painting,harmonious colors, black frame,rectangle, tilt, flat painting, framex, horizontal",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Abstract Dark",
+        "prompt": "Dark atmosphere, deep shadows, lack of light, Macro, deep background, abstract {prompt} painting, bright yellow AND deep blue color palette, curve, circle, ellipse, core, AK, abstract, deconstruction, geometry, geometric composition,paint painting,harmonious colors, black frame,rectangle, tilt, flat painting, framex, horizontal, curve line lean form., Contrasting Character Elements, Distinct features, visual impact, emphasis on differences, photography",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Environment",
+        "prompt": "{prompt}, Environmental Character Setting, Integration of characters into a contextual environment, atmospheric scene, photography",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Photoshoot",
+        "prompt": "RAW analog photo, studio photoshoot, {prompt}, flirting with camera, beautiful art, looking at viewer, pure, plain background",
+        "negative_prompt": "camera, celebrity, (milla jovovich, winona ryder, laetitia casta, adriana lima), (art of greg martin, art of rafael grassetti), greg rutkowski"
+    },
+    {
+        "name": "CX: Make Older",
+        "prompt": "{prompt}, elderly mature centenarian, saggy, wrinkles, age spots, grey hair, macro details, birthmarks, skin blemishes, liver spots",
+        "negative_prompt": "smooth, dirty face, pure, low res, unnatural"
+    },
+    {
+        "name": "CX: Make Unperfect",
+        "prompt": "{prompt}, wrinkles, wrinkled, rugged, weary, (age spots:0.5), (skin hair:0.5), macro details, (birthmarks:0.5), (skin blemishes:0.5)",
+        "negative_prompt": "smooth, dirty face, pure, low res, unnatural"
+    },
+    {
+        "name": "CX: Soft Unperfect",
+        "prompt": "{prompt}, wrinkles, [age spots:0.5], [skin hair:0.5], macro details, goosebumps, [birthmarks:0.5], [skin blemishes:0.5]",
+        "negative_prompt": "smooth, dirty face, pure, low res, unnatural"
+    },
+    {
+        "name": "CX: Beauty",
+        "prompt": "RAW analog photo, studio photoshoot, {prompt}, the most beautiful woman in the world, flirting with camera, beautiful art, pure, white theme, plain white background, blue eyes, dark red lips, (freckles:0.5), looking at viewer, smiling, blushed red cheeks",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Beautiful",
+        "prompt": "beauty photo portrait of a {prompt}, hdr, best quality, details, absurdres, highres, simple, professional, simple, perfect, natural",
+        "negative_prompt": "(((unprofessional-bodies))), (((unprofessional-pose)))"
+    },
+    {
+        "name": "CX: Detailed",
+        "prompt": "{prompt}, absurdres, detailed, macro details, 8k, hyper realistic, texture surface details",
+        "negative_prompt": "low res, unnatural"
+    },
+    {
+        "name": "CX: Isometric",
+        "prompt": "overhead top-down isometric view of a {prompt}, absurdres, macro details, 8k, texture surface details",
+        "negative_prompt": "low res, unnatural"
+    },
+    {
+        "name": "CX: Landscape HDR",
+        "prompt": "{prompt}, (wimmel bild:1.17), powerful imagery, landscape hdr",
+        "negative_prompt": "low res, flamboyance, kitch, low res, unnatural"
+    },
+    {
+        "name": "CX: Landscape Photo",
+        "prompt": "{prompt}, wimmel bild, powerful imagery, landscape photography, hyperrealism, daz 3d genesis iray, trending,",
+        "negative_prompt": "low res, flamboyance, kitch, low res, unnatural"
+    },
+    {
+        "name": "CX: Landscape Drone",
+        "prompt": "wimmel bild by, in a huge, looking down from above, (drone perspective:1.42), {prompt}, digital art, surrealism, dramatic lighting, trending",
+        "negative_prompt": "low res, flamboyance, kitch, low res, unnatural"
+    },
+    {
+        "name": "CX: Fisheye",
+        "prompt": "Fisheye rectilinear lenses, pov . 20mm photograph of {prompt}, film, bokeh, professional, photorealistic. 4k, highly detailed dim volumetric lighting, 8k octane beautifully detailed render, post-processing, hyper-detailed, intricate, epic composition, highly detailed attributes, atmosphere, cinematic natural lighting, masterpiece, trending, stunning, flawless completion, lifelike texture, perfection",
+        "negative_prompt": "optical artifacts, geometric patterns, camera, lens, drawing, painting, crayon, sketch, graphite, impressionist, noisy, blurry, soft, deformed, ugly"
+    },
+    {
+        "name": "CX: Fisheye2",
+        "prompt": "{prompt},  cinematic fish-eye film still from below",
+        "negative_prompt": "centered, center composition "
+    },
+    {
+        "name": "CX: Opulence",
+        "prompt": "a scene of {prompt}, girl laying on sofa, full body, cinematic smooth stone, deep aesthetic, concept art, post process, carved marble texture silk cloth, commoner skin, highly ornate intricate details, in the style of wlop, photography",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Opulence2",
+        "prompt": "a scene of {prompt}, laying on sofa, full body, cinematic smooth stone, deep aesthetic, concept art, post process, carved marble texture silk cloth, commoner skin, dominating pose, highly ornate intricate details, wlop, photography",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Opulence3",
+        "prompt": "a scene of {prompt}, laying on armchair, full body, cinematic smooth stone, deep aesthetic, concept art, post process, carved marble texture silk cloth, commoner skin, dominating pose, highly ornate intricate details, wlop, photography",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Gritty",
+        "prompt": "{prompt}, grit, (rust:0.65), cracks, cracked surface, subtle messy, dust, weary, edges rusty dusty, surface scratches, peeled sun bleeched paint, smudges, crumbles, rugged, used",
+        "negative_prompt": "new, unused"
+    },
+    {
+        "name": "Style: Cinematix",
+        "prompt": "cinematic realism film scene still of a {prompt} . 35mm f1.8 Macro, chiaroscuro, shallow depth of field, vignette, Mise-en-scene, detailed, cinemascope, moody, epic",
+        "negative_prompt": "low res, unnatural, 3D, anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch"
+    },
+    {
+        "name": "Style: Photomatix",
+        "prompt": "photo focus on {prompt}, film, professional, 4k, highly detailed",
+        "negative_prompt": "unwanted elements, 2d, 3d, anime, drawing, painting"
+    },
+    {
+        "name": "Cinematix Portrait",
+        "prompt": "cinematic realism film-scene still of a photo focus-on {prompt} . film, professional, highly detailed, absurdres, , macro details, uhd-16k, 8k, 4k, hyper realistic, texture surface details . 35mm f1.8 Macro, chiaroscuro, shallow depth of field, vignette, Mise-en-scene, sharp-detailed, cinemascope, moody, epic",
+        "negative_prompt": "unwanted elements, 2d, 3d, anime, drawing, painting, low res, unnatural, low res, unnatural, 3D, anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch"
+    },
+    {
+        "name": "Cinematix Portrait2",
+        "prompt": "cinematic realism film scene still of a photo focus on {prompt} . portrait, film, professional, highly detailed, absurdres, detailed, macro details, uhd-16k, 8k, 4k, hyper realistic, texture surface details . 35mm f1.8 Macro, chiaroscuro, shallow depth of field, vignette, Mise-en-scene, detailed, cinemascope, moody, epic",
+        "negative_prompt": "unwanted elements, 2d, 3d, anime, drawing, painting, low res, unnatural, low res, unnatural, 3D, anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch"
+    },
+    {
+        "name": "Cinematix Natural",
+        "prompt": "cinematic realism film scene still of a photo focus on {prompt} . dim light. night, natural commoner portrait, film, professional, highly detailed, absurdres, detailed, macro details, uhd-16k, 8k, 4k, hyper realistic, texture surface details . 35mm f1.8 Macro, chiaroscuro, shallow depth of field, vignette, Mise-en-scene, detailed, cinemascope, moody, epic",
+        "negative_prompt": "unwanted elements, 2d, 3d, anime, drawing, painting, low res, unnatural, low res, unnatural, 3D, anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch"
+    },
+    {
+        "name": "CX Style: Neon",
+        "prompt": "neonpunk style {prompt} . cyberpunk, vaporwave, neon, vibes, vibrant, stunning, crisp, detailed, sleek, ultramodern, green | blue | orange | magenta highlights, dark volumetric shadows, high contrast, professional",
+        "negative_prompt": "painting, drawing, illustration"
+    },
+    {
+        "name": "CX Style: Neon2",
+        "prompt": "neonpunk style {prompt} . feature.cyberpunk, vaporwave, neon, vibes, vibrant, stunning, crisp, detailed, sleek, ultramodern, {green|blue|orange|magenta} highlights, dark volumetric shadows, high contrast, professional",
+        "negative_prompt": "painting, drawing, illustration"
+    },
+    {
+        "name": "CX: Cinema",
+        "prompt": "cinematic realism film scene still of a {prompt} . assiduous, style of, expression, Mise-en-scene, Chiaroscuro, Strong Light and Shadow, Dramatic Contrast, a hilarious scene, unforeseen consequences, photography . 35mm f1.8 Macro, chiaroscuro, shallow depth of field, vignette, Mise-en-scene, detailed, cinemascope, moody, epic scene, best rendered work, 35mm, pristine movie",
+        "negative_prompt": "low res, unnatural, anime, text, glitch, sphere, drone"
+    },
+    {
+        "name": "CX: Tech",
+        "prompt": "assiduous, style of, scene, art composition of {prompt}, (Fujifilm X-T4), bronze silver age, photography ideal arms, artistic dynamic pose:1.15) realism, hyperrealistic, (shallow depth of field, frontal bokeh, light particles flying in air, volumetric light, light caustics, refraction, reflection, v-ray, ray tracing:1.15)",
+        "negative_prompt": "unreal picture, plastic look, plastic skin, digital art image, ironman, hollywood"
+    },
+    {
+        "name": "CX: Oldmasters",
+        "prompt": "{prompt}, a scene, of assiduous, style of, art composition, Klimt, Rembrandt, Costic, fantasy style, dreamlike art, photography, post processing comfortable, luminous",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Chiaroscuro LoRA",
+        "prompt": " chiaroscuro, dark dim scene of {prompt}, color photo, atmospheric, light and shadow, crepuscular, slight athmospheric mist",
+        "negative_prompt": "light streaks"
+    },
+    {
+        "name": "Typo: Scary",
+        "prompt": "[{prompt}] logo in dipping scary font",
+        "negative_prompt": ""
+    },
+    {
+        "name": "Typo: Grafitti",
+        "prompt": "[{prompt}] logo in grafitti style font",
+        "negative_prompt": ""
+    },
+    {
+        "name": "Typo: Dry",
+        "prompt": "[{prompt}] logo in painted dry brush style font",
+        "negative_prompt": ""
+    },
+    {
+        "name": "Typo: Strokes",
+        "prompt": "[{prompt}] logo in dynamic brushstroke style font",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: Funny",
+        "prompt": "{prompt}, a hilarious scene, a humorous attempt with unforeseen consequences, Comedy Unleashed, photography",
+        "negative_prompt": " "
+    },
+    {
+        "name": "CX: Macro Extreme",
+        "prompt": "((extremally close shoot)) (macro shoot), {prompt}  BREAK, realistic, ((photorealistic)), extremely detailed, glass reflection, dark shadows, hard light hard shadows, shallow depth of field,highly detailed, high budget Hollywood film, ((darkfull )) , detailed, focus on material",
+        "negative_prompt": " "
+    },
+    {
+        "name": "EX: Anatomy",
+        "prompt": "{prompt}",
+        "negative_prompt": "morbide-body-parts\"\""
+    },
+    {
+        "name": "EX: Physique",
+        "prompt": "{prompt}, perfect-detailed-physique",
+        "negative_prompt": "physique-in-detail:2"
+    },
+    {
+        "name": "EX: Relaxed",
+        "prompt": "{prompt} (((relaxed)))",
+        "negative_prompt": "morbide-body-parts\"\""
+    },
+    {
+        "name": "EX: Realistic",
+        "prompt": "physically-realistic\" {prompt}\"",
+        "negative_prompt": "3D-rendering\"\""
+    },
+    {
+        "name": "EX: UFO",
+        "prompt": "physical-ufo, flying-in-the-sky, designer-quality lit, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "EX: UFO2",
+        "prompt": "physical-ufo, flying-in-the-sky, designer-quality, {prompt}",
+        "negative_prompt": "3D-rendering"
+    },
+    {
+        "name": "EX: HandPose",
+        "prompt": "{prompt}, sign-language-pov communicating-in-sign-language",
+        "negative_prompt": "morbide-body-parts"
+    },
+    {
+        "name": "EX: Lively Colors",
+        "prompt": "{prompt}",
+        "negative_prompt": "grey-in-grey"
+    },
+    {
+        "name": "EX: Fingers",
+        "prompt": "{prompt}",
+        "negative_prompt": "bulging-fingers"
+    },
+    {
+        "name": "EX: Ask",
+        "prompt": "can-i-get {prompt} ?",
+        "negative_prompt": "can-i-get-no {prompt} ?"
+    },
+    {
+        "name": "EX: Ask2",
+        "prompt": "({prompt}) ?!",
+        "negative_prompt": "({prompt}) ?!"
+    },
+    {
+        "name": "EX: Ask3",
+        "prompt": "((({prompt}))) !",
+        "negative_prompt": "((({prompt}))) !"
+    },
+    {
+        "name": "EX: Overview",
+        "prompt": "{prompt} , at-a-distance",
+        "negative_prompt": "too-close"
+    },
+    {
+        "name": "EX: Fix",
+        "prompt": "{prompt} , picture-perfect pixel-perfect",
+        "negative_prompt": ""
+    },
+    {
+        "name": "EX: AllFix",
+        "prompt": "can-i-get {prompt} ? , picture-perfect pixel-perfect (((relaxed))), physically-realistic, sign-language-pov communicating-in-sign-language",
+        "negative_prompt": "morbide-body-parts, bulging-fingers, 3D-rendering, can-i-get-no {prompt} ?"
+    },
+    {
+        "name": "EX: Glamour",
+        "prompt": "can-i-get bombshell-body casual {prompt} . chiaroscuro. Professional, Strong Light and Shadow, Dramatic Contrast, Ultra-HD-details, tonal-balance, sign-language-pov communicating-in-sign-language (((relaxed))), perfect-detailed-physique, picture-perfect pixel-perfect, at-a-distance, physically-realistic ?",
+        "negative_prompt": "can-i-get-no morbide-body-parts, bulging-fingers, 3D-rendering, grey-in-grey, blood, unprofessional, tonal-unbalance, physique-in-detail:2, too-close ?"
+    },
+    {
+        "name": "EX: Glamour Simple",
+        "prompt": "can-i-get bombshell-body casual {prompt} . chiaroscuro. Professional, Strong Light and Shadow, Dramatic Contrast, tonal-balance, sign-language-pov communicating-in-sign-language (((relaxed))), perfect-detailed-physique, picture-perfect pixel-perfect, at-a-distance, physically-realistic ?",
+        "negative_prompt": "can-i-get-no morbide-body-parts, bulging-fingers, 3D-rendering, grey-in-grey, blood, unprofessional, tonal-unbalance, physique-in-detail:2, too-close ?"
+    },
+    {
+        "name": "EX: Random Person",
+        "prompt": "{prompt} . mix-of-every-race mix-of-natural-hair-styles . who.is.it ?",
+        "negative_prompt": "celebrity, actor"
+    },
+    {
+        "name": "CX: LUT-OGR",
+        "prompt": "realistic, cinematic film still of {prompt},  flyweight, hdr, night , vignette, highly detailed, key visual, beefy, simple background, by, form, cold orange green red theme,",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: LUT-ORB",
+        "prompt": "{prompt},  key visual, beefy, simple background, by, form, cold orange red blue theme,",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: LUT-BROB",
+        "prompt": "{prompt},  key visual, beefy, simple background, by, form, cold blue red orange blue theme,",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: LUT-OBW",
+        "prompt": "{prompt}, highly.detailed, key.visual, beefy, simple.background, by, form, cold orange black white theme,",
+        "negative_prompt": ""
+    },
+    {
+        "name": "CX: LUT-red-blue",
+        "prompt": "{prompt}, highly.detailed, key.visual, by, form, warm red blue theme,",
+        "negative_prompt": ""
+    },
+    {
+        "name": "EX: LoRA Detailed",
+        "prompt": "{prompt} . <lora:detailed_notrigger:1.35>",
+        "negative_prompt": ""
+    },
+    {
+        "name": "EX: LoRA Detailed Lower",
+        "prompt": "{prompt} . <lora:detailed_notrigger:0.7>",
+        "negative_prompt": ""
+    },
+    {
+        "name": "EX: LoRA Mutant",
+        "prompt": "{prompt} . mix-of-random-species-on-1body + mix-of-random-dinosaur-fish-alien-hybrid-species-on-1body",
+        "negative_prompt": ""
+    },
+    {
+        "name": "EX: LoRA Mutant Shrimp",
+        "prompt": "{prompt} . mix-of-random-species-on-1body + mix-of-random-shrimp-octopuss-jellyfisj-alien-hybrid-species-on-1body",
+        "negative_prompt": ""
+    },
+    {
+        "name": "EX: LoRA Mutant Insect",
+        "prompt": "{prompt} . + mix-of-random-mantis-fly-spider-alien -insect-hybrid-species-on-1body",
+        "negative_prompt": ""
+    },
+    {
+        "name": "EX: SD15",
+        "prompt": "{prompt} . (femme-fatale:1.4) (masterpiece:1.4)  (maximalist:1.4) (best-quality:1.4) (HDR-10:1.4) (sharp:1.4) (best-resoulution:1.4) (picturesque:1.4) (idealistic:1.4) (masterfuly-portrayed:1.4) (ingeniously-wrought:1.4), (clevery-shown:1.4) (properly-done:1.5) (professionally-articulated:1.5) (optimal-depiction:1.5) (vrays:1.4) (optimal-lighting:1.4) (16k-uhd:1.4) (depth-of-field:1.4)",
+        "negative_prompt": "(((detailing-defects))) (((inconsistencies))) (((detailing-contortions))) (((3D-rendering))) (((inhuman-failures))) (minimalist:1.5) (low-quality:2) (normal-quality:2) (worst-quality:2) (ineptly-portrayed:1.5) (unimaginatively-wrought:1.5) (stupidly-shown:1.5) (improperly-done:1.5) (incompetently-articulated:1.5) (worst-depiction:1.5) (boring-environment)"
+    },
+    {
+        "name": "EX: SD15b",
+        "prompt": "'(({prompt}):1.668)' (femme-fatale masterpiece maximalist best-quality HDR-10 sharp best-resoulution picturesque idealistic masterfuly-portrayed ingeniously-wrought, clevery-shown properly-done professionally-articulated optimal-depiction vrays optimal-lighting 16k-uhd depth-of-field",
+        "negative_prompt": "(((detailing-defects))) (((inconsistencies))) (((detailing-contortions))) (((3D-rendering))) (((inhuman-failures))) (minimalist:1.5) (low-quality:2) (normal-quality:2) (worst-quality:2) (ineptly-portrayed:1.5) (unimaginatively-wrought:1.5) (stupidly-shown:1.5) (improperly-done:1.5) (incompetently-articulated:1.5) (worst-depiction:1.5) (boring-environment)"
+    },
+    {
+        "name": "EX: SD15c",
+        "prompt": "'(({prompt}):1.668)' (masterpiece maximalist best-quality HDR-10 sharp best-resoulution picturesque idealistic masterfuly-portrayed ingeniously-wrought, clevery-shown properly-done professionally-articulated optimal-depiction vrays optimal-lighting 16k-uhd depth-of-field",
+        "negative_prompt": "(((detailing-defects))) (((inconsistencies))) (((detailing-contortions))) (((3D-rendering))) (((inhuman-failures))) (minimalist:1.5) (low-quality:2) (normal-quality:2) (worst-quality:2) (ineptly-portrayed:1.5) (unimaginatively-wrought:1.5) (stupidly-shown:1.5) (improperly-done:1.5) (incompetently-articulated:1.5) (worst-depiction:1.5) (boring-environment)"
+    },
+    {
+        "name": "EX: Pony",
+        "prompt": "{prompt} . score_9, score_8_up, score_7_up, score_6_up, score_5_up, score_4_up",
+        "negative_prompt": "deformed"
+    },
+    {
+        "name": "EX: Pony6 Safe",
+        "prompt": "score_9, score_8_up, score_7_up, score_6_up, score_5_up, score_4_up, {prompt} , rating_safe",
+        "negative_prompt": "deformed"
+    },
+    {
+        "name": "EX: Pony6 Unsafe",
+        "prompt": "score_9, score_8_up, score_7_up, score_6_up, score_5_up, score_4_up, {prompt} , rating_questionable, rating_explicit",
+        "negative_prompt": ""
+    },
+    {
+        "name": "--------< SDXL Lightning Styles >-------",
+        "prompt": "",
+        "negative_prompt": ""
+    },
+    {
+        "name": "Lightning-2",
+        "prompt": "<lora:sdxl_lightning_2step_lora:1>, {prompt}",
+        "negative_prompt": ""
+    },
+    {
+        "name": "Lightning-4",
+        "prompt": "{prompt} . <lora:sdxl_lightning_4step_lora:1>",
+        "negative_prompt": ""
+    },
+    {
+        "name": "Lightning-8",
+        "prompt": "{prompt} . <lora:sdxl_lightning_8step_lora:1>",
+        "negative_prompt": ""
+    },
+    {
+        "name": "F1-Natural",
+        "prompt": "Detailed description for the naturalistic and award-winning photo: Subject: The main focus of this captivating photograph is a {prompt} . Lighting: The photo is illuminated by natural light, bathes the scene in warm, golden tones, providing a serene candid moment captured by the lens. The soft, diffused sunlight accentuates the textures materials and surfaces, creating a flattering glow on reflective parts.  Composition: The photographer has expertly framed the subject within the frame, using the negative space to emphasize the subject's presence, adding depth to the setting without overpowering the subject. The main subject  is positioned slightly off-center, allowing for a more dynamic composition that draws the viewer's eye naturally towards the storytelling of the composition. Setting: The scene unfolds in a tranquil, poignant manner. The crisp documentary analog shot, achieved through the shallow depth of field created by the 55mm f/1.8 lens, effectively isolates the subject and contributes to an intimate atmosphere.  Depth of Field: With the aperture set at f/1.8, a significant portion of the scene is very sharp, emphasizing the subject by a compositions, where all artistic elements interacts with each other. The woman's face, hair, and upper body are in crisp focus, while the background \u2013 including distant objects \u2013 recedes into soft, creamy blur, thereby drawing attention to the candid expression.Leica-like Aesthetic: Although shot on a DSLR camera, this photograph shares characteristics reminiscent of Leica's distinctive aesthetic. The vibrant colors and sharp details bring the scene to life, creating an enduring visual memory for the viewer. The classic feel of the image is further enhanced by the natural lighting and the subject's unposed demeanor.  Candid Photography: This spontaneous moment captures the essence of candid photography, where a fleeting expression or action is frozen in time. The photographer has successfully preserved the substance and joy of humanity, rendering an authentic portrayal that transcends the ordinary.",
+        "negative_prompt": ""
+    }
+]
