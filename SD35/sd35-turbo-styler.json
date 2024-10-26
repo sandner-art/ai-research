@@ -1,0 +1,976 @@
+{
+  "last_node_id": 66,
+  "last_link_id": 129,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": 160,
+        "1": 830
+      },
+      "size": {
+        "0": 384.75592041015625,
+        "1": 98
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            122
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            53
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd3.5_large_turbo.safetensors"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 43,
+      "type": "TripleCLIPLoader",
+      "pos": {
+        "0": 123.00119018554688,
+        "1": 449.84832763671875
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            125
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TripleCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "clip_g.safetensors",
+        "t5xxl_fp8_e4m3fn_scaled.safetensors"
+      ]
+    },
+    {
+      "id": 61,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 1090,
+        "1": 130
+      },
+      "size": {
+        "0": 359.235595703125,
+        "1": 119.92445373535156
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 124,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "luxury product style  a group of young women cooking meal,  realistic hands, natural poses  . elegant, sophisticated, high-end, luxurious, professional, highly detailed,  a friendly scene cooking dinner, "
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": {
+        "0": 1350,
+        "1": 550
+      },
+      "size": {
+        "0": 315,
+        "1": 474
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 123,
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 113
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 129
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 100
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        866392422823326,
+        "fixed",
+        4,
+        0.9400000000000001,
+        "euler",
+        "sgm_uniform",
+        1
+      ]
+    },
+    {
+      "id": 16,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1090,
+        "1": 290
+      },
+      "size": {
+        "0": 210,
+        "1": 60.14213562011719
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 111
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 119,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            113
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Positive Prompt",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        " a group of young women cooking meal, "
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 62,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 1090,
+        "1": 340
+      },
+      "size": {
+        "0": 349.3307189941406,
+        "1": 94.49612426757812
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 126,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "bad art, cheap, noisy, blurry, unattractive, amateurish, sloppy, unprofessional"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 60,
+      "type": "ModelSamplingSD3",
+      "pos": {
+        "0": 660,
+        "1": 700
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 122
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            123
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingSD3"
+      },
+      "widgets_values": [
+        1.77
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 54,
+      "type": "OverrideCLIPDevice",
+      "pos": {
+        "0": 670,
+        "1": 820
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 125
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            111,
+            112
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OverrideCLIPDevice"
+      },
+      "widgets_values": [
+        "cpu"
+      ]
+    },
+    {
+      "id": 53,
+      "type": "EmptySD3LatentImage",
+      "pos": {
+        "0": 670,
+        "1": 930
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            100
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptySD3LatentImage"
+      },
+      "widgets_values": [
+        960,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 63,
+      "type": "Reroute",
+      "pos": {
+        "0": 1860,
+        "1": 310
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 127
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 1540,
+        "1": 410
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 53,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            51,
+            127
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 51,
+      "type": "Note",
+      "pos": {
+        "0": 160,
+        "1": 980
+      },
+      "size": {
+        "0": 463.0687561035156,
+        "1": 199.81564331054688
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "sd3.5 TURBO (with experimental style node)\n\nhttps://huggingface.co/stabilityai/stable-diffusion-3.5-large-turbo/tree/main\n*****************************************************************************\n\nSAI sd3.5_large_turbo.safetensors is the file that does not contain any CLIP/text encoder weights so you need to load them separately.\n\nThis file goes in the ComfyUI/models/checkpoints directory.\n\nMake sure to put these files in the ComfyUI/models/clip directory:\nclip_g.safetensors\nclip_l.safetensors\nt5xxl_fp8.safetensors (or e4mfn)\n\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 40,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1080,
+        "1": 490
+      },
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 112
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 120,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            128
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "Negative Prompt",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "3D, 3D render, photo, cinematic, photography, photographer, photograph, award-winning photo, bad hands, unnatural hand pose"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 57,
+      "type": "Sandner.ArtStylerAdvanced",
+      "pos": {
+        "0": 620,
+        "1": 290
+      },
+      "size": {
+        "0": 400,
+        "1": 348
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text_positive_g",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "text_positive_l",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        },
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "links": [
+            119,
+            124
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "text_negative_g",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "text_negative_l",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "links": [
+            120,
+            126
+          ],
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Sandner.ArtStylerAdvanced"
+      },
+      "widgets_values": [
+        " a friendly scene cooking dinner, ",
+        " a group of young women cooking meal,  realistic hands, natural poses ",
+        "",
+        "ProStyle: Luxury",
+        "Both",
+        true
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 66,
+      "type": "Note",
+      "pos": {
+        "0": 1040,
+        "1": 850
+      },
+      "size": {
+        "0": 240.0962371826172,
+        "1": 90.96971893310547
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "you may experiment with ZeroOut to remove negative, CTRL+B to disable/enable"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 65,
+      "type": "ConditioningZeroOut",
+      "pos": {
+        "0": 1050,
+        "1": 760
+      },
+      "size": {
+        "0": 226.2744903564453,
+        "1": 35.02744674682617
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 128
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            129
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1800,
+        "1": 440
+      },
+      "size": {
+        "0": 952.5112915039062,
+        "1": 1007.9328002929688
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 51,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 41,
+      "type": "CLIPLoader",
+      "pos": {
+        "0": 123.00119018554688,
+        "1": 179.84844970703125
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "sd3"
+      ]
+    },
+    {
+      "id": 42,
+      "type": "DualCLIPLoader",
+      "pos": {
+        "0": 123.00119018554688,
+        "1": 309.848388671875
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "clip_g.safetensors",
+        "sd3"
+      ]
+    },
+    {
+      "id": 64,
+      "type": "Note",
+      "pos": {
+        "0": 523,
+        "1": 149
+      },
+      "size": [
+        319.34893573386967,
+        80.77618023972096
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "TEST STYLE NODE\n(you can replace this with a styler/advanced node) \ntext_positive_g goes last it the style prompt"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    }
+  ],
+  "links": [
+    [
+      7,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      51,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      53,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      100,
+      53,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      111,
+      54,
+      0,
+      16,
+      0,
+      "CLIP"
+    ],
+    [
+      112,
+      54,
+      0,
+      40,
+      0,
+      "CLIP"
+    ],
+    [
+      113,
+      16,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      119,
+      57,
+      2,
+      16,
+      1,
+      "STRING"
+    ],
+    [
+      120,
+      57,
+      5,
+      40,
+      1,
+      "STRING"
+    ],
+    [
+      122,
+      4,
+      0,
+      60,
+      0,
+      "MODEL"
+    ],
+    [
+      123,
+      60,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      124,
+      57,
+      2,
+      61,
+      0,
+      "STRING"
+    ],
+    [
+      125,
+      43,
+      0,
+      54,
+      0,
+      "CLIP"
+    ],
+    [
+      126,
+      57,
+      5,
+      62,
+      0,
+      "STRING"
+    ],
+    [
+      127,
+      8,
+      0,
+      63,
+      0,
+      "*"
+    ],
+    [
+      128,
+      40,
+      0,
+      65,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      129,
+      65,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "SD 3.5 Different T Encoder Configurations",
+      "bounding": [
+        39,
+        64,
+        462,
+        545
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6830134553650711,
+      "offset": [
+        -155.44029614646774,
+        -86.08812694077082
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
