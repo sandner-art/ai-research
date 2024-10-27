@@ -1,0 +1,50 @@
+[
+    {
+        "label": "SD35",
+        "value": "960x960"
+    },
+    {
+        "label": "SD35 Max",
+        "value": "1152x1152"
+    },
+    {
+        "label": "SD35 Portrait",
+        "value": "960x1024"
+    },
+    {
+        "label": "SD35 Landscape",
+        "value": "1152x800"
+    },
+    {
+        "label": "SD35 4:3 Max",
+        "value": "1152x960"
+    },
+    {
+        "label": "SD35 2:1 Max",
+        "value": "1152x576"
+    },
+    {
+        "label": "SD35 16:9 Max",
+        "value": "1152x648"
+    },
+    {
+        "label": "SD35 16:9",
+        "value": "1024x576"
+    },
+    {
+        "label": "SD35 Min",
+        "value": "800x800"
+    },
+    {
+        "label": "Flux Small",
+        "value": "832x832"
+    },
+    {
+        "label": "Full",
+        "value": "1024x1024"
+    },
+    {
+        "label": "SVD",
+        "value": "1024x576"
+    }
+]
