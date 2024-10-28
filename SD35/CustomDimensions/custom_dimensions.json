@@ -18,6 +18,12 @@
     {
         "label": "SD35 4:3 Max",
         "value": "1152x960"
+    },{
+        "label": "SD35 app. 4:3",
+        "value": "1152x856"
+    },{
+        "label": "SD35 app. 5:4",
+        "value": "960x832"
     },
     {
         "label": "SD35 2:1 Max",
@@ -40,11 +46,19 @@
         "value": "832x832"
     },
     {
+        "label": "Flux app. 4:3",
+        "value": "1152x896"
+    },
+    {
         "label": "Full",
         "value": "1024x1024"
     },
     {
         "label": "SVD",
         "value": "1024x576"
+    },
+    {
+        "label": "SDXL app. 4:3",
+        "value": "1152x896"
     }
 ]
