@@ -1,0 +1,1473 @@
+{
+  "last_node_id": 322,
+  "last_link_id": 661,
+  "nodes": [
+    {
+      "id": 302,
+      "type": "KSampler",
+      "pos": {
+        "0": 875.6298828125,
+        "1": 736.4293823242188
+      },
+      "size": {
+        "0": 378,
+        "1": 504
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 661
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 610
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 621
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 611
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 617,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            612
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1150,
+        "randomize",
+        20,
+        6,
+        "dpmpp_2m",
+        "sgm_uniform",
+        1
+      ]
+    },
+    {
+      "id": 303,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 1303.629638671875,
+        "1": 737.4293823242188
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 612
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 642
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            628,
+            633
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 310,
+      "type": "SaveImage",
+      "pos": {
+        "0": 2106.6298828125,
+        "1": 754.4292602539062
+      },
+      "size": {
+        "0": 1129.50439453125,
+        "1": 1015.695068359375
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 634
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "TripleCLIPLoader",
+      "pos": {
+        "0": -489,
+        "1": 467
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            635
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TripleCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_g.safetensors",
+        "clip_l.safetensors",
+        "t5xxl_fp16.safetensors"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": -153,
+        "1": 60
+      },
+      "size": {
+        "0": 311.9781188964844,
+        "1": 99.1984634399414
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            658
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            652
+          ],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd3.5_medium.safetensors"
+      ]
+    },
+    {
+      "id": 322,
+      "type": "Bookmark (rgthree)",
+      "pos": {
+        "0": -402,
+        "1": -48
+      },
+      "size": {
+        "0": 210,
+        "1": 62
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "🔖",
+      "properties": {},
+      "widgets_values": [
+        "S",
+        1
+      ]
+    },
+    {
+      "id": 305,
+      "type": "PrimitiveNode",
+      "pos": {
+        "0": 182,
+        "1": 481
+      },
+      "size": {
+        "0": 285.3897399902344,
+        "1": 86.61906433105469
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            616,
+            617
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "title": "seed",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        1150,
+        "fixed"
+      ]
+    },
+    {
+      "id": 71,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": -104,
+        "1": 881
+      },
+      "size": {
+        "0": 359.9222412109375,
+        "1": 119.66664123535156
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 637
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            597,
+            627
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "deformed, ugly woman,"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 67,
+      "type": "ConditioningZeroOut",
+      "pos": {
+        "0": -107,
+        "1": 1069
+      },
+      "size": {
+        "0": 211.60000610351562,
+        "1": 27.033300399780273
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 597
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            90
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 70,
+      "type": "ConditioningSetTimestepRange",
+      "pos": {
+        "0": 129,
+        "1": 1077
+      },
+      "size": {
+        "0": 317.4000244140625,
+        "1": 82
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 627,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            92
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetTimestepRange"
+      },
+      "widgets_values": [
+        0,
+        0.1
+      ]
+    },
+    {
+      "id": 69,
+      "type": "ConditioningCombine",
+      "pos": {
+        "0": 226,
+        "1": 1217
+      },
+      "size": {
+        "0": 228.39999389648438,
+        "1": 46
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 91
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 92
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            621,
+            625
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningCombine"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 68,
+      "type": "ConditioningSetTimestepRange",
+      "pos": {
+        "0": -115,
+        "1": 1209
+      },
+      "size": {
+        "0": 317.4000244140625,
+        "1": 82
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 90
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            91
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetTimestepRange"
+      },
+      "widgets_values": [
+        0.1,
+        1
+      ]
+    },
+    {
+      "id": 294,
+      "type": "KSampler",
+      "pos": {
+        "0": 882,
+        "1": 126
+      },
+      "size": {
+        "0": 378,
+        "1": 504
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 660
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 626
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 625
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 598
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 616,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            572
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1150,
+        "randomize",
+        20,
+        6,
+        "dpmpp_2m",
+        "sgm_uniform",
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 1294,
+        "1": 129
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 572
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 641
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            629,
+            632
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 307,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1548,
+        "1": 81
+      },
+      "size": {
+        "0": 498.0307922363281,
+        "1": 513.560302734375
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 629
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 321,
+      "type": "OverrideVAEDevice",
+      "pos": {
+        "0": 167,
+        "1": 411
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 652
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            653,
+            656
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OverrideVAEDevice"
+      },
+      "widgets_values": [
+        "cpu"
+      ]
+    },
+    {
+      "id": 312,
+      "type": "Note",
+      "pos": {
+        "0": 265,
+        "1": 296
+      },
+      "size": {
+        "0": 218.60189819335938,
+        "1": 60.22344970703125
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "SkipLayerGuidanceSD3 fixes some compostion and anatomy errors"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 311,
+      "type": "OverrideCLIPDevice",
+      "pos": {
+        "0": -482,
+        "1": 626
+      },
+      "size": {
+        "0": 339.5555419921875,
+        "1": 59.777862548828125
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 635
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            636,
+            637,
+            657
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OverrideCLIPDevice"
+      },
+      "widgets_values": [
+        "cpu"
+      ]
+    },
+    {
+      "id": 105,
+      "type": "Note",
+      "pos": {
+        "0": -492,
+        "1": 62
+      },
+      "size": {
+        "0": 305.9870300292969,
+        "1": 169.7652587890625
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "SD3.5 MEDIUM Test\n\nBypassers Tips\n- setting VAE to CPU is not yet working\nwith SD3\n\nShortcuts\nC - comparison\nS - settings"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 314,
+      "type": "Fast Groups Muter (rgthree)",
+      "pos": {
+        "0": -488,
+        "1": 281
+      },
+      "size": {
+        "0": 306.2711181640625,
+        "1": 130
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 301,
+      "type": "SkipLayerGuidanceSD3",
+      "pos": {
+        "0": 260,
+        "1": 127
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 659
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            649,
+            660
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SkipLayerGuidanceSD3"
+      },
+      "widgets_values": [
+        "7,8,9",
+        3,
+        0.01,
+        0.15
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 319,
+      "type": "Fast Bypasser (rgthree)",
+      "pos": {
+        "0": -155,
+        "1": 214
+      },
+      "size": {
+        "0": 295.6000061035156,
+        "1": 210
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "SkipLayerGuidanceSD3",
+          "type": "*",
+          "link": 649,
+          "dir": 3
+        },
+        {
+          "name": "ModelSamplingSD3",
+          "type": "*",
+          "link": 650,
+          "dir": 3
+        },
+        {
+          "name": "Force/Set CLIP Device",
+          "type": "*",
+          "link": 657,
+          "dir": 3
+        },
+        {
+          "name": "Force/Set VAE Device",
+          "type": "*",
+          "link": 656,
+          "dir": 3
+        },
+        {
+          "name": "",
+          "type": "*",
+          "link": null,
+          "dir": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": [],
+          "slot_index": 0,
+          "dir": 4
+        }
+      ],
+      "properties": {
+        "toggleRestriction": "default"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 318,
+      "type": "ModelSamplingSD3",
+      "pos": {
+        "0": 260,
+        "1": 7
+      },
+      "size": {
+        "0": 210,
+        "1": 77.9777603149414
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 658
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            650,
+            659,
+            661
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingSD3"
+      },
+      "widgets_values": [
+        5.15
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": -108,
+        "1": 644
+      },
+      "size": {
+        "0": 342.8335266113281,
+        "1": 177.20867919921875
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 636
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            610,
+            626
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "photorealistic photography solo close up of a smiling clown juggling colourfull balls\n"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 309,
+      "type": "CR Simple Image Compare",
+      "pos": {
+        "0": 1588,
+        "1": 1476
+      },
+      "size": {
+        "0": 400,
+        "1": 266
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 632,
+          "shape": 7
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 633,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            634
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Simple Image Compare"
+      },
+      "widgets_values": [
+        "SkipLayerGuidance (SLG)",
+        "No SLG",
+        35,
+        "Roboto-Regular.ttf",
+        25,
+        "dark",
+        20
+      ]
+    },
+    {
+      "id": 306,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1551,
+        "1": 843
+      },
+      "size": {
+        "0": 485.52374267578125,
+        "1": 556.0709838867188
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 628
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 320,
+      "type": "Bookmark (rgthree)",
+      "pos": {
+        "0": 1837,
+        "1": 739
+      },
+      "size": {
+        "0": 210,
+        "1": 62
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "🔖",
+      "properties": {},
+      "widgets_values": [
+        "C",
+        0.8
+      ]
+    },
+    {
+      "id": 315,
+      "type": "Reroute",
+      "pos": {
+        "0": 351,
+        "1": 600
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 653
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "VAE",
+          "links": [
+            641,
+            642
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 135,
+      "type": "EmptySD3LatentImage",
+      "pos": {
+        "0": -151,
+        "1": 471
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            598,
+            611
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptySD3LatentImage"
+      },
+      "widgets_values": [
+        768,
+        960,
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      90,
+      67,
+      0,
+      68,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      91,
+      68,
+      0,
+      69,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      92,
+      70,
+      0,
+      69,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      572,
+      294,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      597,
+      71,
+      0,
+      67,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      598,
+      135,
+      0,
+      294,
+      3,
+      "LATENT"
+    ],
+    [
+      610,
+      6,
+      0,
+      302,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      611,
+      135,
+      0,
+      302,
+      3,
+      "LATENT"
+    ],
+    [
+      612,
+      302,
+      0,
+      303,
+      0,
+      "LATENT"
+    ],
+    [
+      616,
+      305,
+      0,
+      294,
+      4,
+      "INT"
+    ],
+    [
+      617,
+      305,
+      0,
+      302,
+      4,
+      "INT"
+    ],
+    [
+      621,
+      69,
+      0,
+      302,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      625,
+      69,
+      0,
+      294,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      626,
+      6,
+      0,
+      294,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      627,
+      71,
+      0,
+      70,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      628,
+      303,
+      0,
+      306,
+      0,
+      "IMAGE"
+    ],
+    [
+      629,
+      8,
+      0,
+      307,
+      0,
+      "IMAGE"
+    ],
+    [
+      632,
+      8,
+      0,
+      309,
+      0,
+      "IMAGE"
+    ],
+    [
+      633,
+      303,
+      0,
+      309,
+      1,
+      "IMAGE"
+    ],
+    [
+      634,
+      309,
+      0,
+      310,
+      0,
+      "IMAGE"
+    ],
+    [
+      635,
+      11,
+      0,
+      311,
+      0,
+      "CLIP"
+    ],
+    [
+      636,
+      311,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      637,
+      311,
+      0,
+      71,
+      0,
+      "CLIP"
+    ],
+    [
+      641,
+      315,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      642,
+      315,
+      0,
+      303,
+      1,
+      "VAE"
+    ],
+    [
+      649,
+      301,
+      0,
+      319,
+      0,
+      "*"
+    ],
+    [
+      650,
+      318,
+      0,
+      319,
+      1,
+      "*"
+    ],
+    [
+      652,
+      4,
+      2,
+      321,
+      0,
+      "VAE"
+    ],
+    [
+      653,
+      321,
+      0,
+      315,
+      0,
+      "*"
+    ],
+    [
+      656,
+      321,
+      0,
+      319,
+      3,
+      "*"
+    ],
+    [
+      657,
+      311,
+      0,
+      319,
+      2,
+      "*"
+    ],
+    [
+      658,
+      4,
+      0,
+      318,
+      0,
+      "MODEL"
+    ],
+    [
+      659,
+      318,
+      0,
+      301,
+      0,
+      "MODEL"
+    ],
+    [
+      660,
+      301,
+      0,
+      294,
+      0,
+      "MODEL"
+    ],
+    [
+      661,
+      318,
+      0,
+      302,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Simple Compare",
+      "bounding": [
+        750,
+        667,
+        2529,
+        1208
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.4665073802097334,
+      "offset": [
+        -567.9879864814584,
+        -143.33778035359342
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
