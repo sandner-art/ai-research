@@ -40,14 +40,37 @@
     {
         "label": "SD35 Min",
         "value": "800x800"
+    },{
+        "label": "SD35 Medium Landscape",
+        "value": "1280x768"
     },
     {
         "label": "Flux Small",
         "value": "832x832"
     },
     {
+        "label": "Flux Medium",
+        "value": "1280x1280"
+    },
+    {
+        "label": "Flux Large",
+        "value": "1440x1440"
+    },
+    {
+        "label": "Flux XXL",
+        "value": "1536x1536"
+    },
+    {
         "label": "Flux app. 4:3",
         "value": "1152x896"
+    },
+    {
+        "label": "Flux Wide",
+        "value": "1440x960"
+    },
+    {
+        "label": "Flux HD",
+        "value": "1920x1080"
     },
     {
         "label": "Full",
