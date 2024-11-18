@@ -236,7 +236,7 @@
       },
       "flags": {},
       "order": 11,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "model",
@@ -264,48 +264,6 @@
         0.9,
         0.2
       ]
-    },
-    {
-      "id": 15,
-      "type": "SelfAttentionGuidance",
-      "pos": {
-        "0": 980,
-        "1": 80
-      },
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 50
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            30
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SelfAttentionGuidance"
-      },
-      "widgets_values": [
-        0.5,
-        2
-      ],
-      "color": "#332922",
-      "bgcolor": "#593930"
     },
     {
       "id": 14,
@@ -445,30 +403,6 @@
       ]
     },
     {
-      "id": 21,
-      "type": "Note",
-      "pos": {
-        "0": 63,
-        "1": 366
-      },
-      "size": {
-        "0": 210,
-        "1": 60
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "sandner.art |",
-      "properties": {},
-      "widgets_values": [
-        "SD15 workflow\no - output\ns - settings "
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 23,
       "type": "Bookmark (rgthree)",
       "pos": {
@@ -482,7 +416,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -491,6 +425,57 @@
       "widgets_values": [
         "| + S",
         1
+      ]
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": 60,
+        "1": 480
+      },
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            44
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1
+          ],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            54
+          ],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "cinematix_v2.safetensors"
       ]
     },
     {
@@ -543,7 +528,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        222666,
+        222667,
         "fixed",
         20,
         8,
@@ -553,55 +538,70 @@
       ]
     },
     {
-      "id": 1,
-      "type": "CheckpointLoaderSimple",
+      "id": 15,
+      "type": "SelfAttentionGuidance",
       "pos": {
-        "0": 60,
-        "1": 480
+        "0": 980,
+        "1": 80
       },
       "size": {
         "0": 315,
-        "1": 98
+        "1": 82
       },
       "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
+      "order": 7,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 50
+        }
+      ],
       "outputs": [
         {
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            44
+            30
           ],
           "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            1
-          ],
-          "slot_index": 1,
-          "shape": 3
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            54
-          ],
-          "slot_index": 2,
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
+        "Node name for S&R": "SelfAttentionGuidance"
       },
       "widgets_values": [
-        "cinematix_v2.safetensors"
-      ]
+        0.5,
+        2
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 21,
+      "type": "Note",
+      "pos": {
+        "0": 63,
+        "1": 366
+      },
+      "size": [
+        251.46322753981258,
+        63.248036114197646
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {},
+      "widgets_values": [
+        "SDXL cinematix v2 simple workflow\no - output\ns - settings "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -730,10 +730,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1,
+      "scale": 1.4641000000000006,
       "offset": {
-        "0": -15.333251953125,
-        "1": -84.00006103515625
+        "0": 277.4817810058594,
+        "1": 19.26414680480957
       }
     },
     "groupNodes": {}
