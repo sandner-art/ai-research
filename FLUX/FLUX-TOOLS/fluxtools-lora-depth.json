@@ -1,0 +1,1191 @@
+{
+  "last_node_id": 59,
+  "last_link_id": 131,
+  "nodes": [
+    {
+      "id": 22,
+      "type": "Bookmark (rgthree)",
+      "pos": [
+        1583,
+        435
+      ],
+      "size": [
+        210,
+        62
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "🔖",
+      "properties": {},
+      "widgets_values": [
+        "| + O",
+        1
+      ]
+    },
+    {
+      "id": 23,
+      "type": "Bookmark (rgthree)",
+      "pos": [
+        115,
+        96
+      ],
+      "size": [
+        210,
+        62
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "🔖",
+      "properties": {},
+      "widgets_values": [
+        "| + S",
+        1
+      ]
+    },
+    {
+      "id": 25,
+      "type": "UNETLoader",
+      "pos": [
+        67,
+        484
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            71
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux_dev_fp8_scaled_diffusion_model.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "DualCLIPLoader",
+      "pos": [
+        76,
+        620
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            54
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "t5xxl_fp8_e4m3fn_scaled.safetensors",
+        "clip_l.safetensors",
+        "flux"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [
+        411,
+        360
+      ],
+      "size": [
+        254.43333435058594,
+        142
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 71,
+          "dir": 3
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 54,
+          "dir": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            68
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "dir": 4
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            51,
+            52
+          ],
+          "slot_index": 1,
+          "shape": 3,
+          "dir": 4
+        }
+      ],
+      "properties": {
+        "Show Strengths": "Single Strength"
+      },
+      "widgets_values": [
+        null,
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {
+          "on": true,
+          "lora": "FLUXTOOLS\\flux1-depth-dev-lora.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        null,
+        ""
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAELoader",
+      "pos": [
+        80,
+        944
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            53,
+            114
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        1884,
+        418
+      ],
+      "size": [
+        861.7946166992188,
+        838.4965209960938
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 56,
+      "type": "ImageConcatMulti",
+      "pos": [
+        2963,
+        461
+      ],
+      "size": [
+        210,
+        170
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_1",
+          "type": "IMAGE",
+          "link": 123
+        },
+        {
+          "name": "image_2",
+          "type": "IMAGE",
+          "link": 128
+        },
+        {
+          "name": "image_3",
+          "type": "IMAGE",
+          "link": 125
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            121
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        3,
+        "right",
+        true,
+        null
+      ]
+    },
+    {
+      "id": 7,
+      "type": "VAEDecode",
+      "pos": [
+        1529,
+        1093
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 9
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            8,
+            125
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 55,
+      "type": "SaveImage",
+      "pos": [
+        3212,
+        454
+      ],
+      "size": [
+        967.3457641601562,
+        510.1109619140625
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 121
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "reduxmultiple"
+      ]
+    },
+    {
+      "id": 34,
+      "type": "FluxGuidance",
+      "pos": [
+        985,
+        754
+      ],
+      "size": [
+        211.60000610351562,
+        58.70330810546875
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            115
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        3.5
+      ]
+    },
+    {
+      "id": 35,
+      "type": "ModelSamplingFlux",
+      "pos": [
+        808,
+        191
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            70
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingFlux"
+      },
+      "widgets_values": [
+        1.15,
+        0.5,
+        832,
+        1024
+      ]
+    },
+    {
+      "id": 51,
+      "type": "InstructPixToPixConditioning",
+      "pos": [
+        1203,
+        573
+      ],
+      "size": [
+        235.1999969482422,
+        94.99014282226562
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 112
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 115
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 114
+        },
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 127
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            109
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            110
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            111
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InstructPixToPixConditioning"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 59,
+      "type": "Reroute",
+      "pos": [
+        1300,
+        1143
+      ],
+      "size": [
+        82,
+        26
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 130
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            127,
+            128
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": true,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 58,
+      "type": "DepthAnythingV2Preprocessor",
+      "pos": [
+        952,
+        1396
+      ],
+      "size": [
+        268.4347839355469,
+        82
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 129
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            130,
+            131
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DepthAnythingV2Preprocessor"
+      },
+      "widgets_values": [
+        "depth_anything_v2_vitl.pth",
+        1024
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 57,
+      "type": "PreviewImage",
+      "pos": [
+        1262,
+        1244
+      ],
+      "size": [
+        328.66656494140625,
+        250.6665802001953
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 131
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 38,
+      "type": "LoadImage",
+      "pos": [
+        544,
+        1046
+      ],
+      "size": [
+        361.55413818359375,
+        431.8931884765625
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            119,
+            123,
+            129
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "reduxmultiple_00007_.png",
+        "image"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 54,
+      "type": "MiDaS-DepthMapPreprocessor",
+      "pos": [
+        960,
+        1099
+      ],
+      "size": [
+        245.39102172851562,
+        106
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 119
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiDaS-DepthMapPreprocessor"
+      },
+      "widgets_values": [
+        6.283185307179586,
+        0.1,
+        1024
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 41,
+      "type": "Note",
+      "pos": [
+        951,
+        1261
+      ],
+      "size": [
+        265.24554443359375,
+        92.97457885742188
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {},
+      "widgets_values": [
+        "load a depth map or use a proper depth preprocessor (here I am using comfyui_controlnet_aux for various options. \nDepth anything creates map closer to the image:"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [
+        720,
+        881
+      ],
+      "size": [
+        236.7243194580078,
+        76
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 52
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            62
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "human, 3d, drawing, painting, hair"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 5,
+      "type": "KSampler",
+      "pos": [
+        1460,
+        550
+      ],
+      "size": [
+        315,
+        474
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 70
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 109
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 110
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 111
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            9
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        222666,
+        "fixed",
+        25,
+        1.45,
+        "euler",
+        "beta",
+        1
+      ]
+    },
+    {
+      "id": 21,
+      "type": "Note",
+      "pos": [
+        28,
+        357
+      ],
+      "size": [
+        356.9354248046875,
+        75.14553833007812
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "sandner.art |",
+      "properties": {},
+      "widgets_values": [
+        "Flux Tools Depth LoRA workflow \n\no - output\ns - settings "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 27,
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        79,
+        775
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptySD3LatentImage"
+      },
+      "widgets_values": [
+        832,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 50,
+      "type": "FluxGuidance",
+      "pos": [
+        985,
+        423
+      ],
+      "size": [
+        211.60000610351562,
+        59.65694808959961
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 106
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            112
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        8
+      ]
+    },
+    {
+      "id": 3,
+      "type": "CLIPTextEncode",
+      "pos": [
+        706,
+        416
+      ],
+      "size": [
+        253.3909912109375,
+        421.0844421386719
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 51
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            106
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "hindi scientist, a thinking older man, wrinkles, open window light. dim light coming from laboratory background, university lab interior\n\nphoto, 4k, chiaroscuro, soft light"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      8,
+      7,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      5,
+      0,
+      7,
+      0,
+      "LATENT"
+    ],
+    [
+      51,
+      20,
+      1,
+      3,
+      0,
+      "CLIP"
+    ],
+    [
+      52,
+      20,
+      1,
+      4,
+      0,
+      "CLIP"
+    ],
+    [
+      53,
+      8,
+      0,
+      7,
+      1,
+      "VAE"
+    ],
+    [
+      54,
+      26,
+      0,
+      20,
+      1,
+      "CLIP"
+    ],
+    [
+      62,
+      4,
+      0,
+      34,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      68,
+      20,
+      0,
+      35,
+      0,
+      "MODEL"
+    ],
+    [
+      70,
+      35,
+      0,
+      5,
+      0,
+      "MODEL"
+    ],
+    [
+      71,
+      25,
+      0,
+      20,
+      0,
+      "MODEL"
+    ],
+    [
+      106,
+      3,
+      0,
+      50,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      109,
+      51,
+      0,
+      5,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      110,
+      51,
+      1,
+      5,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      111,
+      51,
+      2,
+      5,
+      3,
+      "LATENT"
+    ],
+    [
+      112,
+      50,
+      0,
+      51,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      114,
+      8,
+      0,
+      51,
+      2,
+      "VAE"
+    ],
+    [
+      115,
+      34,
+      0,
+      51,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      119,
+      38,
+      0,
+      54,
+      0,
+      "IMAGE"
+    ],
+    [
+      121,
+      56,
+      0,
+      55,
+      0,
+      "IMAGE"
+    ],
+    [
+      123,
+      38,
+      0,
+      56,
+      0,
+      "IMAGE"
+    ],
+    [
+      125,
+      7,
+      0,
+      56,
+      2,
+      "IMAGE"
+    ],
+    [
+      127,
+      59,
+      0,
+      51,
+      3,
+      "IMAGE"
+    ],
+    [
+      128,
+      59,
+      0,
+      56,
+      1,
+      "IMAGE"
+    ],
+    [
+      129,
+      38,
+      0,
+      58,
+      0,
+      "IMAGE"
+    ],
+    [
+      130,
+      58,
+      0,
+      59,
+      0,
+      "*"
+    ],
+    [
+      131,
+      58,
+      0,
+      57,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5644739300537776,
+      "offset": [
+        -837.2832798554819,
+        185.48452220802574
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
